@@ -327,7 +327,7 @@ class newDebugMenu
 		class NR_deb_configViewer: w_RscButton
 		{
 			idc = 1628;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[64] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Config Viewer"; //--- ToDo: Localize;
 			x = 0.678612 * safezoneW + safezoneX;
@@ -349,7 +349,7 @@ class newDebugMenu
 		class NR_deb_animations: w_RscButton
 		{
 			idc = 1630;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[66] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Animations"; //--- ToDo: Localize;
 			x = 0.678612 * safezoneW + safezoneX;
@@ -360,7 +360,7 @@ class newDebugMenu
 		class NR_deb_GUIEditor: w_RscButton
 		{
 			idc = 1631;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[67] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "GUI Editor"; //--- ToDo: Localize;
 			x = 0.678612 * safezoneW + safezoneX;
@@ -371,7 +371,7 @@ class newDebugMenu
 		class NR_deb_stamina: w_RscButton
 		{
 			idc = 1607;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[6] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Stamina"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;

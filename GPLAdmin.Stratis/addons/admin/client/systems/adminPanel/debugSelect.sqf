@@ -57,7 +57,7 @@ if (_uid call isAdmin) then
 		};
 		case 6: //Stamina
 		{
-			
+			execVM "addons\admin\client\systems\adminPanel\toggleStamina.sqf";
 		};
 		case 7: //Aim Coef
 		{
@@ -183,7 +183,8 @@ if (_uid call isAdmin) then
 		
 		case 62: //Spectator
 		{
-			
+			//["Initialize", [player]] call BIS_fnc_EGSpectator; 	// Initializes spectator for given player
+			//["Terminate"] call BIS_fnc_EGSpectator; 			// Terminates spectator for given player
 		};
 		
 		case 63: //Free Cam
@@ -193,7 +194,7 @@ if (_uid call isAdmin) then
 		
 		case 64: //Config Viewer
 		{
-			
+			[] call BIS_fnc_configViewer;
 		};
 		
 		case 65: //Function Viewer
@@ -203,12 +204,12 @@ if (_uid call isAdmin) then
 		
 		case 66: //Animations
 		{
-			
+			[] call BIS_fnc_animViewer;
 		};
 		
 		case 67: //Gui Editor
 		{
-			
+			[] call BIS_fnc_GUIeditor;
 		};
 		
 		case 68: //Proving Ground
