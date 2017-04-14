@@ -6,10 +6,7 @@ https://github.com/A3Wasteland/ArmA3_Wasteland.Altis
 
 
 # WARNING
-
-SORRY THIS PROJECT IS NOT RELEASED YET.
-
-To follow the development see under "Nightly" branch.
+This is an ALPHA and UNSTABLE release. I'm not any experienced developer. Can contain errors and issues. The work is WIP and much functions are wrong.
 
 
 ## License
