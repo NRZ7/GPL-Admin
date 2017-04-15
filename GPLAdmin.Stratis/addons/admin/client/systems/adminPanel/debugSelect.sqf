@@ -183,8 +183,11 @@ if (_uid call isAdmin) then
 		
 		case 62: //Spectator
 		{
-			//["Initialize", [player]] call BIS_fnc_EGSpectator; 	// Initializes spectator for given player
-			//["Terminate"] call BIS_fnc_EGSpectator; 			// Terminates spectator for given player
+			closeDialog 0;
+			hint "Press ESC to close Spectator";
+			["Initialize", [player, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+			waituntil {!IsNull (findDisplay 60492)}; 
+			_keyDown = (findDisplay 60492) displayAddEventHandler ["KeyDown", "if (_this select 1 == 1) then {['Terminate'] call BIS_fnc_EGSpectator;}"];
 		};
 		
 		case 63: //Free Cam
@@ -199,11 +202,12 @@ if (_uid call isAdmin) then
 		
 		case 65: //Function Viewer
 		{
-			
+			[] call BIS_fnc_help;
 		};
 		
 		case 66: //Animations
 		{
+			closeDialog 0;
 			[] call BIS_fnc_animViewer;
 		};
 		

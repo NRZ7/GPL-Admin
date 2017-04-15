@@ -305,7 +305,7 @@ class newDebugMenu
 		class NR_deb_spectator: w_RscButton
 		{
 			idc = 1626;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[62] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Spectator"; //--- ToDo: Localize;
 			x = 0.678612 * safezoneW + safezoneX;
@@ -338,7 +338,7 @@ class newDebugMenu
 		class NR_deb_funcView: w_RscButton
 		{
 			idc = 1629;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[65] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Function Viewer"; //--- ToDo: Localize;
 			x = 0.678612 * safezoneW + safezoneX;

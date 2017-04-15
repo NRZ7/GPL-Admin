@@ -43,9 +43,9 @@ else
 	// Server Owners: access to everything, including god mode, money, guns, and vehicles
 	serverOwners = compileFinal str
 	[
-	"76561198086857419", 	// NRZ7
-	"76561198131359184", 	// Whatsername
-	"76561197964148577" 	// Logancio
+	"UID1", 	// Admin
+	"UID2", 	// Another Admin
+	"UID3" 		// Chuck Norris
 	];
 
 	/********************************************************/
