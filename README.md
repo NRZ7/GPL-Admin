@@ -13,7 +13,7 @@ To follow the development see under "Nightly" branch.
 
 
 ## License
-Copyright (C) 2015 NRZ7
+Copyright (C) 2017
 
 	This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
