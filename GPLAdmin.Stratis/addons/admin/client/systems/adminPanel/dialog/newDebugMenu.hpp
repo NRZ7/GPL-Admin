@@ -239,7 +239,7 @@ class newDebugMenu
 		class NR_deb_AIESP: w_RscButton
 		{
 			idc = 1617;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[26] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "AI ESP"; //--- ToDo: Localize;
 			x = 0.348612 * safezoneW + safezoneX;

@@ -133,7 +133,7 @@ if (_uid call isAdmin) then
 		
 		case 26: //AI ESP
 		{
-			
+			execVM "addons\admin\client\systems\adminPanel\toggleAIESP.sqf";
 		};
 		
 		case 27: //Object Search
