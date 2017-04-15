@@ -185,6 +185,7 @@ class newDebugMenu
 		class NR_deb_3dteleport: w_RscButton
 		{
 			idc = 1612;
+			onButtonClick = "[11] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "3D Teleport"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
@@ -316,7 +317,7 @@ class newDebugMenu
 		class NR_deb_freeCam: w_RscButton
 		{
 			idc = 1627;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[63] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Free Cam"; //--- ToDo: Localize;
 			x = 0.678612 * safezoneW + safezoneX;

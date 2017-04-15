@@ -2,8 +2,8 @@
 // * This script is licensed under the GNU Lesser GPL v3. Copyright © 2015 A3Wasteland.com *
 // *****************************************************************************************
 //	@file Version: 1.0
-//	@file Name: playerSelect.sqf
-//	@file Author: [404] Deadbeat
+//	@file Name: debugSelect.sqf
+//	@file Author: NRZ7, based on [404] Deadbeat playerSelect.sqf
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
@@ -81,7 +81,7 @@ if (_uid call isAdmin) then
 		
 		case 11: //3D Teleport
 		{
-			
+			execVM "addons\admin\client\systems\adminPanel\toggle3DTeleport.sqf";
 		};
 		
 		case 12: //Enable Environment
@@ -190,9 +190,9 @@ if (_uid call isAdmin) then
 			_keyDown = (findDisplay 60492) displayAddEventHandler ["KeyDown", "if (_this select 1 == 1) then {['Terminate'] call BIS_fnc_EGSpectator;}"];
 		};
 		
-		case 63: //Free Cam
+		case 63: //Splendid Camera (Free Cam)
 		{
-			
+			[] call BIS_fnc_camera;
 		};
 		
 		case 64: //Config Viewer
