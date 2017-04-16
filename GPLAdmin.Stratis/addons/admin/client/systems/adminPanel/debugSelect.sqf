@@ -1,5 +1,5 @@
 // *****************************************************************************************
-// * This script is licensed under the GNU Lesser GPL v3. Copyright © 2015 A3Wasteland.com *
+// * This script is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
 // *****************************************************************************************
 //	@file Version: 1.0
 //	@file Name: debugSelect.sqf
@@ -113,7 +113,7 @@ if (_uid call isAdmin) then
 		
 		case 23: //Flip
 		{
-			
+			execVM "addons\admin\client\systems\adminPanel\flipVehicle.sqf";
 		};
 		
 		case 24: //Repair Refuel Rearm

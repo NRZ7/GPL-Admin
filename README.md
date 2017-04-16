@@ -6,6 +6,11 @@ https://github.com/A3Wasteland/ArmA3_Wasteland.Altis
 
 
 # WARNING
+
+Project by: NRZ7
+
+Original Project from: Team Wasteland
+
 This is an ALPHA and UNSTABLE release. I'm not any experienced developer. Can contain errors and issues. The work is WIP and much functions are wrong.
 
 
@@ -28,6 +33,7 @@ Copyright (C) 2017
 
 ## Credits
 
-* AgentRev
-* [404] Deadbeat
+* AgentRev (A3Wasteland.com lead developer)
+* [404] Deadbeat (From A3W and 404games.co.uk)
 * Team Wasteland
+* Biabock (For unlink the code from the admin panel from A3W)

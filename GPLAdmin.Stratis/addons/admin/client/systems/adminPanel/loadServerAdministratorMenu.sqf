@@ -19,13 +19,13 @@ if ([_uid, 3] call isAdmin) then {
 	_adminSelect = _displayAdmin displayCtrl adminMenu_option;
 
 	_panelOptions = ["Player Management",
-					"Vehicle Management",
-					"Player Markers",
-					"Unstuck player",
-					"Teleport player to me",
-					"Teleport me to player",
+					//"Vehicle Management",
+					//"Player Markers",
+					//"Unstuck player",
+					//"Teleport player to me",
+					//"Teleport me to player",
 					"Debug Menu",
-					"Object Search",
+					//"Object Search",
 					"New Debug"
 	];
 

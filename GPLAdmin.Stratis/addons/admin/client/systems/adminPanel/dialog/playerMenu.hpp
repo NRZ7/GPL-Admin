@@ -1,5 +1,5 @@
 // *****************************************************************************************
-// * This script is licensed under the GNU Lesser GPL v3. Copyright © 2015 A3Wasteland.com *
+// * This script is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
 // *****************************************************************************************
 #define playerMenuDialog 55500
 #define playerMenuPlayerSkin 55501

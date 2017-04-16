@@ -1,5 +1,5 @@
 // *****************************************************************************************
-// * This script is licensed under the GNU Lesser GPL v3. Copyright © 2015 A3Wasteland.com *
+// * This script is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
 // *****************************************************************************************
 //@file Version: 1.1
 //@file Name: init.sqf
@@ -65,4 +65,4 @@ NR_fnc_removeGear = {
 	};
 };
 
-diag_log "A3WAdmin - Client Compile Complete";
+diag_log "GPL Admin - Client Compile Complete";

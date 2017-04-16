@@ -33,6 +33,7 @@ if (_uid call isAdmin) then
 					execVM "addons\admin\client\systems\adminPanel\playerMenu.sqf";
 					//if (!isNil "notifyAdminMenu") then { ["PlayerManagement", "Opened"] call notifyAdminMenu };
 				};
+				/*
 				case 1: //Full Vehicle Management
 				{
 					closeDialog 0;
@@ -62,19 +63,22 @@ if (_uid call isAdmin) then
 					execVM "addons\admin\client\systems\adminPanel\tpmeto.sqf";
 					//if (!isNil "notifyAdminMenu") then { ["TeleportMeTo", "Used"] call notifyAdminMenu };
 				};
-				case 6: //Debug Menu
+				*/
+				case 1: //Debug Menu
 				{
 					closeDialog 0;
 					execVM "addons\admin\client\systems\adminPanel\loadDebugMenu.sqf";
 					//if (!isNil "notifyAdminMenu") then { ["LoadDebugMenu", "Opened"] call notifyAdminMenu };
 				};
+				/*
 				case 7: //Object search menu
 				{
 					closeDialog 0;
 					execVM "addons\admin\client\systems\adminPanel\loadObjectSearch.sqf";
 					//if (!isNil "notifyAdminMenu") then { ["ObjectSearch", "Opened"] call notifyAdminMenu };
 				};
-				case 8: // New Debug
+				*/
+				case 2: // New Debug
 				{
 					closeDialog 0;
 					createDialog "newDebugMenu";

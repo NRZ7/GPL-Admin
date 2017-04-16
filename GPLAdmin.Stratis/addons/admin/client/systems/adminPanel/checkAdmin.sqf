@@ -1,12 +1,11 @@
 // *****************************************************************************************
-// * This script is licensed under the GNU Lesser GPL v3. Copyright © 2015 A3Wasteland.com *
+// * This script is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
 // *****************************************************************************************
 //	@file Version: 1.1
 //	@file Name: checkAdmin.sqf
 //	@file Author: [404] Deadbeat, AgentRev
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
-// bAdmin Exile by Biabock
 
 private ["_uid","_handle"];
 _uid = getPlayerUID player;

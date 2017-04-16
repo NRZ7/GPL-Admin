@@ -1,5 +1,5 @@
 // *****************************************************************************************
-// * This script is licensed under the GNU Lesser GPL v3. Copyright © 2015 A3Wasteland.com *
+// * This script is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
 // *****************************************************************************************
 /*
 	@file Version: 1.0
@@ -83,6 +83,22 @@
 
 #define true 1
 #define false 1
+
+// GPL Admin includes
+class n_RscSlider{
+	style = "0x400 + 0x10";
+	type = 43;  // Type 43 modern UI style. Type 3 ugly old style.
+	shadow = 0;
+	color[] = {1,1,1,0.4};
+	colorActive[] = {1,1,1,1};
+	colorDisabled[] = {0.5,0.5,0.5,0.2};
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
+	arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
+	border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
+	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
+};
+
+// End Of GPL Admin includes
 
 class w_RscText {
 
