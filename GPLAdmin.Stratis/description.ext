@@ -9,6 +9,16 @@ OnLoadMission 				= 	"GPL Admin";
 enableDebugConsole 			= 1;	//	0 = Default behavior, available only in editor | 1 = Available in SP and for hosts / logged in admins | 2 = 2 = Available for everyone
 disabledAI 					= 1;	//	When 1, removes all playable units which do not have a human player. When 0, a logging out player will have AI take control of his character. 
 
+//////////////////////////
+/*	RESPAWN SETTINGS 	*/
+//////////////////////////
+
+respawn	 			= "INSTANT"; 	// "NONE" | "BIRD" | "INSTANT" | "BASE" | "GROUP" | "SIDE"
+respawnDelay 		= 3;		//	Set respawn delay in seconds.
+respawnDialog 		= 1;		//	Show the scoreboard and respawn countdown timer for a player if he is killed with respawnType 3. Default is 1 (true).
+respawnOnStart 		= 1;		//	Respawn on start. Run respawn script on start.
+respawnTemplates[] 	= {"MenuInventory","MenuPosition","Counter"};
+
 // Admin includes
 #include "addons\admin\client\gui_base.hpp"
 #include "addons\admin\client\systems\common.hpp"
@@ -24,6 +34,9 @@ disabledAI 					= 1;	//	When 1, removes all playable units which do not have a h
 #include "addons\admin\client\systems\adminPanel\dialog\objectSearch.hpp"
 
 #include "addons\admin\client\systems\adminPanel\dialog\newDebugMenu.hpp"
+
+
+#include "addons\admin\client\systems\adminPanel\dialog\myTestMenu.hpp"
 
 class CfgRemoteExec
 {        

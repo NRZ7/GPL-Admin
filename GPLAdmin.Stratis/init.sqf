@@ -15,7 +15,7 @@ if (hasInterface) then
 
 if (isServer) then
 {
-	diag_log "A3WAdmin - Initializing";
+	diag_log "GPL Admin - Initializing";
 	[] execVM "addons\admin\server\init.sqf";
 };
 

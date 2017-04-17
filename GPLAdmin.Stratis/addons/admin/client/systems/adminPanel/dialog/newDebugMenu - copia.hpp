@@ -12,7 +12,7 @@ class newDebugMenu
 	class controls {
 
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Fufyhy)
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Hetapu)
 		////////////////////////////////////////////////////////
 
 		class MainBackground: w_RscPicture
@@ -54,7 +54,7 @@ class newDebugMenu
 		{
 			idc = 1600;
 			onButtonClick = "[1] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
-			
+
 			text = "Arsenal"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
 			y = 0.16274 * safezoneH + safezoneY;
@@ -65,7 +65,7 @@ class newDebugMenu
 		{
 			idc = 1601;
 			onButtonClick = "[21] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
-			
+
 			text = "Garage"; //--- ToDo: Localize;
 			x = 0.348612 * safezoneW + safezoneX;
 			y = 0.16274 * safezoneH + safezoneY;
@@ -127,39 +127,6 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_deb_aimcoef: w_RscButton
-		{
-			idc = 1607;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
-
-			text = "Aim coef"; //--- ToDo: Localize;
-			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.42674 * safezoneH + safezoneY;
-			w = 0.132 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class NR_deb_unlimammo: w_RscButton
-		{
-			idc = 1608;
-			onButtonClick = "[5] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
-
-			text = "Unlimited Ammo"; //--- ToDo: Localize;
-			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.33874 * safezoneH + safezoneY;
-			w = 0.132 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class NR_deb_recoilcoef: w_RscButton
-		{
-			idc = 1609;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
-
-			text = "Recoil coef"; //--- ToDo: Localize;
-			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.47074 * safezoneH + safezoneY;
-			w = 0.132 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
 		class NR_deb_grass: w_RscButton
 		{
 			idc = 1610;
@@ -167,7 +134,7 @@ class newDebugMenu
 
 			text = "Set Grass"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.51474 * safezoneH + safezoneY;
+			y = 0.42674 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
@@ -178,7 +145,7 @@ class newDebugMenu
 
 			text = "Set View Distance"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.55874 * safezoneH + safezoneY;
+			y = 0.33874 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
@@ -189,7 +156,7 @@ class newDebugMenu
 
 			text = "3D Teleport"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.60274 * safezoneH + safezoneY;
+			y = 0.51474 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
@@ -200,7 +167,7 @@ class newDebugMenu
 
 			text = "Enable environment"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.64674 * safezoneH + safezoneY;
+			y = 0.38274 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
@@ -211,7 +178,7 @@ class newDebugMenu
 
 			text = "Zeus"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.69074 * safezoneH + safezoneY;
+			y = 0.55874 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
@@ -376,7 +343,7 @@ class newDebugMenu
 
 			text = "Stamina"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.38274 * safezoneH + safezoneY;
+			y = 0.47074 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
@@ -413,9 +380,228 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
+		class RscText_1036: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.60274 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1010: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.64674 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1011: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.69074 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1012: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.73474 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1037: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.348612 * safezoneW + safezoneX;
+			y = 0.47074 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1038: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.348612 * safezoneW + safezoneX;
+			y = 0.51474 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1039: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.348612 * safezoneW + safezoneX;
+			y = 0.55874 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1040: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.348612 * safezoneW + safezoneX;
+			y = 0.60274 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1041: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.513612 * safezoneW + safezoneX;
+			y = 0.38274 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1042: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.513612 * safezoneW + safezoneX;
+			y = 0.42674 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1043: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.513612 * safezoneW + safezoneX;
+			y = 0.51474 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1044: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.513612 * safezoneW + safezoneX;
+			y = 0.47074 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1045: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.513612 * safezoneW + safezoneX;
+			y = 0.55874 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1046: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.513612 * safezoneW + safezoneX;
+			y = 0.60274 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1047: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.678612 * safezoneW + safezoneX;
+			y = 0.51474 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1048: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.678612 * safezoneW + safezoneX;
+			y = 0.55874 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1049: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.678612 * safezoneW + safezoneX;
+			y = 0.60274 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1050: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.77874 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscText_1051: RscText
+		{
+			idc = 1614;
+			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "Disabled"; //--- ToDo: Localize;
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.82274 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class FrameTest: RscFrame
+		{
+			idc = 1800;
+			text = "test"; //--- ToDo: Localize;
+			x = 0.332112 * safezoneW + safezoneX;
+			y = 0.66874 * safezoneH + safezoneY;
+			w = 0.48675 * safezoneW;
+			h = 0.253 * safezoneH;
+		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
 		////////////////////////////////////////////////////////
+
 
 
 		

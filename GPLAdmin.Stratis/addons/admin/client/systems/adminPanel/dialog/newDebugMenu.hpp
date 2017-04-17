@@ -1,6 +1,11 @@
-// *****************************************************************************************
-// * This script is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
-// *****************************************************************************************
+// ******************************************************************************************
+// * This project is licensed under the GNU Affero GPL v3. Copyright © 2017 NRZ7 *
+// ******************************************************************************************
+//	@file Version: 1.0
+//	@file Name: newDebugMenu.hpp
+//	@file Author: NRZ7
+//	@file Created: 17/04/2017 12:23
+
 #define newDebugDialog 60001
 
 class newDebugMenu
@@ -12,12 +17,13 @@ class newDebugMenu
 	class controls {
 
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Hetapu)
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Byvolu)
 		////////////////////////////////////////////////////////
 
 		class MainBackground: w_RscPicture
 		{
 			idc = 1000;
+			onLoad = "[0] execVM 'addons\admin\client\systems\adminPanel\dialog\newDebugMenuCtrlShow.sqf'";
 
 			text = "#(argb,8,8,3)color(0,0,0,0.6)"; //--- ToDo: Localize;
 			x = 0.158862 * safezoneW + safezoneX;
@@ -240,7 +246,7 @@ class newDebugMenu
 		class NR_deb_changeWeather: w_RscButton
 		{
 			idc = 1622;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[1] execVM 'addons\admin\client\systems\adminPanel\dialog\newDebugMenuCtrlShow.sqf'";
 
 			text = "Change Weather"; //--- ToDo: Localize;
 			x = 0.513612 * safezoneW + safezoneX;
@@ -380,7 +386,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1036: RscText
+		class NR_cusom_player11: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -391,7 +397,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1010: RscText
+		class NR_cusom_player12: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -402,7 +408,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1011: RscText
+		class NR_cusom_player13: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -413,7 +419,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1012: RscText
+		class NR_cusom_player14: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -424,7 +430,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1037: RscText
+		class NR_cusom_vehicle8: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -435,7 +441,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1038: RscText
+		class NR_cusom_vehicle9: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -446,7 +452,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1039: RscText
+		class NR_cusom_vehicle10: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -457,7 +463,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1040: RscText
+		class NR_cusom_vehicle11: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -468,7 +474,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1041: RscText
+		class NR_cusom_server6: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -479,7 +485,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1042: RscText
+		class NR_cusom_server7: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -490,7 +496,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1043: RscText
+		class NR_cusom_server9: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -501,7 +507,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1044: RscText
+		class NR_cusom_server8: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -512,7 +518,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1045: RscText
+		class NR_cusom_server10: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -523,7 +529,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1046: RscText
+		class NR_cusom_server11: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -534,18 +540,18 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1047: RscText
+		class NR_cusom_debug9: w_RscButton
 		{
 			idc = 1614;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "createDialog 'myTestMenu'";//"[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
-			text = "Disabled"; //--- ToDo: Localize;
+			text = "Test Menu"; //--- ToDo: Localize;
 			x = 0.678612 * safezoneW + safezoneX;
 			y = 0.51474 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1048: RscText
+		class NR_cusom_debug10: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -556,7 +562,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1049: RscText
+		class NR_cusom_debug11: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -567,7 +573,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1050: RscText
+		class NR_cusom_player15: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -578,7 +584,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class RscText_1051: RscText
+		class NR_cusom_player16: w_RscButton
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -589,14 +595,249 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class FrameTest: RscFrame
+		class CustomFrame: RscFrame
 		{
 			idc = 1800;
-			text = "test"; //--- ToDo: Localize;
+
 			x = 0.332112 * safezoneW + safezoneX;
 			y = 0.66874 * safezoneH + safezoneY;
 			w = 0.48675 * safezoneW;
 			h = 0.253 * safezoneH;
+		};
+		class NR_configBackground: w_RscPicture
+		{
+			idc = 2200;
+
+			text = "#(argb,8,8,3)color(0,0,0,0.6)"; //--- ToDo: Localize;
+			x = 0.332112 * safezoneW + safezoneX;
+			y = 0.66874 * safezoneH + safezoneY;
+			w = 0.48675 * safezoneW;
+			h = 0.253 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0};
+		};
+		////////////////////////////////////////////////////////
+		// GUI EDITOR OUTPUT END Test Slider
+		////////////////////////////////////////////////////////
+
+		class NR_test_slider: n_RscSlider
+		{
+			idc = 1900;
+			onSliderPosChanged = "sliderValue = _this select 1;";
+
+			x = 0.502475 * safezoneW + safezoneX;
+			y = 0.763615 * safezoneH + safezoneY;
+			w = 0.159844 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class NR_test_ButtonOk: w_RscButton
+		{
+			idc = 1901;
+			onButtonClick = "hint format ['Slider Value = %1',sliderValue];";
+
+			text = "Done!"; //--- ToDo: Localize;
+			x = 0.538981 * safezoneW + safezoneX;
+			y = 0.814215 * safezoneH + safezoneY;
+			w = 0.0876563 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		////////////////////////////////////////////////////////
+		// GUI EDITOR OUTPUT END
+		////////////////////////////////////////////////////////
+	
+		////////////////////////////////////////////////////////
+		//					WEATHER CHANGES
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Razysu)
+		////////////////////////////////////////////////////////
+
+		class NR_invisibleBackground: w_RscPicture
+		{
+			idc = 1902;
+
+			text = "#(argb,8,8,3)color(0,0,0,0)"; //--- ToDo: Localize;
+			x = 0.332112 * safezoneW + safezoneX;
+			y = 0.66874 * safezoneH + safezoneY;
+			w = 0.48675 * safezoneW;
+			h = 0.253 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0};
+		};
+		class RscFrame_1800: RscFrame
+		{
+			idc = 1903;
+
+			x = 0.657987 * safezoneW + safezoneX;
+			y = 0.704765 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.198 * safezoneH;
+		};
+		class NR_slider_overcast: n_RscSlider
+		{
+			idc = 1904;
+			onSliderPosChanged = "NR_overcast = _this select 1; NR_overcast = NR_overcast * 0.1;";
+
+			text = "Overcast"; //--- ToDo: Localize;
+			x = 0.356862 * safezoneW + safezoneX;
+			y = 0.71934 * safezoneH + safezoneY;
+			w = 0.099 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_weather_ButtonOk: w_RscButton
+		{
+			idc = 1905;
+			onButtonClick = "NR_windEast = parseNumber ctrlText 1910; NR_windNorth = parseNumber ctrlText 1911; [NR_overcast,NR_fog,NR_rain,NR_Waves,NR_Lightnings,NR_windEast,NR_windNorth] execVM 'addons\admin\client\systems\adminPanel\clientWeather.sqf';";
+
+			text = "Done!"; //--- ToDo: Localize;
+			x = 0.513612 * safezoneW + safezoneX;
+			y = 0.85849 * safezoneH + safezoneY;
+			w = 0.0876563 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class NR_slider_fog: n_RscSlider
+		{
+			idc = 1906;
+			onSliderPosChanged = "NR_fog = _this select 1; NR_fog = NR_fog * 0.1;";
+
+			text = "Fog"; //--- ToDo: Localize;
+			x = 0.356862 * safezoneW + safezoneX;
+			y = 0.788915 * safezoneH + safezoneY;
+			w = 0.099 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_slider_rain: n_RscSlider
+		{
+			idc = 1907;
+			onSliderPosChanged = "NR_rain = _this select 1; NR_rain = NR_rain * 0.1;";
+
+			text = "Rain"; //--- ToDo: Localize;
+			x = 0.356862 * safezoneW + safezoneX;
+			y = 0.852165 * safezoneH + safezoneY;
+			w = 0.099 * safezoneW;
+			h = 0.018975 * safezoneH;
+			tooltip = "Overcast need to be +50%"; //--- ToDo: Localize;
+		};
+		class NR_slider_waves: n_RscSlider
+		{
+			idc = 1908;
+			onSliderPosChanged = "NR_waves = _this select 1; NR_waves = NR_waves * 0.1;";
+
+			text = "Waves"; //--- ToDo: Localize;
+			x = 0.670156 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.1155 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_slider_lightnings: n_RscSlider
+		{
+			idc = 1909;
+			onSliderPosChanged = "NR_lightnings = _this select 1; NR_lightnings = NR_lightnings * 0.1;";
+
+			text = "Lightnings"; //--- ToDo: Localize;
+			x = 0.670362 * safezoneW + safezoneX;
+			y = 0.864815 * safezoneH + safezoneY;
+			w = 0.1155 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_Edit_windEast: RscEdit
+		{
+			idc = 1910;
+
+			x = 0.563112 * safezoneW + safezoneX;
+			y = 0.725665 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.031625 * safezoneH;
+			tooltip = "Negative value for West"; //--- ToDo: Localize;
+		};
+		class NR_Edit_windNorth: RscEdit
+		{
+			idc = 1911;
+
+			x = 0.563112 * safezoneW + safezoneX;
+			y = 0.78259 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.031625 * safezoneH;
+			tooltip = "Negative value for South"; //--- ToDo: Localize;
+		};
+		class NR_text_overcast: RscText
+		{
+			idc = 1912;
+
+			text = "Overcast:"; //--- ToDo: Localize;
+			x = 0.356862 * safezoneW + safezoneX;
+			y = 0.69404 * safezoneH + safezoneY;
+			w = 0.05775 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_text_Fog: RscText
+		{
+			idc = 1913;
+
+			text = "Fog:"; //--- ToDo: Localize;
+			x = 0.356862 * safezoneW + safezoneX;
+			y = 0.763615 * safezoneH + safezoneY;
+			w = 0.05775 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_text_windEast: RscText
+		{
+			idc = 1914;
+
+			text = "Wind East:"; //--- ToDo: Localize;
+			x = 0.497112 * safezoneW + safezoneX;
+			y = 0.73199 * safezoneH + safezoneY;
+			w = 0.05775 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_text_windNorth: RscText
+		{
+			idc = 1915;
+
+			text = "Wind North:"; //--- ToDo: Localize;
+			x = 0.497112 * safezoneW + safezoneX;
+			y = 0.788915 * safezoneH + safezoneY;
+			w = 0.05775 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_text_waves: RscText
+		{
+			idc = 1916;
+
+			text = "Waves:"; //--- ToDo: Localize;
+			x = 0.670156 * safezoneW + safezoneX;
+			y = 0.753 * safezoneH + safezoneY;
+			w = 0.05775 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_text_lightnings: RscText
+		{
+			idc = 1917;
+
+			text = "Lightnings:"; //--- ToDo: Localize;
+			x = 0.670362 * safezoneW + safezoneX;
+			y = 0.83319 * safezoneH + safezoneY;
+			w = 0.05775 * safezoneW;
+			h = 0.018975 * safezoneH;
+		};
+		class NR_text_note: RscText
+		{
+			idc = 1918;
+
+			text = "*Note"; //--- ToDo: Localize;
+			x = 0.701094 * safezoneW + safezoneX;
+			y = 0.709 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			tooltip = " This command will have no effect unless ""Manual Override"" option is selected in the editor in the Intel, which is normally off."; //--- ToDo: Localize;
+		};
+		class NR_text_Rain: RscText
+		{
+			idc = 1919;
+
+			text = "Rain:"; //--- ToDo: Localize;
+			x = 0.356862 * safezoneW + safezoneX;
+			y = 0.826865 * safezoneH + safezoneY;
+			w = 0.05775 * safezoneW;
+			h = 0.018975 * safezoneH;
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
