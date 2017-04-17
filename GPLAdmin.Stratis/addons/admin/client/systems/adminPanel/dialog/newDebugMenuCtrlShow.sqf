@@ -39,10 +39,24 @@ if (_uid call isAdmin) then
 			ctrlShow [1918, false];
 			ctrlShow [1919, false];
 			
+			// Global Message
+			ctrlShow [1920, false];
+			ctrlShow [1921, false];
+			ctrlShow [1922, false];
+			
+			// Server Max Distance
+			ctrlShow [1923, false];
+			ctrlShow [1924, false];
+			ctrlShow [1925, false];
+			
 		};
 		
 		case 1: // Weather
 		{
+			// Test controls
+			ctrlShow [1900, false];
+			ctrlShow [1901, false];
+			
 			// Weather controls
 			ctrlShow [1902, true];
 			ctrlShow [1903, true];
@@ -63,7 +77,92 @@ if (_uid call isAdmin) then
 			ctrlShow [1918, true];
 			ctrlShow [1919, true];
 			
+			// Global Message
+			ctrlShow [1920, false];
+			ctrlShow [1921, false];
+			ctrlShow [1922, false];
+			
+			// Server Max Distance
+			ctrlShow [1923, false];
+			ctrlShow [1924, false];
+			ctrlShow [1925, false];
+			
 		};
+		
+		case 2: // Global Message
+		{
+			// Test controls
+			ctrlShow [1900, false];
+			ctrlShow [1901, false];
+			
+			// Weather controls
+			ctrlShow [1902, false];
+			ctrlShow [1903, false];
+			ctrlShow [1904, false];
+			ctrlShow [1905, false];
+			ctrlShow [1906, false];
+			ctrlShow [1907, false];
+			ctrlShow [1908, false];
+			ctrlShow [1909, false];
+			ctrlShow [1910, false];
+			ctrlShow [1911, false];
+			ctrlShow [1912, false];
+			ctrlShow [1913, false];
+			ctrlShow [1914, false];
+			ctrlShow [1915, false];
+			ctrlShow [1916, false];
+			ctrlShow [1917, false];
+			ctrlShow [1918, false];
+			ctrlShow [1919, false];
+			
+			//Global Message
+			ctrlShow [1920, true];
+			ctrlShow [1921, true];
+			ctrlShow [1922, true];
+			
+			// Server Max Distance
+			ctrlShow [1923, false];
+			ctrlShow [1924, false];
+			ctrlShow [1925, false];
+		};
+		
+		case 3: // Server View Distance
+		{
+			// Test controls
+			ctrlShow [1900, false];
+			ctrlShow [1901, false];
+			
+			// Weather controls
+			ctrlShow [1902, false];
+			ctrlShow [1903, false];
+			ctrlShow [1904, false];
+			ctrlShow [1905, false];
+			ctrlShow [1906, false];
+			ctrlShow [1907, false];
+			ctrlShow [1908, false];
+			ctrlShow [1909, false];
+			ctrlShow [1910, false];
+			ctrlShow [1911, false];
+			ctrlShow [1912, false];
+			ctrlShow [1913, false];
+			ctrlShow [1914, false];
+			ctrlShow [1915, false];
+			ctrlShow [1916, false];
+			ctrlShow [1917, false];
+			ctrlShow [1918, false];
+			ctrlShow [1919, false];
+			
+			//Global Message controls
+			ctrlShow [1920, false];
+			ctrlShow [1921, false];
+			ctrlShow [1922, false];
+			
+			// Server Max Distance controls
+			ctrlShow [1923, true];
+			ctrlShow [1924, true];
+			ctrlShow [1925, true];
+		};
+			
 	};
 
 };

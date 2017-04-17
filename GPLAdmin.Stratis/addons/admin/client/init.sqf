@@ -65,4 +65,13 @@ NR_fnc_removeGear = {
 	};
 };
 
+NR_fnc_globalMessage = {
+	_NR_globalMessage = _this select 0;
+	_callerUID = _this select 1;
+	if (_callerUID call isAdmin) then
+	{
+		titleText [_NR_globalMessage, "PLAIN", 0];
+	};
+};
+
 diag_log "GPL Admin - Client Compile Complete";

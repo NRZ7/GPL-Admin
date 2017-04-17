@@ -153,23 +153,22 @@ if (_uid call isAdmin) then
 		
 		case 42: //CHANGE WHEATHER
 		{
-			
+			[1] execVM "addons\admin\client\systems\adminPanel\dialog\newDebugMenuCtrlShow.sqf";
 		};
 		
 		case 43: //Set Server View Distance
 		{
-			
+			[3] execVM "addons\admin\client\systems\adminPanel\dialog\newDebugMenuCtrlShow.sqf";
 		};
 		
 		case 44: //Day/Night
 		{
-			//closeDialog 0;
 			execVM "addons\admin\client\systems\adminPanel\toggleDayNight.sqf";
 		};
 		
 		case 45: //Global Message
 		{
-			
+			[2] execVM "addons\admin\client\systems\adminPanel\dialog\newDebugMenuCtrlShow.sqf";
 		};
 		
 		////////////////////////////////////////

@@ -246,7 +246,7 @@ class newDebugMenu
 		class NR_deb_changeWeather: w_RscButton
 		{
 			idc = 1622;
-			onButtonClick = "[1] execVM 'addons\admin\client\systems\adminPanel\dialog\newDebugMenuCtrlShow.sqf'";
+			onButtonClick = "[42] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Change Weather"; //--- ToDo: Localize;
 			x = 0.513612 * safezoneW + safezoneX;
@@ -257,7 +257,7 @@ class newDebugMenu
 		class NR_deb_globalViewDistance: w_RscButton
 		{
 			idc = 1623;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[43] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Global View Distance"; //--- ToDo: Localize;
 			x = 0.513612 * safezoneW + safezoneX;
@@ -367,7 +367,7 @@ class newDebugMenu
 		class NR_deb_globalMessage: w_RscButton
 		{
 			idc = 1624;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[45] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Global Message"; //--- ToDo: Localize;
 			x = 0.513612 * safezoneW + safezoneX;
@@ -650,18 +650,6 @@ class newDebugMenu
 		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Razysu)
 		////////////////////////////////////////////////////////
 
-		class NR_invisibleBackground: w_RscPicture
-		{
-			idc = 1902;
-
-			text = "#(argb,8,8,3)color(0,0,0,0)"; //--- ToDo: Localize;
-			x = 0.332112 * safezoneW + safezoneX;
-			y = 0.66874 * safezoneH + safezoneY;
-			w = 0.48675 * safezoneW;
-			h = 0.253 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0};
-		};
 		class RscFrame_1800: RscFrame
 		{
 			idc = 1903;
@@ -843,9 +831,86 @@ class newDebugMenu
 		// GUI EDITOR OUTPUT END
 		////////////////////////////////////////////////////////
 
+		////////////////////////////////////////////////////////
+		//					GLOBAL MESSAGE
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Razysu)
+		////////////////////////////////////////////////////////
 
+		class NR_globalMessage_ButtonOk: w_RscButton
+		{
+			idc = 1921;
+			onButtonClick = "NR_GlobalMessage = ctrlText 1922;  [NR_GlobalMessage] execVM 'addons\admin\client\systems\adminPanel\clientGlobalMessage.sqf';";
 
-		
+			text = "Done!"; //--- ToDo: Localize;
+			x = 0.538362 * safezoneW + safezoneX;
+			y = 0.864815 * safezoneH + safezoneY;
+			w = 0.0876563 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class NR_Edit_globalMessage: n_RscEdit
+		{
+			idc = 1922;
+
+			text = "Write your global message here"; //--- ToDo: Localize;
+			x = 0.348612 * safezoneW + safezoneX;
+			y = 0.687715 * safezoneH + safezoneY;
+			w = 0.45375 * safezoneW;
+			h = 0.158125 * safezoneH;
+		};
+		////////////////////////////////////////////////////////
+		// GUI EDITOR OUTPUT END
+		////////////////////////////////////////////////////////
+
+		////////////////////////////////////////////////////////
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Xekyja)
+		////////////////////////////////////////////////////////
+		class NR_invisibleBackground: w_RscPicture
+		{
+			idc = 1920;
+
+			text = "#(argb,8,8,3)color(0,0,0,0)"; //--- ToDo: Localize;
+			x = 0.332112 * safezoneW + safezoneX;
+			y = 0.66874 * safezoneH + safezoneY;
+			w = 0.48675 * safezoneW;
+			h = 0.253 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0};
+		};
+		class NR_serverView_ButtonOk: w_RscButton
+		{
+			idc = 1923;
+			onButtonClick = "NR_serverView = parseNumber ctrlText 1924;	[NR_serverView] execVM 'addons\admin\client\systems\adminPanel\clientSendServerViewDistance.sqf';";
+
+			text = "Done!"; //--- ToDo: Localize;
+			x = 0.538362 * safezoneW + safezoneX;
+			y = 0.864815 * safezoneH + safezoneY;
+			w = 0.0876563 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class NR_serverView_Edit: n_RscEdit
+		{
+			idc = 1924;
+
+			x = 0.488862 * safezoneW + safezoneX;
+			y = 0.79524 * safezoneH + safezoneY;
+			w = 0.17325 * safezoneW;
+			h = 0.03795 * safezoneH;
+			tooltip = "Insert value between 0 and 10000"; //--- ToDo: Localize;
+		};
+		class NR_serverView_text: RscText
+		{
+			idc = 1925;
+			text = "Max view distance in meters"; //--- ToDo: Localize;
+			x = 0.488862 * safezoneW + safezoneX;
+			y = 0.70669 * safezoneH + safezoneY;
+			w = 0.1815 * safezoneW;
+			h = 0.0506 * safezoneH;
+			style = ST_CENTER;
+		};
+		////////////////////////////////////////////////////////
+		// GUI EDITOR OUTPUT END
+		////////////////////////////////////////////////////////
+
 		////////////////////////////////////////////////////////
 		// CAUTION EDITOR BUG, ALWAYS OVERWRITE THIS LINE
 		////////////////////////////////////////////////////////

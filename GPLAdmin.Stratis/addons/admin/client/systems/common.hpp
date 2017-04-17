@@ -98,6 +98,11 @@ class n_RscSlider{
 	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
 };
 
+class n_RscEdit: RscEdit{
+	  type = CT_EDIT;  // defined constant
+	  style = ST_MULTI;            // defined constant
+	  text = "";
+};
 // End Of GPL Admin includes
 
 class w_RscText {
