@@ -33,7 +33,8 @@ Copyright (C) 2017
 
 ## Credits
 
-* AgentRev (A3Wasteland.com lead developer)
+* AgentRev (A3Wasteland.com) - Code and A3W main developer
 * [404] Deadbeat (From A3W and 404games.co.uk)
 * Team Wasteland
-* Biabock (For unlink the code from the admin panel from A3W)
+* Biabock - For unlink the code from the admin panel from A3W
+* wiking-at (armajunkies.de) - Provide Zeus functionality
