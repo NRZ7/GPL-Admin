@@ -33,6 +33,7 @@ nr_fnc_daynight =
 };
 
 NR_fnc_weatherChange = {
+	_UID = _this select 7;
 	_NR_weather_Over = _this select 0;
 	_NR_weather_Fog = _this select 1;
 	_NR_weather_Rain = _this select 2;
@@ -40,18 +41,49 @@ NR_fnc_weatherChange = {
 	_NR_weather_Lightnings = _this select 4;
 	_NR_weather_windEast = _this select 5;
 	_NR_weather_windNorth = _this select 6;
-	_UID = _this select 7;
-	
-	if (_UID call isAdmin) then
-	{
-		10 setOvercast _NR_weather_Over;
-		10 setFog _NR_weather_Fog;
-		10 setRain _NR_weather_Rain;
-		10 setWaves _NR_weather_Waves;
-		10 setLightnings _NR_weather_Lightnings;
-		setWind [_NR_weather_windEast, _NR_weather_windNorth, true];
-		forceWeatherChange;
+
+	10 setOvercast _NR_weather_Over;
+	10 setFog _NR_weather_Fog;
+	10 setRain _NR_weather_Rain;
+	10 setWaves _NR_weather_Waves;
+	10 setLightnings _NR_weather_Lightnings;
+	setWind [_NR_weather_windEast, _NR_weather_windNorth, true];
+	forceWeatherChange;
+
+};
+
+NR_fnc_serverViewDistance = {
+	//_UID = _this select 1;
+	//if (_UID call isAdmin) then
+	//{
+		_NR_serverView = _this select 0;
+		setViewDistance _NR_serverView;
+	//};
+};
+
+NR_fnc_serverInvisAdmin = {
+		_player = _this select 0;
+		_state = _this select 1;
+		
+		_player hideObjectGlobal _state;
+};
+
+fn_aj_s_refreshZeus = {
+	if (isServer) then {
+		// Refresh map objects if zeus ui is opened
+		
+		private "_zeusUID";
+		_zeusUID = _this select 0;
+		_zeusUID = missionnamespace  getvariable[_zeusUID,0];
+		
+			{
+			_zeusUID addCuratorEditableObjects [[_x],true];
+			} 
+			foreach (allMissionObjects "All");
+
+		
 	};
 };
+
 
 diag_log "Admin - Server Compile Finished";

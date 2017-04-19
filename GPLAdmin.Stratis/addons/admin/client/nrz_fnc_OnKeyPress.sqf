@@ -10,6 +10,8 @@ switch (_this) do {
 	case 7: {
 		nul = [] execVM "addons\admin\client\systems\adminPanel\checkAdmin.sqf";
 	};
-	
+	case 21: {
+		execVM "addons\aj\zeus\refreshzeus.sqf";
+	};
 };
 };

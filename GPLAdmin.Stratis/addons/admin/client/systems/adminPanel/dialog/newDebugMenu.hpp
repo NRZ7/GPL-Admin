@@ -180,7 +180,7 @@ class newDebugMenu
 		class NR_deb_zeus: w_RscButton
 		{
 			idc = 1614;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[13] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Zeus"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
@@ -386,7 +386,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_player11: w_RscButton
+		class NR_cusom_player11: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -397,7 +397,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_player12: w_RscButton
+		class NR_cusom_player12: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -408,7 +408,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_player13: w_RscButton
+		class NR_cusom_player13: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -419,7 +419,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_player14: w_RscButton
+		class NR_cusom_player14: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -430,7 +430,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_vehicle8: w_RscButton
+		class NR_cusom_vehicle8: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -441,7 +441,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_vehicle9: w_RscButton
+		class NR_cusom_vehicle9: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -452,7 +452,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_vehicle10: w_RscButton
+		class NR_cusom_vehicle10: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -463,7 +463,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_vehicle11: w_RscButton
+		class NR_cusom_vehicle11: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -474,7 +474,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_server6: w_RscButton
+		class NR_cusom_server6: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -485,7 +485,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_server7: w_RscButton
+		class NR_cusom_server7: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -496,7 +496,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_server9: w_RscButton
+		class NR_cusom_server9: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -507,7 +507,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_server8: w_RscButton
+		class NR_cusom_server8: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -518,7 +518,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_server10: w_RscButton
+		class NR_cusom_server10: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -529,7 +529,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_server11: w_RscButton
+		class NR_cusom_server11: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -540,7 +540,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_debug9: w_RscButton
+		class NR_cusom_debug9: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "createDialog 'myTestMenu'";//"[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -551,7 +551,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_debug10: w_RscButton
+		class NR_cusom_debug10: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -562,7 +562,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_debug11: w_RscButton
+		class NR_cusom_debug11: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -573,7 +573,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_player15: w_RscButton
+		class NR_cusom_player15: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -584,7 +584,7 @@ class newDebugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_player16: w_RscButton
+		class NR_cusom_player16: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";

@@ -66,10 +66,9 @@ mf_compile = compileFinal
 	};
 	_path call compile preProcessFileLineNumbers format ["%1\init.sqf", _path];
 } call mf_compile;
+*/
 
-_clientFunc = "code\client\functions";
-_serverFunc = "code\server\functions";
+_clientFunc = "addons\admin\client\functions";
+_serverFunc = "addons\admin\server\functions";
 
-switchMoveGlobal = [_clientFunc, "switchMoveGlobal.sqf"] call mf_compile;
-
-"pvar_switchMoveGlobal" addPublicVariableEventHandler { ((_this select 1) select 0) switchMove ((_this select 1) select 1) };*/
+//call compile preprocessFileLineNumbers "server\functions\mf_remote.sqf";

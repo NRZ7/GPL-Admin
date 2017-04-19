@@ -84,27 +84,6 @@
 #define true 1
 #define false 1
 
-// GPL Admin includes
-class n_RscSlider{
-	style = "0x400 + 0x10";
-	type = 43;  // Type 43 modern UI style. Type 3 ugly old style.
-	shadow = 0;
-	color[] = {1,1,1,0.4};
-	colorActive[] = {1,1,1,1};
-	colorDisabled[] = {0.5,0.5,0.5,0.2};
-	arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
-	arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
-	border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
-	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
-};
-
-class n_RscEdit: RscEdit{
-	  type = CT_EDIT;  // defined constant
-	  style = ST_MULTI;            // defined constant
-	  text = "";
-};
-// End Of GPL Admin includes
-
 class w_RscText {
 
 	idc = -1;
@@ -845,3 +824,39 @@ class w_RscMapControl
 		color[] = {0, 0, 0, 1};
 	};
 };
+
+// GPL Admin includes
+class n_RscSlider{
+	style = "0x400 + 0x10";
+	type = 43;  // Type 43 modern UI style. Type 3 ugly old style.
+	shadow = 0;
+	color[] = {1,1,1,0.4};
+	colorActive[] = {1,1,1,1};
+	colorDisabled[] = {0.5,0.5,0.5,0.2};
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
+	arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
+	border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
+	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
+};
+
+class n_RscEdit: RscEdit{
+	  type = CT_EDIT;  // defined constant
+	  style = ST_MULTI;            // defined constant
+	  text = "";
+};
+
+class n_RscButtonMenu: w_RscButton
+{
+	//style = 48;
+	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
+	colorBackground[] = {0, 0, 0, 0.5};
+	colorBackground2[] = {1, 1, 1, 0.1};
+	colorFocused[] = {0,0,0,7}; // pulse
+	colorBackgroundActive[] = {0,0,0,0.7};
+	colorShadow[] = {0,0,0,0};
+	color[] = {1, 1, 1, 1};
+	color2[] = {1, 1, 1, 1};
+	colorText[] = {1, 1, 1, 1};
+	colorDisabled[] = {1, 1, 1, 0.25};
+};
+// End Of GPL Admin includes

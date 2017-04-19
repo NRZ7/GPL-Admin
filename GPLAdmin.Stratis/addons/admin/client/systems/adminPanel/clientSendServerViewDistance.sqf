@@ -8,11 +8,10 @@
 
 
 _callerUID = getPlayerUID player;
+_NR_serverView = _this select 0;
 
 if (_callerUID call isAdmin) then
-{
-	_NR_serverView = _this select 0;
-	
+{	
 	if(_NR_serverView <= 0) exitWith
 	{
 		hint "ERROR: Please, put a value > 0";

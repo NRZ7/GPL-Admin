@@ -47,8 +47,7 @@ if (_uid call isAdmin) then
 		};
 		case 4: //Invisible
 		{
-			hint "Option Disabled";
-			//execVM "addons\admin\client\systems\adminPanel\toggleInvisMode.sqf";
+			execVM "addons\admin\client\systems\adminPanel\toggleInvisMode.sqf";
 		};
 		case 5: //Unlimited Ammo
 		{
@@ -91,7 +90,9 @@ if (_uid call isAdmin) then
 		
 		case 13: //Zeus
 		{
-			
+			closeDialog 0;
+			execVM "addons\aj\zeus\refreshzeus.sqf";
+			openCuratorInterface;
 		};
 		
 		////////////////////////////////////////
