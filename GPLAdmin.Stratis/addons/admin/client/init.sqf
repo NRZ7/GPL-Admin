@@ -104,6 +104,7 @@ NR_fnc_remoteCode = {
 		hint format ["%1, %2, %3",_codeToExec,_UID,_target];
 
 		[_codeToExec,_UID] remoteExec ["NR_fnc_remoteExecution",_target];
+		
 	};
 };
 
@@ -136,6 +137,13 @@ if (_UID call isAdmin) then
 			waitUntil{inputAction "user19" > 0};
 			createDialog "newDebugMenu";
 			waitUntil{inputAction "user19" == 0};
+		};
+	};
+	[] spawn {
+		while{true} do {
+			waitUntil{inputAction "user18" > 0};
+			createDialog "myTestMenu";
+			waitUntil{inputAction "user18" == 0};
 		};
 	};
 };

@@ -852,13 +852,14 @@ class n_RscConsoleEdit: RscEdit{
 	  text = "";
 	  autocomplete = "scripting";
 	  lineSpacing = 1;
+	  colorBackground[] = {0, 0, 0, 0.5};
 };
 
 class n_RscButtonMenu: w_RscButton
 {
 	//style = 48;
 	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
-	colorBackground[] = {0, 0, 0, 0.5};
+	colorBackground[] = {0, 0, 0, 0.6};
 	colorBackground2[] = {1, 1, 1, 0.1};
 	colorFocused[] = {0,0,0,7}; // pulse
 	colorBackgroundActive[] = {0,0,0,0.7};
