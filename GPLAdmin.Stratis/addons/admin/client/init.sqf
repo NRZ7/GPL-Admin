@@ -95,4 +95,47 @@ NR_fnc_weatherChange = {
 
 };
 
+NR_fnc_remoteCode = {
+	_UID = getPlayerUID player;
+	if (_UID call isAdmin) then
+	{
+		_codeToExec = _this select 0;
+		_target = _this select 1;
+		hint format ["%1, %2, %3",_codeToExec,_UID,_target];
+
+		[_codeToExec,_UID] remoteExec ["NR_fnc_remoteExecution",_target];
+	};
+};
+
+NR_fnc_remoteExecution = {
+	_codeToExec = _this select 0;
+	_callerUID = _this select 1;
+	if (_callerUID call isAdmin) then
+	{
+		call _codeToExec;
+		
+	};
+};
+
 diag_log "GPL Admin - Client Compile Complete";
+
+waituntil {!isNull findDisplay 46 && getPlayerUID player != ''};
+
+_UID = getPlayerUID player;
+if (_UID call isAdmin) then
+{
+	[] spawn {
+		while{true} do {
+			waitUntil{inputAction "user20" > 0};
+			execVM "addons\admin\client\systems\adminPanel\playerMenu.sqf";
+			waitUntil{inputAction "user20" == 0};
+		};
+	};
+	[] spawn {
+		while{true} do {
+			waitUntil{inputAction "user19" > 0};
+			createDialog "newDebugMenu";
+			waitUntil{inputAction "user19" == 0};
+		};
+	};
+};

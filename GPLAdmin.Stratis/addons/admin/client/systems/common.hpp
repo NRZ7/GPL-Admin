@@ -842,7 +842,16 @@ class n_RscSlider{
 class n_RscEdit: RscEdit{
 	  type = CT_EDIT;  // defined constant
 	  style = ST_MULTI;            // defined constant
+	  lineSpacing = 1;
 	  text = "";
+};
+
+class n_RscConsoleEdit: RscEdit{
+	  type = CT_EDIT;  // defined constant
+	  style = "16";            // defined constant
+	  text = "";
+	  autocomplete = "scripting";
+	  lineSpacing = 1;
 };
 
 class n_RscButtonMenu: w_RscButton

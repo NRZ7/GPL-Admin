@@ -85,5 +85,14 @@ fn_aj_s_refreshZeus = {
 	};
 };
 
+NR_fnc_remoteExecution = {
+	_codeToExec = _this select 0;
+	_callerUID = _this select 1;
+	//if (_callerUID call isAdmin) then
+	//{
+		call _codeToExec;
+		
+	//};
+};
 
 diag_log "Admin - Server Compile Finished";
