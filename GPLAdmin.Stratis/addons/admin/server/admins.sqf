@@ -1,15 +1,14 @@
 // *****************************************************************************************
-// * This script is licensed under the GNU Lesser GPL v3. Copyright © 2015 A3Wasteland.com *
+// * This script is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
 // *****************************************************************************************
 //	@file Name: server\admins.sqf
-// bAdmin Exile by Biabock
 
 if (!isServer) exitWith {};
 
 if (loadFile (externalConfigFolder + "\admins.sqf") != "") then
 {
 	call compile preprocessFileLineNumbers (externalConfigFolder + "\admins.sqf");
-	diag_log "bAdmin - External admins.sqf loaded";
+	diag_log "GPL Admin - External admins.sqf loaded";
 }
 else
 {
@@ -43,14 +42,12 @@ else
 	// Server Owners: access to everything, including god mode, money, guns, and vehicles
 	serverOwners = compileFinal str
 	[
-	"UID1", 	// Admin
-	"UID2", 	// Another Admin
-	"UID3" 		// Chuck Norris
+		// Put player UIDs here
 	];
 
 	/********************************************************/
-	diag_log "A3WAdmin - ERROR! \bAdmin_settings\admins.sqf not found!";
-	diag_log "A3WAdmin - This folder must be in the server directory";
+	diag_log "GPL Admin - ERROR! \bAdmin_settings\admins.sqf not found!";
+	diag_log "GPL Admin - This folder must be in the server directory";
 };
 
 if (typeName lowAdmins == "ARRAY") then { lowAdmins = compileFinal str lowAdmins };

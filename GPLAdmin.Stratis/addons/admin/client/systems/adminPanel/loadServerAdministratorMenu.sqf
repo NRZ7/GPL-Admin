@@ -24,9 +24,9 @@ if ([_uid, 3] call isAdmin) then {
 					//"Unstuck player",
 					//"Teleport player to me",
 					//"Teleport me to player",
-					"Debug Menu",
 					//"Object Search",
-					"New Debug"
+					"Debug Menu",
+					"Debug Console"
 	];
 
 	{

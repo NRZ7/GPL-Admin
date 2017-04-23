@@ -64,12 +64,12 @@ if (_uid call isAdmin) then
 					//if (!isNil "notifyAdminMenu") then { ["TeleportMeTo", "Used"] call notifyAdminMenu };
 				};
 				*/
-				case 1: //Debug Menu
+				/*case 1: //Debug Menu
 				{
 					closeDialog 0;
 					execVM "addons\admin\client\systems\adminPanel\loadDebugMenu.sqf";
 					//if (!isNil "notifyAdminMenu") then { ["LoadDebugMenu", "Opened"] call notifyAdminMenu };
-				};
+				};*/
 				/*
 				case 7: //Object search menu
 				{
@@ -78,10 +78,15 @@ if (_uid call isAdmin) then
 					//if (!isNil "notifyAdminMenu") then { ["ObjectSearch", "Opened"] call notifyAdminMenu };
 				};
 				*/
+				case 1: // New Debug
+				{
+					closeDialog 0;
+					createDialog "debugMenu";
+				};
 				case 2: // New Debug
 				{
 					closeDialog 0;
-					createDialog "newDebugMenu";
+					createDialog "debugConsoleMenu";
 				};
 			};
 		};

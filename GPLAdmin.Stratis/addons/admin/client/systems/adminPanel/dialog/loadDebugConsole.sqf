@@ -6,7 +6,7 @@
 //	@file Author: NRZ7
 //	@file Created: 22/04/2017 12:23
 
-#define myTestMenuDialog 61111
+#define debugConsoleMenuDialog 62111
 
 disableSerialization;
 
@@ -19,7 +19,7 @@ NR_monitor3 = "";
 NR_monitor4 = "";
 };
 
-_NR_monitor = "";
+
 
 inDebugConsole = true;
 

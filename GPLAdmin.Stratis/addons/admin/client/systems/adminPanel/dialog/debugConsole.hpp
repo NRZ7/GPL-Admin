@@ -1,8 +1,8 @@
-#define myTestMenuDialog 61111
+#define debugConsoleMenuDialog 62111
 
-class myTestMenu
+class debugConsoleMenu
 {
-	idd = myTestMenuDialog;
+	idd = debugConsoleMenuDialog;
 	movingEnable = false;
 	enableSimulation = true;
 	
@@ -47,6 +47,17 @@ class myTestMenu
 			w = 0.0844792 * safezoneW;
 			h = 0.0448149 * safezoneH;
 			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+		};
+		class n_buttonCloseDialog: n_RscButtonClose
+		{
+			idc = 891600;
+			onButtonClick = "closeDialog 0;";
+
+			text = "X"; //--- ToDo: Localize;
+			x = 0.802363 * safezoneW + safezoneX;
+			y = 0.05274 * safezoneH + safezoneY;
+			w = 0.02475 * safezoneW;
+			h = 0.033 * safezoneH;
 		};
 		class n_consoleEdit: n_RscConsoleEdit
 		{

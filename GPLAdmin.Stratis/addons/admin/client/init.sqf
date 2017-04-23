@@ -135,14 +135,14 @@ if (_UID call isAdmin) then
 	[] spawn {
 		while{true} do {
 			waitUntil{inputAction "user19" > 0};
-			createDialog "newDebugMenu";
+			createDialog "debugMenu";
 			waitUntil{inputAction "user19" == 0};
 		};
 	};
 	[] spawn {
 		while{true} do {
 			waitUntil{inputAction "user18" > 0};
-			createDialog "myTestMenu";
+			createDialog "debugConsoleMenu";
 			waitUntil{inputAction "user18" == 0};
 		};
 	};

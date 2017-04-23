@@ -7,7 +7,7 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-#define debugMenuDialog 60001
+#define debugDialog 60001
 
 disableSerialization;
 
@@ -15,7 +15,7 @@ private ["_dialog","_playerListBox","_spectateButton","_switch","_index","_modSe
 _uid = getPlayerUID player;
 if (_uid call isAdmin) then
 {
-	_dialog = findDisplay debugMenuDialog;
+	_dialog = findDisplay debugDialog;
 	_switch = _this select 0;
 };
 
@@ -154,12 +154,12 @@ if (_uid call isAdmin) then
 		
 		case 42: //CHANGE WHEATHER
 		{
-			[1] execVM "addons\admin\client\systems\adminPanel\dialog\newDebugMenuCtrlShow.sqf";
+			[1] execVM "addons\admin\client\systems\adminPanel\dialog\debugMenuCtrlShow.sqf";
 		};
 		
 		case 43: //Set Server View Distance
 		{
-			[3] execVM "addons\admin\client\systems\adminPanel\dialog\newDebugMenuCtrlShow.sqf";
+			[3] execVM "addons\admin\client\systems\adminPanel\dialog\debugMenuCtrlShow.sqf";
 		};
 		
 		case 44: //Day/Night
@@ -169,7 +169,7 @@ if (_uid call isAdmin) then
 		
 		case 45: //Global Message
 		{
-			[2] execVM "addons\admin\client\systems\adminPanel\dialog\newDebugMenuCtrlShow.sqf";
+			[2] execVM "addons\admin\client\systems\adminPanel\dialog\debugMenuCtrlShow.sqf";
 		};
 		
 		////////////////////////////////////////

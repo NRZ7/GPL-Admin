@@ -10,7 +10,7 @@ if (isServer) then
 	if (loadFile ("\GPLAdmin_settings\zeus.sqf") != "") then
 		{
 		diag_log "A3W:Zeus Config File found";
-		call compile preprocessFileLineNumbers ("\A3Wasteland_settings\zeus.sqf");
+		call compile preprocessFileLineNumbers ("\GPLAdmin_settings\zeus.sqf");
 		}
 	else
 		{

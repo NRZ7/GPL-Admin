@@ -15,10 +15,7 @@ if (_uid call isAdmin) then
 	{
 		case 0: // On Load. / Default
 		{
-			// Test controls
-			ctrlShow [1900, false];
-			ctrlShow [1901, false];
-			
+	
 			// Weather controls
 			ctrlShow [1902, false];
 			ctrlShow [1903, false];
@@ -52,11 +49,7 @@ if (_uid call isAdmin) then
 		};
 		
 		case 1: // Weather
-		{
-			// Test controls
-			ctrlShow [1900, false];
-			ctrlShow [1901, false];
-			
+		{		
 			// Weather controls
 			ctrlShow [1902, true];
 			ctrlShow [1903, true];
@@ -91,10 +84,6 @@ if (_uid call isAdmin) then
 		
 		case 2: // Global Message
 		{
-			// Test controls
-			ctrlShow [1900, false];
-			ctrlShow [1901, false];
-			
 			// Weather controls
 			ctrlShow [1902, false];
 			ctrlShow [1903, false];
@@ -128,10 +117,7 @@ if (_uid call isAdmin) then
 		
 		case 3: // Server View Distance
 		{
-			// Test controls
-			ctrlShow [1900, false];
-			ctrlShow [1901, false];
-			
+
 			// Weather controls
 			ctrlShow [1902, false];
 			ctrlShow [1903, false];

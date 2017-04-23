@@ -49,6 +49,17 @@ class PlayersMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 		};
+		class n_buttonCloseDialog: n_RscButtonClose
+		{
+			idc = 891600;
+			onButtonClick = "closeDialog 0;";
+
+			text = "X"; //--- ToDo: Localize;
+			x = 0.802363 * safezoneW + safezoneX;
+			y = 0.05274 * safezoneH + safezoneY;
+			w = 0.02475 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
 		class PlayerUIDText: w_RscText
 		{
 			idc = 55510;

@@ -869,4 +869,14 @@ class n_RscButtonMenu: w_RscButton
 	colorText[] = {1, 1, 1, 1};
 	colorDisabled[] = {1, 1, 1, 0.25};
 };
+
+class n_RscButtonClose: w_RscButton
+{
+	
+	colorBackground[] = {0.863,0.376,0.376,1};
+	colorBackground2[] = {1, 1, 1, 0.1};
+	colorFocused[] = {0.863,0.376,0.376,1}; // pulse
+	colorBackgroundActive[] = {0.863,0.376,0.376,1};
+	colorShadow[] = {0,0,0,0.1};
+};
 // End Of GPL Admin includes
