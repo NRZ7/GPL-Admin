@@ -22,9 +22,18 @@ class PlayersMenu
 	class controls {
 
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Raxuqu)
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Wuvufu)
 		////////////////////////////////////////////////////////
 
+		class n_playerFrame: RscFrame
+		{
+			idc = 1800;
+
+			x = 0.167112 * safezoneW + safezoneX;
+			y = 0.10774 * safezoneH + safezoneY;
+			w = 0.17325 * safezoneW;
+			h = 0.715 * safezoneH;
+		};
 		class MainBackground: w_RscPicture
 		{
 			idc = 1000;
@@ -59,6 +68,7 @@ class PlayersMenu
 			y = 0.05274 * safezoneH + safezoneY;
 			w = 0.02475 * safezoneW;
 			h = 0.033 * safezoneH;
+			colorBackground[] = {0.863,0.376,0.376,1};
 		};
 		class PlayerUIDText: w_RscText
 		{
@@ -135,8 +145,8 @@ class PlayersMenu
 			idc = 55509;
 			colorDisabled[] = {1,1,1,0.3};
 
-			x = 0.653862 * safezoneW + safezoneX;
-			y = 0.87224 * safezoneH + safezoneY;
+			x = 0.645612 * safezoneW + safezoneX;
+			y = 0.88874 * safezoneH + safezoneY;
 			w = 0.175 * safezoneW;
 			h = 0.0449999 * safezoneH;
 		};
@@ -145,10 +155,10 @@ class PlayersMenu
 			idc = 55505;
 			onLBSelChanged = "[2,_this select 1] execVM ""addons\admin\client\systems\adminPanel\importvalues.sqf"";";
 
-			x = 0.168556 * safezoneW + safezoneX;
-			y = 0.11126 * safezoneH + safezoneY;
-			w = 0.168919 * safezoneW;
-			h = 0.698196 * safezoneH;
+			x = 0.167112 * safezoneW + safezoneX;
+			y = 0.10774 * safezoneH + safezoneY;
+			w = 0.17325 * safezoneW;
+			h = 0.704 * safezoneH;
 			tooltip = "Select a target on Player List"; //--- ToDo: Localize;
 		};
 		class SpectateButton: w_RscButton
@@ -157,10 +167,10 @@ class PlayersMenu
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
 			text = "Spectate"; //--- ToDo: Localize;
-			x = 0.180312 * safezoneW + safezoneX;
-			y = 0.83 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.04125 * safezoneH;
+			x = 0.175362 * safezoneW + safezoneX;
+			y = 0.83374 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
 			tooltip = "Spectate target"; //--- ToDo: Localize;
 		};
 		class KickButton: w_RscButton
@@ -169,10 +179,10 @@ class PlayersMenu
 			onButtonClick = "[3] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
 			text = "Kick"; //--- ToDo: Localize;
-			x = 0.180312 * safezoneW + safezoneX;
-			y = 0.885 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.04125 * safezoneH;
+			x = 0.175362 * safezoneW + safezoneX;
+			y = 0.88874 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
 			tooltip = "Send the target to lobby"; //--- ToDo: Localize;
 		};
 		class WarnButton: w_RscButton
@@ -181,8 +191,8 @@ class PlayersMenu
 			onButtonClick = "[1] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
 			text = "Warn"; //--- ToDo: Localize;
-			x = 0.664175 * safezoneW + safezoneX;
-			y = 0.81724 * safezoneH + safezoneY;
+			x = 0.662112 * safezoneW + safezoneX;
+			y = 0.83374 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -192,9 +202,9 @@ class PlayersMenu
 			idc = 1015;
 
 			text = "TpToMe"; //--- ToDo: Localize;
-			x = 0.385737 * safezoneW + safezoneX;
+			x = 0.365112 * safezoneW + safezoneX;
 			y = 0.18474 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 			tooltip = "Teleport target to me"; //--- ToDo: Localize;
 		};
@@ -206,7 +216,7 @@ class PlayersMenu
 			text = "TpMeTo"; //--- ToDo: Localize;
 			x = 0.488862 * safezoneW + safezoneX;
 			y = 0.18474 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 			tooltip = "Teleport me to target"; //--- ToDo: Localize;
 		};
@@ -216,9 +226,9 @@ class PlayersMenu
 			idc = 1017;
 
 			text = "Heal"; //--- ToDo: Localize;
-			x = 0.385737 * safezoneW + safezoneX;
+			x = 0.365112 * safezoneW + safezoneX;
 			y = 0.23974 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 			tooltip = "Heal target"; //--- ToDo: Localize;
 		};
@@ -230,7 +240,7 @@ class PlayersMenu
 			text = "Kill"; //--- ToDo: Localize;
 			x = 0.488862 * safezoneW + safezoneX;
 			y = 0.23974 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 			tooltip = "Kill target"; //--- ToDo: Localize;
 		};
@@ -240,9 +250,9 @@ class PlayersMenu
 			idc = 1019;
 
 			text = "Unfreeze"; //--- ToDo: Localize;
-			x = 0.385737 * safezoneW + safezoneX;
+			x = 0.365112 * safezoneW + safezoneX;
 			y = 0.29474 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 			tooltip = "Allow target controls"; //--- ToDo: Localize;
 		};
@@ -254,7 +264,7 @@ class PlayersMenu
 			text = "Freeze"; //--- ToDo: Localize;
 			x = 0.488862 * safezoneW + safezoneX;
 			y = 0.29474 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 			tooltip = "Disables target input controls"; //--- ToDo: Localize;
 		};
@@ -264,9 +274,9 @@ class PlayersMenu
 			idc = 1021;
 
 			text = "Arsenal"; //--- ToDo: Localize;
-			x = 0.385737 * safezoneW + safezoneX;
+			x = 0.365112 * safezoneW + safezoneX;
 			y = 0.34974 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 			tooltip = "Open BIS Arsenal on target"; //--- ToDo: Localize;
 		};
@@ -278,7 +288,7 @@ class PlayersMenu
 			text = "Remove Gear"; //--- ToDo: Localize;
 			x = 0.488862 * safezoneW + safezoneX;
 			y = 0.34974 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 			tooltip = "Remove the gear of target"; //--- ToDo: Localize;
 		};
@@ -288,9 +298,9 @@ class PlayersMenu
 			idc = 1023;
 
 			text = "Custom #1"; //--- ToDo: Localize;
-			x = 0.385737 * safezoneW + safezoneX;
-			y = 0.54224 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			x = 0.365112 * safezoneW + safezoneX;
+			y = 0.54774 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
 		class NR_PM_custom2: w_RscButton
@@ -300,8 +310,8 @@ class PlayersMenu
 
 			text = "Custom #2"; //--- ToDo: Localize;
 			x = 0.488862 * safezoneW + safezoneX;
-			y = 0.54224 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			y = 0.54774 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
 		class NR_PM_Custom3: w_RscButton
@@ -310,9 +320,9 @@ class PlayersMenu
 			idc = 1025;
 
 			text = "Custom #3"; //--- ToDo: Localize;
-			x = 0.385737 * safezoneW + safezoneX;
-			y = 0.59724 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			x = 0.365112 * safezoneW + safezoneX;
+			y = 0.60274 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
 		class NR_PM_custom4: w_RscButton
@@ -322,20 +332,20 @@ class PlayersMenu
 
 			text = "Custom #4"; //--- ToDo: Localize;
 			x = 0.488862 * safezoneW + safezoneX;
-			y = 0.59724 * safezoneH + safezoneY;
-			w = 0.061875 * safezoneW;
+			y = 0.60274 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
 		class NR_PM_tempban: w_RscButton
 		{
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[16] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 			idc = 1027;
 
 			text = "Temp-Ban"; //--- ToDo: Localize;
-			x = 0.2723 * safezoneW + safezoneX;
-			y = 0.88588 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.04125 * safezoneH;
+			x = 0.266112 * safezoneW + safezoneX;
+			y = 0.88874 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
 			tooltip = "Force target to lobby until the next restart"; //--- ToDo: Localize;
 		};
 		class NR_PM_ban: w_RscButton
@@ -344,10 +354,10 @@ class PlayersMenu
 			idc = 1028;
 
 			text = "Ban"; //--- ToDo: Localize;
-			x = 0.365112 * safezoneW + safezoneX;
-			y = 0.88588 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.04125 * safezoneH;
+			x = 0.356862 * safezoneW + safezoneX;
+			y = 0.88874 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
 			tooltip = "Ban the target"; //--- ToDo: Localize;
 		};
 		class NR_PM_exec: w_RscButton
@@ -356,10 +366,10 @@ class PlayersMenu
 			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
 			text = "Execute Code"; //--- ToDo: Localize;
-			x = 0.2723 * safezoneW + safezoneX;
-			y = 0.83088 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.04125 * safezoneH;
+			x = 0.266112 * safezoneW + safezoneX;
+			y = 0.83374 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
 			tooltip = "Execute code on target"; //--- ToDo: Localize;
 		};
 		class NR_PM_showmap: w_RscButton
@@ -368,23 +378,79 @@ class PlayersMenu
 			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
 			text = "Show on map"; //--- ToDo: Localize;
-			x = 0.365937 * safezoneW + safezoneX;
-			y = 0.83 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.04125 * safezoneH;
+			x = 0.356862 * safezoneW + safezoneX;
+			y = 0.83374 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
 			tooltip = "Show the target on map"; //--- ToDo: Localize;
 		};
 		class DialogTitleText: w_RscText
 		{
 			idc = 1002;
-			font = "PuristaMedium";
+
 			text = "Player Menu"; //--- ToDo: Localize;
 			x = 0.1733 * safezoneW + safezoneX;
 			y = 0.04724 * safezoneH + safezoneY;
 			w = 0.0844792 * safezoneW;
 			h = 0.0448149 * safezoneH;
-			//sizeEx = (			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * 	(0.04) * 	(0.04) * 	(0.04) * 	(0.04) * 	(0.04) * 	(0.04) * GUI_GRID_H;
 			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+		};
+		class NR_PM_custom5: w_RscButton
+		{
+			idc = 55506;
+			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+
+			text = "Custom #5"; //--- ToDo: Localize;
+			x = 0.447612 * safezoneW + safezoneX;
+			y = 0.83374 * safezoneH + safezoneY;
+			w = 0.10725 * safezoneW;
+			h = 0.044 * safezoneH;
+			tooltip = "Show the target on map"; //--- ToDo: Localize;
+		};
+		class NR_PM_custom6: w_RscButton
+		{
+			idc = 55506;
+			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+
+			text = "Custom #6"; //--- ToDo: Localize;
+			x = 0.447612 * safezoneW + safezoneX;
+			y = 0.88874 * safezoneH + safezoneY;
+			w = 0.10725 * safezoneW;
+			h = 0.044 * safezoneH;
+			tooltip = "Show the target on map"; //--- ToDo: Localize;
+		};
+		class n_playermenu_rightFrame: RscFrame
+		{
+			idc = 55507;
+
+			x = 0.596112 * safezoneW + safezoneX;
+			y = 0.11874 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.671 * safezoneH;
+		};
+		class NR_PM_Repair: w_RscButton
+		{
+			onButtonClick = "[14] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+			idc = 55508;
+
+			text = "Repair"; //--- ToDo: Localize;
+			x = 0.365112 * safezoneW + safezoneX;
+			y = 0.40474 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+			tooltip = "Repair target vehicle"; //--- ToDo: Localize;
+		};
+		class NR_PM_Flip: w_RscButton
+		{
+			onButtonClick = "[15] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+			idc = 55509;
+
+			text = "Flip"; //--- ToDo: Localize;
+			x = 0.488862 * safezoneW + safezoneX;
+			y = 0.40474 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+			tooltip = "Flip target vehicle"; //--- ToDo: Localize;
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END

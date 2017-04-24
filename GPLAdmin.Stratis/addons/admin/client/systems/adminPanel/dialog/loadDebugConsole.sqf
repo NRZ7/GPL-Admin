@@ -20,7 +20,6 @@ NR_monitor4 = "";
 };
 
 
-
 inDebugConsole = true;
 
 ctrlSetText [1953, NR_consoleLog];

@@ -95,4 +95,12 @@ NR_fnc_remoteExecution = {
 	//};
 };
 
+NR_fnc_tempBan = {
+	_targetUID = _this select 0;
+	_adminName = _this select 1;
+	banList pushBack _targetUID;
+	publicVariable "banList";
+	[_targetUID,_adminName] remoteExec ["nr_fnc_kick",0,false];
+};
+
 diag_log "Admin - Server Compile Finished";

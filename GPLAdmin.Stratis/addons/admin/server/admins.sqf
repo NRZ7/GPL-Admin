@@ -44,9 +44,14 @@ else
 	[
 		// Put player UIDs here
 	];
+	
+	banList = // These users can't acces to game.
+	[
+		// Put player UIDs here
+	];
 
 	/********************************************************/
-	diag_log "GPL Admin - ERROR! \bAdmin_settings\admins.sqf not found!";
+	diag_log "GPL Admin - ERROR! \GPLAdmin_settings\admins.sqf not found!";
 	diag_log "GPL Admin - This folder must be in the server directory";
 };
 
@@ -57,3 +62,4 @@ if (typeName serverOwners == "ARRAY") then { serverOwners = compileFinal str ser
 publicVariable "lowAdmins";
 publicVariable "highAdmins";
 publicVariable "serverOwners";
+publicVariable "banList";

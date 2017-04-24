@@ -9,6 +9,7 @@
 
 //if (isDedicated) exitWith {};
 
+[] execVM "addons\admin\client\checkBan.sqf";
 [] execVM "addons\admin\client\camera\functions.sqf";
 
 isAdmin = "addons\admin\client\systems\adminPanel\isAdmin.sqf" call mf_compile;//
@@ -34,13 +35,12 @@ NR_fnc_unfreeze = {
 };
 
 NR_fnc_kick = {
-	_target = _this select 0;
+	_targetUID = _this select 0;
 	_adminName = _this select 1;
-	_targetUID = getPlayerUID _target;
 	if (_targetUID == getPlayerUID player) then
 	{
 		["You are kicked by "+_adminName] spawn BIS_fnc_guiMessage; sleep 0.5;
-		endMission "LOSER";		
+		["kicked",false,0.5] call BIS_fnc_endMission;	
 	};
 };
 
@@ -117,6 +117,41 @@ NR_fnc_remoteExecution = {
 		
 	};
 };
+
+NR_fnc_RRR = {
+	_target = _this;
+	_targetUID = getPlayerUID _target;
+	if (_targetUID == getPlayerUID player) then {
+		if ((vehicle player) == player) then {
+		cursorTarget setVehicleAmmo 1; cursorTarget setFuel 1; cursorTarget setDamage 0;
+		} else {
+		(vehicle player) setVehicleAmmo 1;(vehicle player) setfuel 1;(vehicle player) setDamage 0;
+		};
+	};
+};
+
+NR_fnc_flip = {
+	_target = _this;
+	_targetUID = getPlayerUID _target;
+	if (_targetUID == getPlayerUID player) then 
+	{
+		private ["_obj","_pos","_xPos","_yPos","_zPos"];
+
+		if ((vehicle player) == player) then {
+			_obj = cursorobject;
+		} else {
+			_obj = vehicle player;
+		};
+			_pos = getPos _obj;
+			_xPos = _pos select 0;
+			_yPos = _pos select 1;
+			_zPos = _pos select 2;
+			_zPos = _zPos +1;
+			_obj setPos [_xPos,_yPos,_zPos];
+			_obj setVectorUp [0,0,1];
+	};
+};
+
 
 diag_log "GPL Admin - Client Compile Complete";
 

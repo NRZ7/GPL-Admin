@@ -83,15 +83,16 @@ if (_uid call isAdmin) then
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
 			_targetName = name _target;
 			_adminName = name player;
-			if (_targetName == _adminName) then
+			/*if (_targetName == _adminName) then
 			{
 				hint "You cannot kick yourself.."
 			}
 			else 
-			{
-				[_target,_adminName] remoteExec ["NR_fnc_kick", 0, false];
+			{*/
+				_targetUID = getPlayerUID _target;
+				[_targetUID,_adminName] remoteExec ["NR_fnc_kick", 0, false];
 				hint format ["%1 has kicked of the game",_targetName];
-			};
+			//};
 		};
 		case 4: //Unlock Team Killer
 		{
@@ -191,5 +192,38 @@ if (_uid call isAdmin) then
 				hint format ["Input disabled on %1",_targetName];
 			};
 		};
+		
+		case 14: //Repair Refuel Rearm
+		{
+			if (isNil "_target") exitWith {hint "You need to select a target first!" };
+			_target remoteExec ["NR_fnc_RRR", 0, false];
+
+		};
+		
+		case 15: //Flip
+		{
+			if (isNil "_target") exitWith {hint "You need to select a target first!" };
+			_target remoteExec ["NR_fnc_flip", 0, false];
+
+		};
+		
+		case 16: //Temp-Ban
+		{
+			if (isNil "_target") exitWith {hint "You need to select a target first!" };
+			_targetName = name _target;
+			_adminName = name player;
+			/*if (_targetName == _adminName) then
+			{
+				hint "This is stupid"
+			}
+			else 
+			{*/
+			_targetUID = getPlayerUID _target;
+			[_targetUID,_adminName] remoteExec ["NR_fnc_tempBan", 2, false];
+
+			//};
+		
+		};
+	
 	};
 

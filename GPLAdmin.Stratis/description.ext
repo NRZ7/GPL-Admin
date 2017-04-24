@@ -66,6 +66,27 @@ class CfgRemoteExec
 	};
 };
 
+class CfgDebriefing
+{  
+	class kicked
+	{
+		title = "You are KICKED";
+		subtitle = "";
+		description = "";
+		pictureBackground = "";
+		pictureColor[] = {0,1,0,1};	
+	};
+
+	class banned
+	{
+		title = "You are BANNED";
+		subtitle = "";
+		description = "";
+		pictureBackground = "";
+		pictureColor[] = {1,0,0,1};	
+	};
+};
+
 class RscTitles
 {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
