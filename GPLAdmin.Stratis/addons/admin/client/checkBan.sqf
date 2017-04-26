@@ -9,6 +9,8 @@
 
 private ["_uid"]; 
  
+waituntil {!isNull findDisplay 46 && getPlayerUID player != ''};
+ 
 _uid = getPlayerUID player; 
 
 if (_uid in banList) then 

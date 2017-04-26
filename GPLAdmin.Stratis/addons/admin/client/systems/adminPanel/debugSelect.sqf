@@ -39,7 +39,8 @@ if (_uid call isAdmin) then
 			closeDialog 0;
 			openmap true;
 			onMapSingleClick "vehicle player setPos _pos; onMapSingleClick '';true;";
-			hint "Click on map to teleport";	
+			hint "Click on map to teleport";
+			waitUntil {!visibleMap}; onMapSingleClick "";			
 		};
 		case 3: //God mode
 		{
@@ -141,6 +142,12 @@ if (_uid call isAdmin) then
 		{
 			//closeDialog 0;
 			execVM "addons\admin\client\systems\adminPanel\loadObjectSearch.sqf";
+		};
+		
+		case 28: //NPC Markers
+		{
+			//closeDialog 0;
+			execVM "addons\admin\client\systems\adminPanel\toggleAIMarkers.sqf";
 		};
 		
 		////////////////////////////////////////

@@ -375,7 +375,7 @@ class PlayersMenu
 		class NR_PM_showmap: w_RscButton
 		{
 			idc = 55506;
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[18] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
 			text = "Show on map"; //--- ToDo: Localize;
 			x = 0.356862 * safezoneW + safezoneX;

@@ -416,18 +416,17 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_vehicle8: n_RscButtonMenu
+		class NR_deb_NPCMarkers: w_RscButton
 		{
 			idc = 1614;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[28] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
-			text = "Disabled"; //--- ToDo: Localize;
+			text = "NPC Markers"; //--- ToDo: Localize;
 			x = 0.348612 * safezoneW + safezoneX;
 			y = 0.51474 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.6};
 		};
 		class NR_cusom_vehicle9: n_RscButtonMenu
 		{

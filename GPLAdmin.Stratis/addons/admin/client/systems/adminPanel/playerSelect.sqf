@@ -224,6 +224,19 @@ if (_uid call isAdmin) then
 			//};
 		
 		};
+		
+		case 17: // Execute Code on Target
+		{
+			if (isNil "_target") exitWith {hint "You need to select a target first!" };
+
+		};
+		
+		case 18: // Show on map
+		{
+			if (isNil "_target") exitWith {hint "You need to select a target first!" };
+			[_target] execVM "addons\admin\client\systems\adminPanel\targetTeleport.sqf";;
+			closeDialog 0;
+		};
 	
 	};
 

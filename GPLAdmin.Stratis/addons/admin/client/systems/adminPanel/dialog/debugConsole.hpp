@@ -63,6 +63,7 @@ class debugConsoleMenu
 		{
 			idc = 1953;
 			onKeyDown = "NR_consoleLog = ctrlText 1953;";
+			onKillFocus = "NR_consoleLog = ctrlText 1953;";
 
 			x = 0.175362 * safezoneW + safezoneX;
 			y = 0.11874 * safezoneH + safezoneY;
@@ -154,6 +155,7 @@ class debugConsoleMenu
 		{
 			idc = 1962;
 			onKeyDown = "NR_monitor = ctrlText 1962;";
+			onKillFocus = "NR_monitor2 = ctrlText 1962;";
 
 			x = 0.200112 * safezoneW + safezoneX;
 			y = 0.75674 * safezoneH + safezoneY;
@@ -182,6 +184,7 @@ class debugConsoleMenu
 		{
 			idc = 1965;
 			onKeyDown = "NR_monitor2 = ctrlText 1965;";
+			onKillFocus = "NR_monitor2 = ctrlText 1965;";
 
 			x = 0.200112 * safezoneW + safezoneX;
 			y = 0.85574 * safezoneH + safezoneY;
@@ -219,6 +222,7 @@ class debugConsoleMenu
 		{
 			idc = 1969;
 			onKeyDown = "NR_monitor3 = ctrlText 1969;";
+			onKillFocus = "NR_monitor2 = ctrlText 1969;";
 
 			x = 0.480612 * safezoneW + safezoneX;
 			y = 0.75674 * safezoneH + safezoneY;
@@ -238,6 +242,7 @@ class debugConsoleMenu
 		{
 			idc = 1971;
 			onKeyDown = "NR_monitor4 = ctrlText 1971;";
+			onKillFocus = "NR_monitor2 = ctrlText 1971;";
 
 			x = 0.480612 * safezoneW + safezoneX;
 			y = 0.85574 * safezoneH + safezoneY;

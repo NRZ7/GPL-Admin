@@ -2,7 +2,7 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2017 NRZ7 *
 // ******************************************************************************************
 //	@file Version: 1.0
-//	@file Name: AIESP.sqf
+//	@file Name: ToggleAIESP.sqf
 //	@file Author: NRZ7
 //	@file Credits: Inspired in tonic-_- https://forums.bistudio.com/forums/topic/158494-how-to-make-3d-wasteland-style-on-screen-player-markers/
 //	@file Created: 15/04/2017
@@ -27,10 +27,10 @@ if ((getPlayerUID player) call isAdmin) then
 					_groupIcon = "\a3\ui_f\data\map\Markers\Military\arrow2_CA.paa";
 					switch (side _x) do
 								{
-									case WEST:      { _iconColor = [0, 0, 1, 1] }; 
-									case EAST:       { _iconColor = [1, 0, 0, 1] };
-									case resistance: { _iconColor = [1, 1, 0, 1] };
-									default           { _iconColor = [1, 1, 1, 1] };
+									case WEST:      	{ _iconColor = [0, 0, 1, 1] }; 
+									case EAST:       	{ _iconColor = [1, 0, 0, 1] };
+									case resistance: 	{ _iconColor = [1, 1, 0, 1] };
+									default           	{ _iconColor = [1, 1, 1, 1] };
 								};
 							   _pos = visiblePosition _x; 
 							   _pos set[2,(getPosATL _x select 2) + 2.2]; 

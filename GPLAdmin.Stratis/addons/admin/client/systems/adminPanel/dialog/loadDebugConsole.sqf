@@ -13,10 +13,10 @@ disableSerialization;
 if (isNil "inDebugConsole") then
 {
 NR_consoleLog = "";
-NR_monitor = "";
-NR_monitor2 = "";
-NR_monitor3 = "";
-NR_monitor4 = "";
+NR_monitor = "getPos player";
+NR_monitor2 = "count allPlayers";
+NR_monitor3 = "typeOf cursorTarget";
+NR_monitor4 = "count allUnits - count allPlayers";
 };
 
 
@@ -52,7 +52,7 @@ if (_uid call isAdmin) then
 			_NR_monitorBox4 = str (call compile ctrlText 1971); 
 			ctrlSetText [1972, _NR_monitorBox4]; 
 			
-			sleep 2;
+			sleep 1;
 		};
 	};
 	
