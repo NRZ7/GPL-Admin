@@ -27,6 +27,7 @@ else
 	            a comma (,) except the last one.
 	********************************************************/
 
+	
 	// Low Administrators: manage & spectate players, remove hacked vehicles
 	lowAdmins = compileFinal str
 	[

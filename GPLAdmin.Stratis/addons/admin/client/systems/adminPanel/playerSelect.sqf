@@ -68,10 +68,9 @@ if (_uid call isAdmin) then
 		};
 		case 1: //Warn
 		{
-			/*_warnText = ctrlText _warnMessage;
+			_warnText = ctrlText 55509;
 			_playerName = name player;
-			[format ["Message from Admin: %1", _warnText], "A3W_fnc_titleTextMessage", _target, false] call A3W_fnc_MP;*/
-			systemChat "Option Disabled";
+			_warnText remoteExec ["A3W_fnc_titleTextMessage",_target,false];
 		};
 		case 2: //Kill
 		{
@@ -82,15 +81,13 @@ if (_uid call isAdmin) then
 		{
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
 			_targetName = name _target;
-			_adminName = name player;
 			/*if (_targetName == _adminName) then
 			{
 				hint "You cannot kick yourself.."
 			}
 			else 
 			{*/
-				_targetUID = getPlayerUID _target;
-				[_targetUID,_adminName] remoteExec ["NR_fnc_kick", 0, false];
+				_target remoteExec ["NR_fnc_kickTarget", 2, false];
 				hint format ["%1 has kicked of the game",_targetName];
 			//};
 		};
@@ -212,23 +209,24 @@ if (_uid call isAdmin) then
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
 			_targetName = name _target;
 			_adminName = name player;
-			/*if (_targetName == _adminName) then
+			if (_targetName == _adminName) then
 			{
-				hint "This is stupid"
+				hint "BAN yourself is not the best idea";
 			}
 			else 
-			{*/
+			{
 			_targetUID = getPlayerUID _target;
-			[_targetUID,_adminName] remoteExec ["NR_fnc_tempBan", 2, false];
+			[_targetUID,_adminName] remoteExec ["NR_fnc_tempBanServer", 2, false];
 
-			//};
+			};
 		
 		};
 		
 		case 17: // Execute Code on Target
 		{
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
-
+			createDialog "debugConsoleMenu";
+			nr_target = _target;
 		};
 		
 		case 18: // Show on map
@@ -236,6 +234,21 @@ if (_uid call isAdmin) then
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
 			[_target] execVM "addons\admin\client\systems\adminPanel\targetTeleport.sqf";;
 			closeDialog 0;
+		};
+		
+		case 19: // BAN!
+		{
+			if (isNil "_target") exitWith {hint "You need to select a target first!" };
+			_targetName = name _target;
+			_adminName = name player;
+			if (_targetName == _adminName) then
+			{
+				hint "BAN yourself is not the best idea";
+			}
+			else 
+			{
+			_target remoteExec ["NR_fnc_banTarget", 2, false];
+			};
 		};
 	
 	};

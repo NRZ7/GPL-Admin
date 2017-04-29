@@ -7,7 +7,6 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Description: The server init.
 //	@file Args:
-// bAdmin Exile by Biabock
 
 // All the "hasInterface" and "isServer" checks are to allow this file to be executed on a headless client to offload object saving
 
@@ -95,12 +94,24 @@ NR_fnc_remoteExecution = {
 	//};
 };
 
-NR_fnc_tempBan = {
+NR_fnc_tempBanServer = {
 	_targetUID = _this select 0;
 	_adminName = _this select 1;
 	banList pushBack _targetUID;
 	publicVariable "banList";
-	[_targetUID,_adminName] remoteExec ["nr_fnc_kick",0,false];
+	[_targetUID,_adminName] remoteExec ["nr_fnc_tempBanClient",0,false];
+};
+
+NR_fnc_kickTarget = {
+	_target = _this;
+	_name = name _target;
+	serverCommandPassword serverCommand format ['#exec kick "%1"',_name];
+};
+
+NR_fnc_banTarget = {
+	_target = _this;
+	_name = name _target;
+	serverCommandPassword serverCommand format ['#exec ban "%1"',_name];
 };
 
 diag_log "Admin - Server Compile Finished";

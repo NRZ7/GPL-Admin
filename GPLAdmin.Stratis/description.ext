@@ -14,7 +14,7 @@ disabledAI 					= 1;	//	When 1, removes all playable units which do not have a h
 //////////////////////////
 
 respawn	 			= "INSTANT"; 	// "NONE" | "BIRD" | "INSTANT" | "BASE" | "GROUP" | "SIDE"
-respawnDelay 		= 3;		//	Set respawn delay in seconds.
+respawnDelay 		= 1;		//	Set respawn delay in seconds.
 respawnDialog 		= 1;		//	Show the scoreboard and respawn countdown timer for a player if he is killed with respawnType 3. Default is 1 (true).
 respawnOnStart 		= 1;		//	Respawn on start. Run respawn script on start.
 respawnTemplates[] 	= {"MenuInventory","MenuPosition","Counter"};
@@ -68,20 +68,11 @@ class CfgRemoteExec
 
 class CfgDebriefing
 {  
-	class kicked
-	{
-		title = "You are KICKED";
-		subtitle = "";
-		description = "";
-		pictureBackground = "";
-		pictureColor[] = {0,1,0,1};	
-	};
-
 	class banned
 	{
-		title = "You are BANNED";
+		title = "You are TEMPORALLY BANNED";
 		subtitle = "";
-		description = "";
+		description = "Return after the next restart and correct your conduct";
 		pictureBackground = "";
 		pictureColor[] = {1,0,0,1};	
 	};

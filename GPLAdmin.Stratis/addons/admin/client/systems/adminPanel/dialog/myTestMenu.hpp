@@ -8,21 +8,14 @@ class myTestMenu
 	
 	class controls {
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by {VS} Conky, v1.063, #Wuvufu)
+		// GUI EDITOR OUTPUT START (by NRZ7 v1.063, #Qiquzi)
 		////////////////////////////////////////////////////////
 
-		class n_playerFrame: RscFrame
-		{
-			idc = 1800;
-
-			x = 0.167112 * safezoneW + safezoneX;
-			y = 0.10774 * safezoneH + safezoneY;
-			w = 0.17325 * safezoneW;
-			h = 0.715 * safezoneH;
-		};
 		class MainBackground: w_RscPicture
 		{
-			idc = 1000;
+			idc = 1950;
+			onLoad = "execVM 'addons\admin\client\systems\adminPanel\dialog\loadDebugConsole.sqf'";
+			onDestroy = "inDebugConsole = false;";
 
 			text = "#(argb,8,8,3)color(0,0,0,0.6)"; //--- ToDo: Localize;
 			x = 0.158862 * safezoneW + safezoneX;
@@ -34,7 +27,7 @@ class myTestMenu
 		};
 		class TopBar: w_RscPicture
 		{
-			idc = 1001;
+			idc = 1951;
 
 			text = "#(argb,8,8,3)color(0.25,0.51,0.96,0.8)"; //--- ToDo: Localize;
 			x = 0.158862 * safezoneW + safezoneX;
@@ -43,6 +36,259 @@ class myTestMenu
 			h = 0.055 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
+		};
+		class DialogTitleText: w_RscText
+		{
+			idc = 1952;
+
+			text = "Debug Console"; //--- ToDo: Localize;
+			x = 0.1733 * safezoneW + safezoneX;
+			y = 0.04724 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448149 * safezoneH;
+			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+		};
+		class nr_commandListBox: RscListBox
+		{
+			idc = 1954;
+			onLBSelChanged = "nr_fncIndex = _this select 1";
+
+			x = 0.703362 * safezoneW + safezoneX;
+			y = 0.11874 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.561 * safezoneH;
+		};
+		class nr_storedEdit: RscEdit
+		{
+			idc = 1955;
+
+			x = 0.703362 * safezoneW + safezoneX;
+			y = 0.67974 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscButton_1600: w_RscButton
+		{
+			idc = 1956;
+			onButtonClick = "[1] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+
+			text = "<< Previous"; //--- ToDo: Localize;
+			x = 0.191862 * safezoneW + safezoneX;
+			y = 0.63574 * safezoneH + safezoneY;
+			w = 0.07425 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscButton_1601: w_RscButton
+		{
+			idc = 1957;
+			onButtonClick = "_NR_codeExec = compile ctrlText 1953;	[6,_NR_codeExec] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+
+			text = "Server"; //--- ToDo: Localize;
+			x = 0.274362 * safezoneW + safezoneX;
+			y = 0.63574 * safezoneH + safezoneY;
+			w = 0.07425 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class NR_cmd_GlobalButton: w_RscButton
+		{
+			idc = 1958;
+			onButtonClick = "_NR_codeExec = compile ctrlText 1953;	[7,_NR_codeExec] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+
+			text = "Global"; //--- ToDo: Localize;
+			x = 0.356862 * safezoneW + safezoneX;
+			y = 0.63574 * safezoneH + safezoneY;
+			w = 0.07425 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class NR_cmd_localButton: w_RscButton
+		{
+			idc = 1959;
+			onButtonClick = "_NR_codeExec = compile ctrlText 1953;	 [8,_NR_codeExec] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+
+			text = "Local"; //--- ToDo: Localize;
+			x = 0.439362 * safezoneW + safezoneX;
+			y = 0.63574 * safezoneH + safezoneY;
+			w = 0.07425 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscButton_1604: w_RscButton
+		{
+			idc = 1960;
+			onButtonClick = "[2] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+
+			text = "Next >> "; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.63574 * safezoneH + safezoneY;
+			w = 0.07425 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class n_consoleMonitor1: n_RscConsoleEdit
+		{
+			idc = 1962;
+			onKeyDown = "NR_monitor = ctrlText 1962;";
+			onKillFocus = "NR_monitor = ctrlText 1962;";
+
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.69074 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class n_monitorOutput1: RscEdit
+		{
+			idc = 1963;
+
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.72374 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class n_consoleMonitor2: n_RscConsoleEdit
+		{
+			idc = 1965;
+			onKeyDown = "NR_monitor2 = ctrlText 1965;";
+			onKillFocus = "NR_monitor2 = ctrlText 1965;";
+
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.77874 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class n_monitorOutput2: RscEdit
+		{
+			idc = 1966;
+
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.81174 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class n_consoleMonitor3: n_RscConsoleEdit
+		{
+			idc = 1969;
+			onKeyDown = "NR_monitor3 = ctrlText 1969;";
+			onKillFocus = "NR_monitor3 = ctrlText 1969;";
+
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.86674 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class n_monitorOutput3: RscEdit
+		{
+			idc = 1970;
+
+			x = 0.183612 * safezoneW + safezoneX;
+			y = 0.89974 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class n_consoleMonitor4: n_RscConsoleEdit
+		{
+			idc = 1971;
+			onKeyDown = "NR_monitor4 = ctrlText 1971;";
+			onKillFocus = "NR_monitor4 = ctrlText 1971;";
+
+			x = 0.455862 * safezoneW + safezoneX;
+			y = 0.69074 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class n_monitorOutput4: RscEdit
+		{
+			idc = 1972;
+
+			x = 0.455862 * safezoneW + safezoneX;
+			y = 0.72374 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscButton_1605: w_RscButton
+		{
+			idc = 1973;
+			onButtonClick = "[3] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+
+			text = "Load "; //--- ToDo: Localize;
+			x = 0.723987 * safezoneW + safezoneX;
+			y = 0.74574 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscButton_1606: w_RscButton
+		{
+			idc = 1974;
+			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+
+			text = "Save "; //--- ToDo: Localize;
+			x = 0.723987 * safezoneW + safezoneX;
+			y = 0.81174 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscButton_1607: w_RscButton
+		{
+			idc = 1975;
+			onButtonClick = "[5] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+
+			text = "Delete "; //--- ToDo: Localize;
+			x = 0.723987 * safezoneW + safezoneX;
+			y = 0.87774 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class NR_cmd_targetButton: w_RscButton
+		{
+			idc = 1976;
+			onButtonClick = "_NR_codeExec = compile ctrlText 1953; [9,_NR_codeExec] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+
+			text = "Target"; //--- ToDo: Localize;
+			x = 0.521862 * safezoneW + safezoneX;
+			y = 0.63574 * safezoneH + safezoneY;
+			w = 0.07425 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class n_consoleEdit: n_RscConsoleEdit
+		{
+			idc = 1953;
+			onKeyDown = "NR_consoleLog = ctrlText 1953;";
+			onKillFocus = "NR_consoleLog = ctrlText 1953;";
+
+			x = 0.175362 * safezoneW + safezoneX;
+			y = 0.11874 * safezoneH + safezoneY;
+			w = 0.51975 * safezoneW;
+			h = 0.506 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class n_buttonClearConsole: n_RscButtonClose
+		{
+			idc = 1981;
+			onButtonClick = "ctrlSetText [1953,'']; NR_consoleLog = ctrlText 1953;";
+
+			text = "X"; //--- ToDo: Localize;
+			x = 0.67655 * safezoneW + safezoneX;
+			y = 0.12149 * safezoneH + safezoneY;
+			w = 0.0165 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {0,0,0,1};
+			colorBackground2[] = {0.5, 0.5,0.5, 0.1};
+			colorFocused[] = {0,0,0,1}; // pulse
+			colorBackgroundActive[] = {0,0,0,1};
+			colorShadow[] = {0,0,0,0.1};
+		};
+		class n_consoleMonitor5: n_RscConsoleEdit
+		{
+			idc = 1977;
+			onKeyDown = "NR_monitor5 = ctrlText 1977;";
+			onKillFocus = "NR_monitor5 = ctrlText 1977;";
+
+			x = 0.455862 * safezoneW + safezoneX;
+			y = 0.77874 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
 		};
 		class n_buttonCloseDialog: n_RscButtonClose
 		{
@@ -56,387 +302,35 @@ class myTestMenu
 			h = 0.033 * safezoneH;
 			colorBackground[] = {0.863,0.376,0.376,1};
 		};
-		class PlayerUIDText: w_RscText
+		class n_monitorOutput5: RscEdit
 		{
-			idc = 55510;
+			idc = 1978;
 
-			text = "UID:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.12974 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerObjectText: w_RscText
-		{
-			idc = 55507;
-
-			text = "Slot:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.18474 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerSkinText: w_RscText
-		{
-			idc = 55501;
-
-			text = "Score:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.15724 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerGunText: w_RscText
-		{
-			idc = 55502;
-
-			text = "Poptabs:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.21224 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerItemsText: w_RscText
-		{
-			idc = 55503;
-
-			text = "Items:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.23974 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerHealthText: w_RscText
-		{
-			idc = 55508;
-
-			text = "Health:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.26592 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerPosistionText: w_RscText
-		{
-			idc = 55504;
-
-			text = "Position:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.29474 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerEditBox: w_RscEdit
-		{
-			idc = 55509;
-			colorDisabled[] = {1,1,1,0.3};
-
-			x = 0.645612 * safezoneW + safezoneX;
-			y = 0.88874 * safezoneH + safezoneY;
-			w = 0.175 * safezoneW;
-			h = 0.0449999 * safezoneH;
-		};
-		class PlayerListBox: w_RscList
-		{
-			idc = 55505;
-			onLBSelChanged = "[2,_this select 1] execVM ""addons\admin\client\systems\adminPanel\importvalues.sqf"";";
-
-			x = 0.167112 * safezoneW + safezoneX;
-			y = 0.10774 * safezoneH + safezoneY;
-			w = 0.17325 * safezoneW;
-			h = 0.704 * safezoneH;
-			tooltip = "Select a target on Player List"; //--- ToDo: Localize;
-		};
-		class SpectateButton: w_RscButton
-		{
-			idc = 55506;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-
-			text = "Spectate"; //--- ToDo: Localize;
-			x = 0.175362 * safezoneW + safezoneX;
-			y = 0.83374 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.044 * safezoneH;
-			tooltip = "Spectate target"; //--- ToDo: Localize;
-		};
-		class KickButton: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "[3] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-
-			text = "Kick"; //--- ToDo: Localize;
-			x = 0.175362 * safezoneW + safezoneX;
-			y = 0.88874 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.044 * safezoneH;
-			tooltip = "Send the target to lobby"; //--- ToDo: Localize;
-		};
-		class WarnButton: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "[1] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-
-			text = "Warn"; //--- ToDo: Localize;
-			x = 0.662112 * safezoneW + safezoneX;
-			y = 0.83374 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-		class NR_PM_tptome: w_RscButton
-		{
-			onButtonClick = "[8] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1015;
-
-			text = "TpToMe"; //--- ToDo: Localize;
-			x = 0.365112 * safezoneW + safezoneX;
-			y = 0.18474 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Teleport target to me"; //--- ToDo: Localize;
-		};
-		class NR_PM_tpmeto: w_RscButton
-		{
-			onButtonClick = "[9] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1016;
-
-			text = "TpMeTo"; //--- ToDo: Localize;
-			x = 0.488862 * safezoneW + safezoneX;
-			y = 0.18474 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Teleport me to target"; //--- ToDo: Localize;
-		};
-		class NR_PM_heal: w_RscButton
-		{
-			onButtonClick = "[10] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1017;
-
-			text = "Heal"; //--- ToDo: Localize;
-			x = 0.365112 * safezoneW + safezoneX;
-			y = 0.23974 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Heal target"; //--- ToDo: Localize;
-		};
-		class NR_PM_kill: w_RscButton
-		{
-			onButtonClick = "[2] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1018;
-
-			text = "Kill"; //--- ToDo: Localize;
-			x = 0.488862 * safezoneW + safezoneX;
-			y = 0.23974 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Kill target"; //--- ToDo: Localize;
-		};
-		class NR_PM_unfreeze: w_RscButton
-		{
-			onButtonClick = "[12] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1019;
-
-			text = "Unfreeze"; //--- ToDo: Localize;
-			x = 0.365112 * safezoneW + safezoneX;
-			y = 0.29474 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Allow target controls"; //--- ToDo: Localize;
-		};
-		class NR_PM_freeze: w_RscButton
-		{
-			onButtonClick = "[13] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1020;
-
-			text = "Freeze"; //--- ToDo: Localize;
-			x = 0.488862 * safezoneW + safezoneX;
-			y = 0.29474 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Disables target input controls"; //--- ToDo: Localize;
-		};
-		class NR_PM_Arsenal: w_RscButton
-		{
-			onButtonClick = "[5] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1021;
-
-			text = "Arsenal"; //--- ToDo: Localize;
-			x = 0.365112 * safezoneW + safezoneX;
-			y = 0.34974 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Open BIS Arsenal on target"; //--- ToDo: Localize;
-		};
-		class NR_PM_RemoveGear: w_RscButton
-		{
-			onButtonClick = "[6] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1022;
-
-			text = "Remove Gear"; //--- ToDo: Localize;
-			x = 0.488862 * safezoneW + safezoneX;
-			y = 0.34974 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-			tooltip = "Remove the gear of target"; //--- ToDo: Localize;
-		};
-		class NR_PM_custom1: w_RscButton
-		{
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1023;
-
-			text = "Custom #1"; //--- ToDo: Localize;
-			x = 0.365112 * safezoneW + safezoneX;
-			y = 0.54774 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class NR_PM_custom2: w_RscButton
-		{
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1024;
-
-			text = "Custom #2"; //--- ToDo: Localize;
-			x = 0.488862 * safezoneW + safezoneX;
-			y = 0.54774 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class NR_PM_Custom3: w_RscButton
-		{
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1025;
-
-			text = "Custom #3"; //--- ToDo: Localize;
-			x = 0.365112 * safezoneW + safezoneX;
-			y = 0.60274 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class NR_PM_custom4: w_RscButton
-		{
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1026;
-
-			text = "Custom #4"; //--- ToDo: Localize;
-			x = 0.488862 * safezoneW + safezoneX;
-			y = 0.60274 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class NR_PM_tempban: w_RscButton
-		{
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1027;
-
-			text = "Temp-Ban"; //--- ToDo: Localize;
-			x = 0.266112 * safezoneW + safezoneX;
-			y = 0.88874 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.044 * safezoneH;
-			tooltip = "Force target to lobby until the next restart"; //--- ToDo: Localize;
-		};
-		class NR_PM_ban: w_RscButton
-		{
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1028;
-
-			text = "Ban"; //--- ToDo: Localize;
-			x = 0.356862 * safezoneW + safezoneX;
-			y = 0.88874 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.044 * safezoneH;
-			tooltip = "Ban the target"; //--- ToDo: Localize;
-		};
-		class NR_PM_exec: w_RscButton
-		{
-			idc = 55506;
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-
-			text = "Execute Code"; //--- ToDo: Localize;
-			x = 0.266112 * safezoneW + safezoneX;
-			y = 0.83374 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.044 * safezoneH;
-			tooltip = "Execute code on target"; //--- ToDo: Localize;
-		};
-		class NR_PM_showmap: w_RscButton
-		{
-			idc = 55506;
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-
-			text = "Show on map"; //--- ToDo: Localize;
-			x = 0.356862 * safezoneW + safezoneX;
-			y = 0.83374 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.044 * safezoneH;
-			tooltip = "Show the target on map"; //--- ToDo: Localize;
-		};
-		class DialogTitleText: w_RscText
-		{
-			idc = 1002;
-
-			text = "Player Menu"; //--- ToDo: Localize;
-			x = 0.1733 * safezoneW + safezoneX;
-			y = 0.04724 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448149 * safezoneH;
-			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-		};
-		class NR_PM_custom5: w_RscButton
-		{
-			idc = 55506;
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-
-			text = "Custom #5"; //--- ToDo: Localize;
-			x = 0.447612 * safezoneW + safezoneX;
-			y = 0.83374 * safezoneH + safezoneY;
-			w = 0.10725 * safezoneW;
-			h = 0.044 * safezoneH;
-			tooltip = "Show the target on map"; //--- ToDo: Localize;
-		};
-		class NR_PM_custom6: w_RscButton
-		{
-			idc = 55506;
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-
-			text = "Custom #6"; //--- ToDo: Localize;
-			x = 0.447612 * safezoneW + safezoneX;
-			y = 0.88874 * safezoneH + safezoneY;
-			w = 0.10725 * safezoneW;
-			h = 0.044 * safezoneH;
-			tooltip = "Show the target on map"; //--- ToDo: Localize;
-		};
-		class n_playermenu_rightFrame: RscFrame
-		{
-			idc = 1800;
-
-			x = 0.596112 * safezoneW + safezoneX;
-			y = 0.11874 * safezoneH + safezoneY;
+			x = 0.455862 * safezoneW + safezoneX;
+			y = 0.81174 * safezoneH + safezoneY;
 			w = 0.22275 * safezoneW;
-			h = 0.671 * safezoneH;
-		};
-		class NR_PM_Repair: w_RscButton
-		{
-			onButtonClick = "[5] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1021;
-
-			text = "Repair"; //--- ToDo: Localize;
-			x = 0.365112 * safezoneW + safezoneX;
-			y = 0.40474 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
-			tooltip = "Open BIS Arsenal on target"; //--- ToDo: Localize;
 		};
-		class NR_PM_Flip: w_RscButton
+		class n_consoleMonitor6: n_RscConsoleEdit
 		{
-			onButtonClick = "[5] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
-			idc = 1021;
+			idc = 1979;
+			onKeyDown = "NR_monitor6 = ctrlText 1979;";
+			onKillFocus = "NR_monitor6 = ctrlText 1979;";
 
-			text = "Flip"; //--- ToDo: Localize;
-			x = 0.488862 * safezoneW + safezoneX;
-			y = 0.40474 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
+			x = 0.455862 * safezoneW + safezoneX;
+			y = 0.86674 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
 			h = 0.033 * safezoneH;
-			tooltip = "Open BIS Arsenal on target"; //--- ToDo: Localize;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class n_monitorOutput6: RscEdit
+		{
+			idc = 1980;
+
+			x = 0.455862 * safezoneW + safezoneX;
+			y = 0.89974 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.033 * safezoneH;
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END

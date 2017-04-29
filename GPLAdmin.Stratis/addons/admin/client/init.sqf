@@ -15,6 +15,15 @@
 isAdmin = "addons\admin\client\systems\adminPanel\isAdmin.sqf" call mf_compile;//
 A3W_fnc_titleTextMessage = "addons\admin\client\titleTextMessage.sqf" call mf_compile;
 
+NR_fnc_tempBanClient = {
+	_targetUID = _this select 0;
+	_adminName = _this select 1;
+	if (_targetUID == getPlayerUID player) then
+	{
+		["banned",false,0.5] call BIS_fnc_endMission;	
+	};
+};
+
 NR_fnc_freeze = {
 	_target = _this;
 	_targetUID = getPlayerUID _target;
@@ -31,16 +40,6 @@ NR_fnc_unfreeze = {
 	if (_targetUID == getPlayerUID player) then
 	{
 		disableUserInput false;
-	};
-};
-
-NR_fnc_kick = {
-	_targetUID = _this select 0;
-	_adminName = _this select 1;
-	if (_targetUID == getPlayerUID player) then
-	{
-		["You are kicked by "+_adminName] spawn BIS_fnc_guiMessage; sleep 0.5;
-		["kicked",false,0.5] call BIS_fnc_endMission;	
 	};
 };
 
@@ -152,6 +151,10 @@ NR_fnc_flip = {
 	};
 };
 
+////////////// Defining variables (for admins)
+cba_index = -1;
+cba_prevStatements = [];
+////////////// End of variables
 
 diag_log "GPL Admin - Client Compile Complete";
 

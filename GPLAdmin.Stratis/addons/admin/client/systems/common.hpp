@@ -345,8 +345,8 @@ class w_RscButton
 	colorFocused[] = {0.14,0.25,0.49,1}; // pulse
 	colorBackgroundActive[] = {0.25,0.51,0.96,1}; // hover
 	colorBackgroundDisabled[] = {0.3,0.3,0.3,1};
-	colorShadow[] = {0,0,0,1};
-	colorBorder[] = {0,0,0,1};
+	colorShadow[] = {0,0,0,0.7};
+	colorBorder[] = {0,0,0,0.7};
 	soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1};
 	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1};
 	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1};
@@ -844,6 +844,14 @@ class n_RscEdit: RscEdit{
 	  style = ST_MULTI;            // defined constant
 	  lineSpacing = 1;
 	  text = "";
+};
+
+class n_RscOutput: RscEdit{
+	  type = CT_EDIT;  // defined constant
+	  //style = ST_MULTI;            // defined constant
+	  text = "";
+	  colorBackground[] = {0, 0, 0, 0.4};
+	  sizeEx = 0.035;
 };
 
 class n_RscConsoleEdit: RscEdit{

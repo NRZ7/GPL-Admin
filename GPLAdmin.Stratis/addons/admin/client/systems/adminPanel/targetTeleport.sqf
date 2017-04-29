@@ -10,7 +10,7 @@ private ["_target","_targetName","_deleteMarkersOnExit"];
 
 if(isNil "NR_togglePlayerMarkers") then	{	NR_togglePlayerMarkers = false;	};
 
-_target = _this select 0;
+_target = _this select 0; // I don't understant why not work if the variable is private -_-
 _targetName = name _target;
 
 openMap true;

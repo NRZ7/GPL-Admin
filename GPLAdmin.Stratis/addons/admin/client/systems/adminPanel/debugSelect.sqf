@@ -1,5 +1,5 @@
 // *****************************************************************************************
-// * This script is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
+// * This script is licensed under the GNU Affero GPL v3. Copyright © 2017 A3Wasteland.com *
 // *****************************************************************************************
 //	@file Version: 1.0
 //	@file Name: debugSelect.sqf
@@ -59,19 +59,21 @@ if (_uid call isAdmin) then
 		{
 			execVM "addons\admin\client\systems\adminPanel\toggleStamina.sqf";
 		};
-		case 7: //Aim Coef
+		case 7: //3D Teleport
 		{
-			
+			execVM "addons\admin\client\systems\adminPanel\toggle3DTeleport.sqf";
 		};
 		
-		case 8: //Recoil Coef
+		case 8: // Zeus
 		{
-			
+			closeDialog 0;
+			execVM "addons\aj\zeus\refreshzeus.sqf";
+			openCuratorInterface;
 		};
 		
-		case 9: //Set Grass
+		case 9: // delete cursorTarget
 		{
-			
+			deleteVehicle cursorTarget;
 		};
 		
 		case 10: //Client View Distance
@@ -81,7 +83,7 @@ if (_uid call isAdmin) then
 		
 		case 11: //3D Teleport
 		{
-			execVM "addons\admin\client\systems\adminPanel\toggle3DTeleport.sqf";
+			
 		};
 		
 		case 12: //Enable Environment
@@ -91,9 +93,7 @@ if (_uid call isAdmin) then
 		
 		case 13: //Zeus
 		{
-			closeDialog 0;
-			execVM "addons\aj\zeus\refreshzeus.sqf";
-			openCuratorInterface;
+			
 		};
 		
 		////////////////////////////////////////

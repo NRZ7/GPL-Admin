@@ -22,21 +22,14 @@ class PlayersMenu
 	class controls {
 
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Wuvufu)
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Qucyhy)
 		////////////////////////////////////////////////////////
 
-		class n_playerFrame: RscFrame
-		{
-			idc = 1800;
-
-			x = 0.167112 * safezoneW + safezoneX;
-			y = 0.10774 * safezoneH + safezoneY;
-			w = 0.17325 * safezoneW;
-			h = 0.715 * safezoneH;
-		};
 		class MainBackground: w_RscPicture
 		{
 			idc = 1000;
+			onLoad = "nr_inPlayerMenu = true;";
+			onDestroy = "nr_inPlayerMenu = false;";
 
 			text = "#(argb,8,8,3)color(0,0,0,0.6)"; //--- ToDo: Localize;
 			x = 0.158862 * safezoneW + safezoneX;
@@ -45,6 +38,24 @@ class PlayersMenu
 			h = 0.913 * safezoneH;
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
+		};
+		class nr_PM_rightPic: w_RscPicture
+		{
+			idc = 1200;
+			text = "#(argb,8,8,3)color(0,0,0,0.2)";
+			x = 0.596112 * safezoneW + safezoneX;
+			y = 0.11874 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.671 * safezoneH;
+		};
+		class nr_PM_rightFrame: RscFrame
+		{
+			idc = 55507;
+
+			x = 0.596112 * safezoneW + safezoneX;
+			y = 0.11874 * safezoneH + safezoneY;
+			w = 0.22275 * safezoneW;
+			h = 0.671 * safezoneH;
 		};
 		class TopBar: w_RscPicture
 		{
@@ -70,75 +81,15 @@ class PlayersMenu
 			h = 0.033 * safezoneH;
 			colorBackground[] = {0.863,0.376,0.376,1};
 		};
-		class PlayerUIDText: w_RscText
+		class PlayerTargetText: w_RscText
 		{
 			idc = 55510;
 
-			text = "UID:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.12974 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerObjectText: w_RscText
-		{
-			idc = 55507;
-
-			text = "Slot:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.18474 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerSkinText: w_RscText
-		{
-			idc = 55501;
-
-			text = "Score:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.15724 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerGunText: w_RscText
-		{
-			idc = 55502;
-
-			text = "Poptabs:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.21224 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerItemsText: w_RscText
-		{
-			idc = 55503;
-
-			text = "Items:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.23974 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerHealthText: w_RscText
-		{
-			idc = 55508;
-
-			text = "Health:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.26592 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
-		};
-		class PlayerPosistionText: w_RscText
-		{
-			idc = 55504;
-
-			text = "Position:"; //--- ToDo: Localize;
-			x = 0.6023 * safezoneW + safezoneX;
-			y = 0.29474 * safezoneH + safezoneY;
-			w = 0.237187 * safezoneW;
-			h = 0.0275 * safezoneH;
+			text = "Target:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.14074 * safezoneH + safezoneY;
+			w = 0.0433125 * safezoneW;
+			h = 0.02475 * safezoneH;
 		};
 		class PlayerEditBox: w_RscEdit
 		{
@@ -149,6 +100,7 @@ class PlayersMenu
 			y = 0.88874 * safezoneH + safezoneY;
 			w = 0.175 * safezoneW;
 			h = 0.0449999 * safezoneH;
+			sizeEx = 0.03;
 		};
 		class PlayerListBox: w_RscList
 		{
@@ -191,7 +143,7 @@ class PlayersMenu
 			onButtonClick = "[1] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
 			text = "Warn"; //--- ToDo: Localize;
-			x = 0.662112 * safezoneW + safezoneX;
+			x = 0.653862 * safezoneW + safezoneX;
 			y = 0.83374 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
@@ -292,7 +244,7 @@ class PlayersMenu
 			h = 0.033 * safezoneH;
 			tooltip = "Remove the gear of target"; //--- ToDo: Localize;
 		};
-		class NR_PM_custom1: w_RscButton
+		class NR_PM_custom1: n_RscButtonMenu
 		{
 			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 			idc = 1023;
@@ -303,7 +255,7 @@ class PlayersMenu
 			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_PM_custom2: w_RscButton
+		class NR_PM_custom2: n_RscButtonMenu
 		{
 			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 			idc = 1024;
@@ -314,7 +266,7 @@ class PlayersMenu
 			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_PM_Custom3: w_RscButton
+		class NR_PM_Custom3: n_RscButtonMenu
 		{
 			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 			idc = 1025;
@@ -325,7 +277,7 @@ class PlayersMenu
 			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_PM_custom4: w_RscButton
+		class NR_PM_custom4: n_RscButtonMenu
 		{
 			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 			idc = 1026;
@@ -350,7 +302,7 @@ class PlayersMenu
 		};
 		class NR_PM_ban: w_RscButton
 		{
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[19] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 			idc = 1028;
 
 			text = "Ban"; //--- ToDo: Localize;
@@ -363,7 +315,7 @@ class PlayersMenu
 		class NR_PM_exec: w_RscButton
 		{
 			idc = 55506;
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[17] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
 			text = "Execute Code"; //--- ToDo: Localize;
 			x = 0.266112 * safezoneW + safezoneX;
@@ -377,7 +329,7 @@ class PlayersMenu
 			idc = 55506;
 			onButtonClick = "[18] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
-			text = "Show on map"; //--- ToDo: Localize;
+			text = "Teleport Target"; //--- ToDo: Localize;
 			x = 0.356862 * safezoneW + safezoneX;
 			y = 0.83374 * safezoneH + safezoneY;
 			w = 0.0825 * safezoneW;
@@ -395,38 +347,29 @@ class PlayersMenu
 			h = 0.0448149 * safezoneH;
 			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 		};
-		class NR_PM_custom5: w_RscButton
+		class NR_PM_customA: n_RscButtonMenu
 		{
 			idc = 55506;
 			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
-			text = "Custom #5"; //--- ToDo: Localize;
+			text = "Custom #A"; //--- ToDo: Localize;
 			x = 0.447612 * safezoneW + safezoneX;
 			y = 0.83374 * safezoneH + safezoneY;
 			w = 0.10725 * safezoneW;
 			h = 0.044 * safezoneH;
 			tooltip = "Show the target on map"; //--- ToDo: Localize;
 		};
-		class NR_PM_custom6: w_RscButton
+		class NR_PM_customB: n_RscButtonMenu
 		{
 			idc = 55506;
 			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
 
-			text = "Custom #6"; //--- ToDo: Localize;
+			text = "Custom #B"; //--- ToDo: Localize;
 			x = 0.447612 * safezoneW + safezoneX;
 			y = 0.88874 * safezoneH + safezoneY;
 			w = 0.10725 * safezoneW;
 			h = 0.044 * safezoneH;
 			tooltip = "Show the target on map"; //--- ToDo: Localize;
-		};
-		class n_playermenu_rightFrame: RscFrame
-		{
-			idc = 55507;
-
-			x = 0.596112 * safezoneW + safezoneX;
-			y = 0.11874 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.671 * safezoneH;
 		};
 		class NR_PM_Repair: w_RscButton
 		{
@@ -452,9 +395,250 @@ class PlayersMenu
 			h = 0.033 * safezoneH;
 			tooltip = "Flip target vehicle"; //--- ToDo: Localize;
 		};
+		class n_playerFrame: RscFrame
+		{
+			idc = 1800;
+
+			x = 0.167112 * safezoneW + safezoneX;
+			y = 0.10774 * safezoneH + safezoneY;
+			w = 0.17325 * safezoneW;
+			h = 0.704 * safezoneH;
+		};
+		class PlayerTargetOutput: n_RscOutput
+		{
+			idc = 55528;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.14074 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PlayerUIDText: w_RscText
+		{
+			idc = 55510;
+
+			text = "UID:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.17374 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class PlayerUIDOutput: n_RscOutput
+		{
+			idc = 55511;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.17374 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PlayerHealthText: w_RscText
+		{
+			idc = 55512;
+
+			text = "Health:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.20674 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class PlayerWeaponsText: w_RscText
+		{
+			idc = 55513;
+
+			text = "Weapons:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.23974 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class PlayerItemsText: w_RscText
+		{
+			idc = 55514;
+
+			text = "Vehicle:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.27274 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class PlayerPositionText: w_RscText
+		{
+			idc = 55515;
+
+			text = "Position:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.30574 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class PlayerSideText: w_RscText
+		{
+			idc = 55516;
+
+			text = "Side:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.33874 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class PlayerKillsText: w_RscText
+		{
+			idc = 55517;
+
+			text = "Kills:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.37174 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class PlayerDeathsText: w_RscText
+		{
+			idc = 55518;
+
+			text = "Deaths:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.40474 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class PlayerSquadText: w_RscText
+		{
+			idc = 55519;
+
+			text = "Squad:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.43774 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class PlayerHealthOutput: n_RscOutput
+		{
+			idc = 55520;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.20674 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PlayerWeaponsOutput: n_RscOutput
+		{
+			idc = 55521;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.23974 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PlayerItemsOutput: n_RscOutput
+		{
+			idc = 55522;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.27274 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PlayerPositionOutput: n_RscOutput
+		{
+			idc = 55523;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.30574 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PlayerSideOutput: n_RscOutput
+		{
+			idc = 55524;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.33874 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PlayerKillsOutput: n_RscOutput
+		{
+			idc = 55525;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.37174 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PlayerDeathsOutput: n_RscOutput
+		{
+			idc = 55526;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.40474 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class PlayerSquadOutput: n_RscOutput
+		{
+			idc = 55527;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.43774 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class RscSquadPlayerList: w_RscList
+		{
+			idc = 55529;
+			x = 0.670362 * safezoneW + safezoneX;
+			y = 0.48174 * safezoneH + safezoneY;
+			w = 0.132 * safezoneW;
+			h = 0.088 * safezoneH;
+		};
+		class PlayerSquadPlayersText: w_RscText
+		{
+			idc = 55530;
+
+			text = "Squad Players:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.49274 * safezoneH + safezoneY;
+			w = 0.05775 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		
+		class NR_PM_Custom5: n_RscButtonMenu
+		{
+			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+			idc = 1025;
+
+			text = "Custom #5"; //--- ToDo: Localize;
+			x = 0.365112 * safezoneW + safezoneX;
+			y = 0.65774 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class NR_PM_Custom6: n_RscButtonMenu
+		{
+			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
+			idc = 1026;
+
+			text = "Custom #4"; //--- ToDo: Localize;
+			x = 0.488862 * safezoneW + safezoneX;
+			y = 0.65774 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
 		////////////////////////////////////////////////////////
+
 
 
 

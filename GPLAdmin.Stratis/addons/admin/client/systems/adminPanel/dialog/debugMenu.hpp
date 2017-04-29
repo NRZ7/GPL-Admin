@@ -147,7 +147,7 @@ class debugMenu
 		class NR_deb_3dteleport: w_RscButton
 		{
 			idc = 1612;
-			onButtonClick = "[11] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[7] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "3D Teleport"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
@@ -158,7 +158,7 @@ class debugMenu
 		class NR_deb_zeus: w_RscButton
 		{
 			idc = 1614;
-			onButtonClick = "[13] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[8] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
 			text = "Zeus"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
@@ -364,20 +364,18 @@ class debugMenu
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class NR_cusom_player11: n_RscButtonMenu
+		class NR_deb_delete: w_RscButton
 		{
-			idc = 1614;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			idc = 1632;
+			onButtonClick = "[9] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
 
-			text = "Disabled"; //--- ToDo: Localize;
+			text = "Delete target"; //--- ToDo: Localize;
 			x = 0.183612 * safezoneW + safezoneX;
 			y = 0.51474 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_player12: n_RscButtonMenu
+		class NR_custom_player12: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -390,7 +388,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_player13: n_RscButtonMenu
+		class NR_custom_player13: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -403,7 +401,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_player14: n_RscButtonMenu
+		class NR_custom_player14: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -428,7 +426,7 @@ class debugMenu
 			h = 0.033 * safezoneH;
 			colorText[] = {1,1,1,1};
 		};
-		class NR_cusom_vehicle9: n_RscButtonMenu
+		class NR_custom_vehicle9: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -441,7 +439,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_vehicle10: n_RscButtonMenu
+		class NR_custom_vehicle10: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -454,7 +452,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_server6: n_RscButtonMenu
+		class NR_custom_server6: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -467,7 +465,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_server7: n_RscButtonMenu
+		class NR_custom_server7: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -480,7 +478,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_server9: n_RscButtonMenu
+		class NR_custom_server9: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -493,7 +491,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_server8: n_RscButtonMenu
+		class NR_custom_server8: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -506,7 +504,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_server10: n_RscButtonMenu
+		class NR_custom_server10: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -519,7 +517,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_debug9: n_RscButtonMenu
+		class NR_custom_debug9: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "createDialog 'myTestMenu'";
@@ -532,7 +530,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_debug10: n_RscButtonMenu
+		class NR_custom_debug10: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
@@ -545,7 +543,7 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_cusom_player15: n_RscButtonMenu
+		class NR_custom_player15: n_RscButtonMenu
 		{
 			idc = 1614;
 			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
