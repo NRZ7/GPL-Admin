@@ -101,7 +101,7 @@ if (_uid call isAdmin) then
 		////////////////////////////////////////
 		case 21: //Garage
 		{
-			closeDialog 0; createDialog "balca_debug_veh_creator"; [0,2] call c_proving_ground_fnc_create_vehicle; ['You may get kicked if BattlEye is monitoring createVehicle.','WARNING'] spawn BIS_fnc_guiMessage;
+			 closeDialog 0; createDialog "balca_debug_veh_creator"; ['You may get kicked if BattlEye is monitoring createVehicle.','WARNING'] spawn BIS_fnc_guiMessage; [0,2] call c_proving_ground_fnc_create_vehicle; 
 			
 			/*
 			closeDialog 0;
@@ -233,5 +233,103 @@ if (_uid call isAdmin) then
 			createDialog "balca_debug_main";
 		};
 		
+		////////////////////////////////////////
+		//	DYNAMIC MENU	[81-99]
+		////////////////////////////////////////
+		
+		case 81: // Change View Distance
+		{
+			_NR_ViewDistance = _this select 1;
+			if(_NR_ViewDistance <= 199) exitWith
+			{
+				hint "ERROR: Please, put a value > 199";
+			};
+			if(_NR_ViewDistance > 10000) exitWith
+			{
+				hint "ERROR: Max. value is 10000.";
+			};
+
+			[_NR_ViewDistance] remoteExec ["NR_fnc_ViewDistance",0];
+		};
+		
+		case 82: // Global Message
+		{
+			_NR_GlobalMessage = _this select 1;
+	
+			if(_NR_GlobalMessage == "") exitWith
+			{
+				hint "ERROR: Message can't be empty";
+			};
+			if(_NR_GlobalMessage == "Write your global message here") exitWith
+			{
+				hint "ERROR: Please write something...";
+			};
+
+			[_NR_GlobalMessage] remoteExec ["NR_fnc_globalMessage",0];
+		};
+		
+		case 83: // Global Message
+		{
+			_NR_GlobalMessage = _this select 1;
+	
+			if(_NR_GlobalMessage == "") exitWith
+			{
+				hint "ERROR: Message can't be empty";
+			};
+			if(_NR_GlobalMessage == "Write your global message here") exitWith
+			{
+				hint "ERROR: Please write something...";
+			};
+
+			[_NR_GlobalMessage] remoteExec ["NR_fnc_globalMessage",0];
+		};
+		
+		case 84: // Change Weather
+		{
+			_NR_overcast = _this select 1;
+			_NR_fog = _this select 2;
+			_NR_rain = _this select 3;
+			_NR_waves = _this select 4;
+			_NR_Lightnings = _this select 5;
+			_NR_windEast = _this select 6;
+			_NR_windNorth = _this select 7;
+			
+			if(isNil "_NR_overcast") then
+			{
+				_NR_overcast = 0;
+			};
+			if(isNil "_NR_fog") then
+			{
+				_NR_fog = 0;
+			};
+			if(isNil "_NR_rain") then
+			{
+				_NR_rain = 0;
+			};
+			if(isNil "_NR_waves") then
+			{
+				_NR_waves = 0;
+			};
+			if(isNil "_NR_Lightnings") then
+			{
+				_NR_Lightnings = 0;
+			};
+			if(isNil "_NR_windEast") then
+			{
+				_NR_windEast = 0;
+			};
+			if(isNil "_NR_windNorth") then
+			{
+				_NR_windNorth = 0;
+			};
+
+			[_NR_overcast,_NR_fog,_NR_rain,_NR_Waves,_NR_Lightnings,_NR_windEast,_NR_windNorth] remoteExec ["NR_fnc_weatherChange",0];
+		};
+		
+		case 85: // Change Time Multiplier
+		{
+			_timeMultiplier = _this select 1;
+			_timeMultiplier remoteExec ["NR_fnc_timeMultiplier",2];
+		};
 	};
 

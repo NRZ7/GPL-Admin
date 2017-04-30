@@ -67,15 +67,10 @@ NR_fnc_removeGear = {
 
 NR_fnc_globalMessage = {
 	_NR_globalMessage = _this select 0;
-	_callerUID = _this select 1;
-	if (_callerUID call isAdmin) then
-	{
-		titleText [_NR_globalMessage, "PLAIN", 0];
-	};
+	titleText [_NR_globalMessage, "PLAIN", 0];
 };
 
 NR_fnc_weatherChange = {
-	_UID = _this select 7;
 	_NR_weather_Over = _this select 0;
 	_NR_weather_Fog = _this select 1;
 	_NR_weather_Rain = _this select 2;

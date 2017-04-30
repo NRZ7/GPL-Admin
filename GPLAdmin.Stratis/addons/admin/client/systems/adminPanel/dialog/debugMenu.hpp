@@ -452,18 +452,16 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0.6};
 		};
-		class NR_custom_server6: n_RscButtonMenu
+		class NR_deb_serverTime: w_RscButton
 		{
 			idc = 1614;
-			onButtonClick = "[0] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\dialog\debugMenuCtrlShow.sqf'";
 
-			text = "Disabled"; //--- ToDo: Localize;
+			text = "Time Multiplier"; //--- ToDo: Localize;
 			x = 0.513612 * safezoneW + safezoneX;
 			y = 0.42674 * safezoneH + safezoneY;
 			w = 0.132 * safezoneW;
 			h = 0.033 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.6};
 		};
 		class NR_custom_server7: n_RscButtonMenu
 		{
@@ -610,7 +608,7 @@ class debugMenu
 		class NR_weather_ButtonOk: w_RscButton
 		{
 			idc = 1905;
-			onButtonClick = "NR_windEast = parseNumber ctrlText 1910; NR_windNorth = parseNumber ctrlText 1911; [NR_overcast,NR_fog,NR_rain,NR_Waves,NR_Lightnings,NR_windEast,NR_windNorth] execVM 'addons\admin\client\systems\adminPanel\clientWeather.sqf';";
+			onButtonClick = "NR_windEast = parseNumber ctrlText 1910; NR_windNorth = parseNumber ctrlText 1911; [84,NR_overcast,NR_fog,NR_rain,NR_Waves,NR_Lightnings,NR_windEast,NR_windNorth] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf';";
 
 			text = "Done!"; //--- ToDo: Localize;
 			x = 0.513612 * safezoneW + safezoneX;
@@ -776,7 +774,7 @@ class debugMenu
 		class NR_globalMessage_ButtonOk: w_RscButton
 		{
 			idc = 1921;
-			onButtonClick = "NR_GlobalMessage = ctrlText 1922;  [NR_GlobalMessage] execVM 'addons\admin\client\systems\adminPanel\clientGlobalMessage.sqf';";
+			onButtonClick = "NR_GlobalMessage = ctrlText 1922;  [82,NR_GlobalMessage] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf';";
 
 			text = "Done!"; //--- ToDo: Localize;
 			x = 0.538362 * safezoneW + safezoneX;
@@ -805,7 +803,7 @@ class debugMenu
 		class NR_serverView_ButtonOk: w_RscButton
 		{
 			idc = 1923;
-			onButtonClick = "_NR_ViewDistance = parseNumber ctrlText 1924;	[_NR_viewDistance] execVM 'addons\admin\client\systems\adminPanel\clientSendViewDistance.sqf';";
+			onButtonClick = "_NR_ViewDistance = parseNumber ctrlText 1924;	[81,_NR_viewDistance] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf';";
 
 			text = "Done!"; //--- ToDo: Localize;
 			x = 0.538362 * safezoneW + safezoneX;
@@ -842,18 +840,6 @@ class debugMenu
 		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Gypeta)
 		////////////////////////////////////////////////////////
 
-		class NR_invisibleBackground: w_RscPicture
-		{
-			idc = 1920;
-
-			text = "#(argb,8,8,3)color(0,0,0,0)"; //--- ToDo: Localize;
-			x = 0.332112 * safezoneW + safezoneX;
-			y = 0.66874 * safezoneH + safezoneY;
-			w = 0.48675 * safezoneW;
-			h = 0.253 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0};
-		};
 		class n_rscFrameLoad: RscFrame
 		{
 			idc = 1933;
@@ -932,6 +918,62 @@ class debugMenu
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
 		////////////////////////////////////////////////////////
+		
+		////////////////////////////////////////////////////////
+		//				TIME MULTIPLIER
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Huwyko)
+		////////////////////////////////////////////////////////
+
+		class NR_invisibleBackground: w_RscPicture
+		{
+			idc = 1920;
+
+			text = "#(argb,8,8,3)color(0,0,0,0)"; //--- ToDo: Localize;
+			x = 0.332112 * safezoneW + safezoneX;
+			y = 0.66874 * safezoneH + safezoneY;
+			w = 0.48675 * safezoneW;
+			h = 0.253 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0};
+		};
+		class NR_timemultiplierButton: w_RscButton
+		{
+			idc = 1934;
+			onButtonClick = "_NR_timeMultiplier = parseNumber ctrlText 1935; [85,_NR_timeMultiplier] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf';";
+
+			text = "Send!"; //--- ToDo: Localize;
+			x = 0.530112 * safezoneW + safezoneX;
+			y = 0.852165 * safezoneH + safezoneY;
+			w = 0.0876563 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class NR_TimeMultiplierEdit: RscEdit
+		{
+			idc = 1935;
+			
+			
+			tooltip = "Number between 0.1 and 120"
+			x = 0.548675 * safezoneW + safezoneX;
+			y = 0.76994 * safezoneH + safezoneY;
+			w = 0.0464063 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class NR_TimeMultiplierText: RscText
+		{
+			idc = 1936;
+
+			text = "Set Time Multiplier"; //--- ToDo: Localize;
+			x = 0.530112 * safezoneW + safezoneX;
+			y = 0.700365 * safezoneH + safezoneY;
+			w = 0.0876563 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		////////////////////////////////////////////////////////
+		// GUI EDITOR OUTPUT END
+		////////////////////////////////////////////////////////
+
+
+		
 		
 		
 		////////////////////////////////////////////////////////

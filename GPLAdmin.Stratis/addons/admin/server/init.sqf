@@ -32,7 +32,6 @@ nr_fnc_daynight =
 };
 
 NR_fnc_weatherChange = {
-	_UID = _this select 7;
 	_NR_weather_Over = _this select 0;
 	_NR_weather_Fog = _this select 1;
 	_NR_weather_Rain = _this select 2;
@@ -108,6 +107,11 @@ NR_fnc_banTarget = {
 	_target = _this;
 	_name = name _target;
 	serverCommandPassword serverCommand format ['#exec ban "%1"',_name];
+};
+
+NR_fnc_timeMultiplier = {
+	_timeMultiplier = _this;
+	setTimeMultiplier _timeMultiplier;
 };
 
 diag_log "Admin - Server Compile Finished";
