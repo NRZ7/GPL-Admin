@@ -81,34 +81,25 @@ if (_uid call isAdmin) then
 		{
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
 			_targetName = name _target;
-			/*if (_targetName == _adminName) then
-			{
-				hint "You cannot kick yourself.."
-			}
-			else 
-			{*/
-				_target remoteExec ["NR_fnc_kickTarget", 2, false];
-				hint format ["%1 has kicked of the game",_targetName];
-			//};
+			_target remoteExec ["NR_fnc_kickTarget", 2, false];
+			hint format ["%1 has kicked of the game",_targetName];
 		};
 		case 4: //Unlock Team Killer
 		{
-			/*pvar_teamKillUnlock = getPlayerUID _target;
-			publicVariableServer "pvar_teamKillUnlock";*/
 			systemChat "Option Disabled";
 		};
 		case 5: //Open Arsenal on Target
 		{
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
 			_targetName = name _target;
-			_target remoteExec ["NR_fnc_arsenal", 0, false];
+			_target remoteExec ["NR_fnc_arsenal", _target, false];
 			hint format ["Arsenal opened on %1",_targetName];
 		};
 		case 6: //Remove All Weapons
 		{
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
 			_targetName = name _target;
-			_target remoteExec ["NR_fnc_removeGear", 0, false];
+			_target remoteExec ["NR_fnc_removeGear", _target, false];
 			hint format ["Removed gear from %1",_targetName];
 		};
 		case 7: //Check Player Gear
@@ -139,7 +130,6 @@ if (_uid call isAdmin) then
 			_targetName = name _target;
 			player setPos _targetPos;
 			hint format ["You are teleported to %1!",_targetName]
-			//_target remoteExec ["NR_fnc_TPMeTo", 0, false];
 		};
 		
 		case 10: //Heal
@@ -170,7 +160,7 @@ if (_uid call isAdmin) then
 		{
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
 			_targetName = name _target;
-			_target remoteExec ["NR_fnc_unfreeze", 0, false];
+			_target remoteExec ["NR_fnc_unfreeze", _target, false];
 			hint format ["Input enabled on %1",_targetName];
 		};
 		
@@ -185,7 +175,7 @@ if (_uid call isAdmin) then
 			}
 			else
 			{
-				_target remoteExec ["NR_fnc_freeze", 0, false];
+				_target remoteExec ["NR_fnc_freeze", _target, false];
 				hint format ["Input disabled on %1",_targetName];
 			};
 		};
@@ -193,14 +183,14 @@ if (_uid call isAdmin) then
 		case 14: //Repair Refuel Rearm
 		{
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
-			_target remoteExec ["NR_fnc_RRR", 0, false];
+			_target remoteExec ["NR_fnc_RRR", _target, false];
 
 		};
 		
 		case 15: //Flip
 		{
 			if (isNil "_target") exitWith {hint "You need to select a target first!" };
-			_target remoteExec ["NR_fnc_flip", 0, false];
+			_target remoteExec ["NR_fnc_flip", _target, false];
 
 		};
 		

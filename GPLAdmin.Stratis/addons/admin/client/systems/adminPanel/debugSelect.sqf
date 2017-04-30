@@ -101,10 +101,14 @@ if (_uid call isAdmin) then
 		////////////////////////////////////////
 		case 21: //Garage
 		{
+			closeDialog 0; createDialog "balca_debug_veh_creator"; [0,2] call c_proving_ground_fnc_create_vehicle; ['You may get kicked if BattlEye is monitoring createVehicle.','WARNING'] spawn BIS_fnc_guiMessage;
+			
+			/*
 			closeDialog 0;
 			_pos = player getPos [30,getDir player];
 			_vehicle = createVehicle [ "Land_HelipadEmpty_F", _pos, [], 0, "CAN_COLLIDE" ]; 
 			["Open",[ true, _vehicle ]] call BIS_fnc_garage;
+			*/
 		};
 		
 		case 22: //Vehicle Manager
@@ -164,7 +168,7 @@ if (_uid call isAdmin) then
 			[1] execVM "addons\admin\client\systems\adminPanel\dialog\debugMenuCtrlShow.sqf";
 		};
 		
-		case 43: //Set Server View Distance
+		case 43: //Set Global View Distance
 		{
 			[3] execVM "addons\admin\client\systems\adminPanel\dialog\debugMenuCtrlShow.sqf";
 		};

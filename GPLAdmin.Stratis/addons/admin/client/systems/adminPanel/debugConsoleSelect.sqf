@@ -27,8 +27,9 @@ if (_uid call isAdmin) then
 		case 0: // Log Statement
 		{		 
 			_update = true;
-			if(count cba_prevStatements > 0) then {
-				if((cba_prevStatements select 0) == NR_consoleLog) then {
+			_count = count cba_prevStatements - 1;
+			if( _count >= 0) then {
+				if((cba_prevStatements select _count) == NR_consoleLog) then {
 					_update = false;
 				};
 			};

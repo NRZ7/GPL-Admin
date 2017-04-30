@@ -15,7 +15,15 @@ if (_uid call isAdmin) then
 	{
 		case 0: // On Load. / Default
 		{
-	
+			// Default Intro
+			ctrlShow [1927, true];
+			ctrlShow [1928, true];
+			ctrlShow [1929, true];
+			ctrlShow [1930, true];
+			ctrlShow [1931, true];
+			ctrlShow [1932, true];
+			ctrlShow [1933, true];
+			
 			// Weather controls
 			ctrlShow [1902, false];
 			ctrlShow [1903, false];
@@ -37,7 +45,6 @@ if (_uid call isAdmin) then
 			ctrlShow [1919, false];
 			
 			// Global Message
-			ctrlShow [1920, false];
 			ctrlShow [1921, false];
 			ctrlShow [1922, false];
 			
@@ -50,6 +57,15 @@ if (_uid call isAdmin) then
 		
 		case 1: // Weather
 		{		
+			// Default Intro
+			ctrlShow [1927, false];
+			ctrlShow [1928, false];
+			ctrlShow [1929, false];
+			ctrlShow [1930, false];
+			ctrlShow [1931, false];
+			ctrlShow [1932, false];
+			ctrlShow [1933, false];
+			
 			// Weather controls
 			ctrlShow [1902, true];
 			ctrlShow [1903, true];
@@ -71,7 +87,6 @@ if (_uid call isAdmin) then
 			ctrlShow [1919, true];
 			
 			// Global Message
-			ctrlShow [1920, false];
 			ctrlShow [1921, false];
 			ctrlShow [1922, false];
 			
@@ -84,6 +99,15 @@ if (_uid call isAdmin) then
 		
 		case 2: // Global Message
 		{
+			// Default Intro
+			ctrlShow [1927, false];
+			ctrlShow [1928, false];
+			ctrlShow [1929, false];
+			ctrlShow [1930, false];
+			ctrlShow [1931, false];
+			ctrlShow [1932, false];
+			ctrlShow [1933, false];
+			
 			// Weather controls
 			ctrlShow [1902, false];
 			ctrlShow [1903, false];
@@ -105,7 +129,6 @@ if (_uid call isAdmin) then
 			ctrlShow [1919, false];
 			
 			//Global Message
-			ctrlShow [1920, true];
 			ctrlShow [1921, true];
 			ctrlShow [1922, true];
 			
@@ -117,7 +140,16 @@ if (_uid call isAdmin) then
 		
 		case 3: // Server View Distance
 		{
-
+			// Default Intro
+			ctrlShow [1927, false];
+			ctrlShow [1928, false];
+			ctrlShow [1929, false];
+			ctrlShow [1930, false];
+			ctrlShow [1931, false];
+			ctrlShow [1932, false];
+			ctrlShow [1933, false];
+			
+			
 			// Weather controls
 			ctrlShow [1902, false];
 			ctrlShow [1903, false];
@@ -139,7 +171,6 @@ if (_uid call isAdmin) then
 			ctrlShow [1919, false];
 			
 			//Global Message controls
-			ctrlShow [1920, false];
 			ctrlShow [1921, false];
 			ctrlShow [1922, false];
 			

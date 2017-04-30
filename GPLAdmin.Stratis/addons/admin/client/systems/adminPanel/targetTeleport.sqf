@@ -17,7 +17,7 @@ openMap true;
 
 hint format ["Click on map to teleport %1",_targetName];
 
-_target onMapSingleClick "_this setPos _pos; onMapSingleClick '';true;";
+_target onMapSingleClick "vehicle _this setPos _pos; onMapSingleClick '';true;";
 
 if (!NR_togglePlayerMarkers) then
 {

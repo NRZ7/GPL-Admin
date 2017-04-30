@@ -51,13 +51,9 @@ NR_fnc_weatherChange = {
 
 };
 
-NR_fnc_serverViewDistance = {
-	//_UID = _this select 1;
-	//if (_UID call isAdmin) then
-	//{
-		_NR_serverView = _this select 0;
-		setViewDistance _NR_serverView;
-	//};
+NR_fnc_ViewDistance = {
+		_NR_ViewDistance = _this select 0;
+		setViewDistance _NR_ViewDistance;
 };
 
 NR_fnc_serverInvisAdmin = {

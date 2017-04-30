@@ -151,6 +151,11 @@ NR_fnc_flip = {
 	};
 };
 
+NR_fnc_ViewDistance = {
+		_NR_ViewDistance = _this select 0;
+		setViewDistance _NR_ViewDistance;
+};
+
 ////////////// Defining variables (for admins)
 cba_index = -1;
 cba_prevStatements = [];

@@ -8,10 +8,10 @@
 
 #define debugConsoleMenuDialog 62111
 
+disableSerialization;
+
 _dialogPlayer = findDisplay debugConsoleMenuDialog;
 _functionsNameList = _dialogPlayer displayCtrl 1954;
-
-disableSerialization;
 
 if (isNil "inDebugConsole") then
 {
@@ -23,6 +23,11 @@ NR_monitor3 = "typeOf cursorTarget";
 NR_monitor4 = "count allUnits - count allPlayers";
 NR_monitor5 = "vehicle player";
 NR_monitor6 = "group player";
+};
+
+if (isNil "nr_inPlayerMenu") then
+{
+nr_inPlayerMenu = false;
 };
 
 if (nr_inPlayerMenu) then

@@ -8,337 +8,87 @@ class myTestMenu
 	
 	class controls {
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by NRZ7 v1.063, #Qiquzi)
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Gypeta)
 		////////////////////////////////////////////////////////
 
-		class MainBackground: w_RscPicture
+		class n_rscFrameLoad: RscFrame
 		{
-			idc = 1950;
-			onLoad = "execVM 'addons\admin\client\systems\adminPanel\dialog\loadDebugConsole.sqf'";
-			onDestroy = "inDebugConsole = false;";
+			idc = 1933;
 
-			text = "#(argb,8,8,3)color(0,0,0,0.6)"; //--- ToDo: Localize;
-			x = 0.158862 * safezoneW + safezoneX;
-			y = 0.04174 * safezoneH + safezoneY;
-			w = 0.675469 * safezoneW;
-			h = 0.913 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0};
+			x = 0.641487 * safezoneW + safezoneX;
+			y = 0.70174 * safezoneH + safezoneY;
+			w = 0.165 * safezoneW;
+			h = 0.198 * safezoneH;
 		};
-		class TopBar: w_RscPicture
+		class RscStructuredText_1100: RscStructuredText
 		{
-			idc = 1951;
+			idc = 1927;
 
-			text = "#(argb,8,8,3)color(0.25,0.51,0.96,0.8)"; //--- ToDo: Localize;
-			x = 0.158862 * safezoneW + safezoneX;
-			y = 0.0414741 * safezoneH + safezoneY;
-			w = 0.675469 * safezoneW;
-			h = 0.055 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0};
-		};
-		class DialogTitleText: w_RscText
-		{
-			idc = 1952;
-
-			text = "Debug Console"; //--- ToDo: Localize;
-			x = 0.1733 * safezoneW + safezoneX;
-			y = 0.04724 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448149 * safezoneH;
-			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-		};
-		class nr_commandListBox: RscListBox
-		{
-			idc = 1954;
-			onLBSelChanged = "nr_fncIndex = _this select 1";
-
-			x = 0.703362 * safezoneW + safezoneX;
-			y = 0.11874 * safezoneH + safezoneY;
-			w = 0.12375 * safezoneW;
-			h = 0.561 * safezoneH;
-		};
-		class nr_storedEdit: RscEdit
-		{
-			idc = 1955;
-
-			x = 0.703362 * safezoneW + safezoneX;
-			y = 0.67974 * safezoneH + safezoneY;
-			w = 0.12375 * safezoneW;
-			h = 0.044 * safezoneH;
-		};
-		class RscButton_1600: w_RscButton
-		{
-			idc = 1956;
-			onButtonClick = "[1] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
-
-			text = "<< Previous"; //--- ToDo: Localize;
-			x = 0.191862 * safezoneW + safezoneX;
-			y = 0.63574 * safezoneH + safezoneY;
-			w = 0.07425 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class RscButton_1601: w_RscButton
-		{
-			idc = 1957;
-			onButtonClick = "_NR_codeExec = compile ctrlText 1953;	[6,_NR_codeExec] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
-
-			text = "Server"; //--- ToDo: Localize;
-			x = 0.274362 * safezoneW + safezoneX;
-			y = 0.63574 * safezoneH + safezoneY;
-			w = 0.07425 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class NR_cmd_GlobalButton: w_RscButton
-		{
-			idc = 1958;
-			onButtonClick = "_NR_codeExec = compile ctrlText 1953;	[7,_NR_codeExec] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
-
-			text = "Global"; //--- ToDo: Localize;
-			x = 0.356862 * safezoneW + safezoneX;
-			y = 0.63574 * safezoneH + safezoneY;
-			w = 0.07425 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class NR_cmd_localButton: w_RscButton
-		{
-			idc = 1959;
-			onButtonClick = "_NR_codeExec = compile ctrlText 1953;	 [8,_NR_codeExec] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
-
-			text = "Local"; //--- ToDo: Localize;
-			x = 0.439362 * safezoneW + safezoneX;
-			y = 0.63574 * safezoneH + safezoneY;
-			w = 0.07425 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class RscButton_1604: w_RscButton
-		{
-			idc = 1960;
-			onButtonClick = "[2] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
-
-			text = "Next >> "; //--- ToDo: Localize;
-			x = 0.604362 * safezoneW + safezoneX;
-			y = 0.63574 * safezoneH + safezoneY;
-			w = 0.07425 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class n_consoleMonitor1: n_RscConsoleEdit
-		{
-			idc = 1962;
-			onKeyDown = "NR_monitor = ctrlText 1962;";
-			onKillFocus = "NR_monitor = ctrlText 1962;";
-
-			x = 0.183612 * safezoneW + safezoneX;
+			text = "<t align='center'><t size='2'><t color='#f87b36'>GPL Admin</t></t></t>"; //--- ToDo: Localize;
+			x = 0.36305 * safezoneW + safezoneX;
 			y = 0.69074 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-			colorBackground[] = {0,0,0,0.5};
+			w = 0.23925 * safezoneW;
+			h = 0.05775 * safezoneH;
+			colorBackground[] = {-1,-1,-1,0};
 		};
-		class n_monitorOutput1: RscEdit
+		class RscStructuredText_1101: RscStructuredText
 		{
-			idc = 1963;
+			idc = 1928;
 
-			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.72374 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class n_consoleMonitor2: n_RscConsoleEdit
-		{
-			idc = 1965;
-			onKeyDown = "NR_monitor2 = ctrlText 1965;";
-			onKillFocus = "NR_monitor2 = ctrlText 1965;";
-
-			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.77874 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-			colorBackground[] = {0,0,0,0.5};
-		};
-		class n_monitorOutput2: RscEdit
-		{
-			idc = 1966;
-
-			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.81174 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class n_consoleMonitor3: n_RscConsoleEdit
-		{
-			idc = 1969;
-			onKeyDown = "NR_monitor3 = ctrlText 1969;";
-			onKillFocus = "NR_monitor3 = ctrlText 1969;";
-
-			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.86674 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-			colorBackground[] = {0,0,0,0.5};
-		};
-		class n_monitorOutput3: RscEdit
-		{
-			idc = 1970;
-
-			x = 0.183612 * safezoneW + safezoneX;
-			y = 0.89974 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class n_consoleMonitor4: n_RscConsoleEdit
-		{
-			idc = 1971;
-			onKeyDown = "NR_monitor4 = ctrlText 1971;";
-			onKillFocus = "NR_monitor4 = ctrlText 1971;";
-
-			x = 0.455862 * safezoneW + safezoneX;
-			y = 0.69074 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-			colorBackground[] = {0,0,0,0.5};
-		};
-		class n_monitorOutput4: RscEdit
-		{
-			idc = 1972;
-
-			x = 0.455862 * safezoneW + safezoneX;
-			y = 0.72374 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class RscButton_1605: w_RscButton
-		{
-			idc = 1973;
-			onButtonClick = "[3] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
-
-			text = "Load "; //--- ToDo: Localize;
-			x = 0.723987 * safezoneW + safezoneX;
+			text = "<t align='center'><t color='#367ff8'>A project by NRZ7 forked from A3Wasteland</t></t>"; //--- ToDo: Localize;
+			x = 0.369237 * safezoneW + safezoneX;
 			y = 0.74574 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
+			w = 0.23925 * safezoneW;
+			h = 0.02475 * safezoneH;
+			colorBackground[] = {0,0,0,0};
+		};
+		class RscStructuredText_1102: RscStructuredText
+		{
+			idc = 1929;
+
+			text = "<t color='#c1c1c1'>HotKeys:</t>"; //--- ToDo: Localize;
+			x = 0.657987 * safezoneW + safezoneX;
+			y = 0.73474 * safezoneH + safezoneY;
+			w = 0.066 * safezoneW;
+			h = 0.0275 * safezoneH;
+			colorBackground[] = {0,0,0,0};
+		};
+		class RscStructuredText_1103: RscStructuredText
+		{
+			idc = 1930;
+
+			text = "<t size='0.8'><t color='#c1c1c1'>[6]: Open Main Menu <br />User Action 20: Open Player Menu <br />User Action 19: Open Debug Menu <br />User Action 18: Open Debug Console</ t></t>"; //--- ToDo: Localize;
+			x = 0.649737 * safezoneW + safezoneX;
+			y = 0.76774 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.099 * safezoneH;
+			colorBackground[] = {0,0,0,0};
+		};
+		class RscStructuredText_1104: RscStructuredText
+		{
+			idc = 1931;
+
+			text = "<t align='center'><t color='#ff5f5f'>With Great Power Comes Great Responsibility</t></t>"; //--- ToDo: Localize;
+			x = 0.350675 * safezoneW + safezoneX;
+			y = 0.82274 * safezoneH + safezoneY;
+			w = 0.27225 * safezoneW;
 			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0};
 		};
-		class RscButton_1606: w_RscButton
+		class RscStructuredText_1105: RscStructuredText
 		{
-			idc = 1974;
-			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
+			idc = 1932;
 
-			text = "Save "; //--- ToDo: Localize;
-			x = 0.723987 * safezoneW + safezoneX;
-			y = 0.81174 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
+			text = "<t align='center'><t size='1.3'><t color='#ff2b2b'>Do not be a coward, do not be a cheater</t></t></t>"; //--- ToDo: Localize;
+			x = 0.350675 * safezoneW + safezoneX;
+			y = 0.86124 * safezoneH + safezoneY;
+			w = 0.27225 * safezoneW;
 			h = 0.033 * safezoneH;
-		};
-		class RscButton_1607: w_RscButton
-		{
-			idc = 1975;
-			onButtonClick = "[5] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
-
-			text = "Delete "; //--- ToDo: Localize;
-			x = 0.723987 * safezoneW + safezoneX;
-			y = 0.87774 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class NR_cmd_targetButton: w_RscButton
-		{
-			idc = 1976;
-			onButtonClick = "_NR_codeExec = compile ctrlText 1953; [9,_NR_codeExec] execVM 'addons\admin\client\systems\adminPanel\debugConsoleSelect.sqf';";
-
-			text = "Target"; //--- ToDo: Localize;
-			x = 0.521862 * safezoneW + safezoneX;
-			y = 0.63574 * safezoneH + safezoneY;
-			w = 0.07425 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class n_consoleEdit: n_RscConsoleEdit
-		{
-			idc = 1953;
-			onKeyDown = "NR_consoleLog = ctrlText 1953;";
-			onKillFocus = "NR_consoleLog = ctrlText 1953;";
-
-			x = 0.175362 * safezoneW + safezoneX;
-			y = 0.11874 * safezoneH + safezoneY;
-			w = 0.51975 * safezoneW;
-			h = 0.506 * safezoneH;
-			colorBackground[] = {0,0,0,0.5};
-		};
-		class n_buttonClearConsole: n_RscButtonClose
-		{
-			idc = 1981;
-			onButtonClick = "ctrlSetText [1953,'']; NR_consoleLog = ctrlText 1953;";
-
-			text = "X"; //--- ToDo: Localize;
-			x = 0.67655 * safezoneW + safezoneX;
-			y = 0.12149 * safezoneH + safezoneY;
-			w = 0.0165 * safezoneW;
-			h = 0.022 * safezoneH;
-			colorBackground[] = {0,0,0,1};
-			colorBackground2[] = {0.5, 0.5,0.5, 0.1};
-			colorFocused[] = {0,0,0,1}; // pulse
-			colorBackgroundActive[] = {0,0,0,1};
-			colorShadow[] = {0,0,0,0.1};
-		};
-		class n_consoleMonitor5: n_RscConsoleEdit
-		{
-			idc = 1977;
-			onKeyDown = "NR_monitor5 = ctrlText 1977;";
-			onKillFocus = "NR_monitor5 = ctrlText 1977;";
-
-			x = 0.455862 * safezoneW + safezoneX;
-			y = 0.77874 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-			colorBackground[] = {0,0,0,0.5};
-		};
-		class n_buttonCloseDialog: n_RscButtonClose
-		{
-			idc = 891600;
-			onButtonClick = "closeDialog 0;";
-
-			text = "X"; //--- ToDo: Localize;
-			x = 0.802363 * safezoneW + safezoneX;
-			y = 0.05274 * safezoneH + safezoneY;
-			w = 0.02475 * safezoneW;
-			h = 0.033 * safezoneH;
-			colorBackground[] = {0.863,0.376,0.376,1};
-		};
-		class n_monitorOutput5: RscEdit
-		{
-			idc = 1978;
-
-			x = 0.455862 * safezoneW + safezoneX;
-			y = 0.81174 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class n_consoleMonitor6: n_RscConsoleEdit
-		{
-			idc = 1979;
-			onKeyDown = "NR_monitor6 = ctrlText 1979;";
-			onKillFocus = "NR_monitor6 = ctrlText 1979;";
-
-			x = 0.455862 * safezoneW + safezoneX;
-			y = 0.86674 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
-			colorBackground[] = {0,0,0,0.5};
-		};
-		class n_monitorOutput6: RscEdit
-		{
-			idc = 1980;
-
-			x = 0.455862 * safezoneW + safezoneX;
-			y = 0.89974 * safezoneH + safezoneY;
-			w = 0.22275 * safezoneW;
-			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0};
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
 		////////////////////////////////////////////////////////
-
-
-
-
 
 
 	};
