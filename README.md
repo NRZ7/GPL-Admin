@@ -33,8 +33,12 @@ Copyright (C) 2017
 
 ## Credits
 
+*These people are not affiliated in any way with GPL admin, but they have contributed by releasing their code under the GPL therms*
+
 * AgentRev (A3Wasteland.com) - Code and A3W main developer
 * [404] Deadbeat (From A3W and 404games.co.uk)
-* Team Wasteland
+* Team Wasteland - General code
 * Biabock - For unlink the code from the admin panel from A3W
 * wiking-at (armajunkies.de) - Provide Zeus functionality
+* conKORD - For Proving Grounds
+* Community Base Addons - Point to the right direction to store functions
