@@ -13,7 +13,7 @@
             a comma (,) except the last one.
 ********************************************************/
 
-serverCommandPassword = "mySecretPassword";
+gpl_CommandPassword = "mySecretPassword";
 
 // Low Administrators: manage & spectate players, remove hacked vehicles
 lowAdmins = 

@@ -331,5 +331,10 @@ if (_uid call isAdmin) then
 			_timeMultiplier = _this select 1;
 			_timeMultiplier remoteExec ["NR_fnc_timeMultiplier",2];
 		};
+		
+		case 86: // About
+		{
+			[5] execVM "addons\admin\client\systems\adminPanel\dialog\debugMenuCtrlShow.sqf";
+		};
 	};
 

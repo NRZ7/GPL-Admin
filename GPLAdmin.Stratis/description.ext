@@ -41,10 +41,8 @@ respawnTemplates[] 	= {"MenuInventory","MenuPosition","Counter"};
 
 class CfgFunctions
 {
-	class armajunkies
-	{
-		#include "addons\aj\aj_FunctionsDefinition.hpp"
-	};
+
+	#include "addons\aj\aj_FunctionsDefinition.hpp"
 };
 
 class CfgRemoteExec
@@ -53,11 +51,32 @@ class CfgRemoteExec
        class Functions
        {
                // State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists (default because of backward compatibility)
-			   mode = 2;
+			   mode = 1;
                // Ability to send jip messages: 0-disabled, 1-enabled (default)
                jip = 1;
-               /*your functions here*/
+			   
+				class A3W_fnc_titleTextMessage								{ allowedTargets=1; };
+				class NR_fnc_tempBanClient									{ allowedTargets=1; };	
+				class NR_fnc_freeze											{ allowedTargets=1; };
+				class NR_fnc_unfreeze										{ allowedTargets=1; };
+				class NR_fnc_arsenal										{ allowedTargets=1; };
+				class NR_fnc_removeGear										{ allowedTargets=1; };
+				class NR_fnc_globalMessage									{ allowedTargets=1; };
+				class NR_fnc_weatherChange									{ allowedTargets=0; };
+				class NR_fnc_remoteCode										{ allowedTargets=0; };
+				class NR_fnc_remoteExecution								{ allowedTargets=0; };
+				class NR_fnc_RRR											{ allowedTargets=1; };
+				class NR_fnc_flip											{ allowedTargets=1; };
+				class NR_fnc_ViewDistance									{ allowedTargets=0; };
+				class nr_fnc_daynight										{ allowedTargets=2; };
+				class NR_fnc_serverInvisAdmin								{ allowedTargets=2; };
+				class fn_aj_s_refreshZeus									{ allowedTargets=2; };
+				class NR_fnc_tempBanServer									{ allowedTargets=2; };
+				class NR_fnc_kickTarget										{ allowedTargets=2; };
+				class NR_fnc_banTarget										{ allowedTargets=2; };
+				class NR_fnc_timeMultiplier									{ allowedTargets=2; };
         };        
+		
        // List of script commands allowed to be sent from client via remoteExec
        class Commands
        {

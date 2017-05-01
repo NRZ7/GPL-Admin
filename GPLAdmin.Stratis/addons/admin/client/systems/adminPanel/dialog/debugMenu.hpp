@@ -575,6 +575,18 @@ class debugMenu
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
 		};
+		
+		class NR_deb_about: w_RscButton
+		{
+			idc = 3223;
+			onButtonClick = "[86] execVM 'addons\admin\client\systems\adminPanel\debugSelect.sqf'";
+
+			text = "About"; //--- ToDo: Localize;
+			x = 0.200112 * safezoneW + safezoneX;
+			y = 0.87774 * safezoneH + safezoneY;
+			w = 0.099 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
 
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
@@ -924,18 +936,6 @@ class debugMenu
 		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Huwyko)
 		////////////////////////////////////////////////////////
 
-		class NR_invisibleBackground: w_RscPicture
-		{
-			idc = 1920;
-
-			text = "#(argb,8,8,3)color(0,0,0,0)"; //--- ToDo: Localize;
-			x = 0.332112 * safezoneW + safezoneX;
-			y = 0.66874 * safezoneH + safezoneY;
-			w = 0.48675 * safezoneW;
-			h = 0.253 * safezoneH;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0};
-		};
 		class NR_timemultiplierButton: w_RscButton
 		{
 			idc = 1934;
@@ -971,8 +971,76 @@ class debugMenu
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
 		////////////////////////////////////////////////////////
+		
+		////////////////////////////////////////////////////////
+		//				ABOUT
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Huwyko)
+		////////////////////////////////////////////////////////
+		class NR_deb_about1: w_RscPicture
+		{
+			idc = 1937;
 
-
+			text = "#(argb,8,8,3)color(0,0,0,0)"; //--- ToDo: Localize;
+			x = 0.332112 * safezoneW + safezoneX;
+			y = 0.66874 * safezoneH + safezoneY;
+			w = 0.48675 * safezoneW;
+			h = 0.253 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0};
+		};
+		class NR_deb_about2: RscStructuredText
+		{
+			idc = 1938;
+			text = "<t size='1.3'><t color='#f87b36'>About GPL Admin</t></t><br />Development: <t size='1.1'><a underline='true' color='#2d8ced' href='http://standarol.com/'>NRZ7</t></t> <br />Forked from: <t size='1.1'><a underline='true' color='#2d8ced' href='http://a3wasteland.com/'>A3Wasteland</t></t>"; //--- ToDo: Localize;
+			x = 0.340362 * safezoneW + safezoneX;
+			y = 0.67974 * safezoneH + safezoneY;
+			w = 0.1485 * safezoneW;
+			h = 0.077 * safezoneH;
+			colorBackground[] = {0,0,0,0};
+		};
+		class NR_deb_about3: RscStructuredText
+		{
+			idc = 1939;
+			text = "Contribute: <br /> Donate <br /> <a underline='true' color='#2d8ced' href='http://github.com/NRZ7/GPL-Admin'>GitHub Project</a>"; //--- ToDo: Localize;
+			x = 0.348612 * safezoneW + safezoneX;
+			y = 0.77874 * safezoneH + safezoneY;
+			w = 0.1485 * safezoneW;
+			h = 0.132 * safezoneH;
+			colorBackground[] = {0,0,0,0};
+		};
+		class NR_deb_about4: RscStructuredText
+		{
+			idc = 1940;
+			text = "<t size='0.8'><t color='#99ffffff'>These people are not affiliated in any way with GPL admin, but they have contributed by releasing their code under the GPL therms</t></t>"; //--- ToDo: Localize;
+			x = 0.505362 * safezoneW + safezoneX;
+			y = 0.67974 * safezoneH + safezoneY;
+			w = 0.30525 * safezoneW;
+			h = 0.066 * safezoneH;
+			colorBackground[] = {0,0,0,0};
+		};
+		class NR_deb_about5: RscStructuredText
+		{
+			idc = 1941;
+			text = "AgentRev<br />[404] Deadbeat<br />Team Wasteland"; //--- ToDo: Localize;
+			x = 0.530112 * safezoneW + safezoneX;
+			y = 0.77874 * safezoneH + safezoneY;
+			w = 0.1155 * safezoneW;
+			h = 0.11 * safezoneH;
+			colorBackground[] = {0,0,0,0};
+		};
+		class NR_deb_about6: RscStructuredText
+		{
+			idc = 1942;
+			text = "Biabock<br />wiking-at<br />conKORD<br />CBA Team"; //--- ToDo: Localize;
+			x = 0.678612 * safezoneW + safezoneX;
+			y = 0.77874 * safezoneH + safezoneY;
+			w = 0.1155 * safezoneW;
+			h = 0.11 * safezoneH;
+			colorBackground[] = {0,0,0,0};
+		};
+		////////////////////////////////////////////////////////
+		// GUI EDITOR OUTPUT END
+		////////////////////////////////////////////////////////
 		
 		
 		

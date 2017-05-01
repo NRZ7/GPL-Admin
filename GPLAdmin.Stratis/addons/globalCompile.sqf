@@ -53,3 +53,6 @@ mf_compile = compileFinal
 		};
 	};
 ');
+
+_clientFunc = "addons\admin\client\functions";
+_serverFunc = "addons\admin\server\functions";

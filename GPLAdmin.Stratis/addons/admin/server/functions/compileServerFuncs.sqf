@@ -1,26 +1,3 @@
-// *****************************************************************************************
-// * This script is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
-// *****************************************************************************************
-//	@file Version: 1.1
-//	@file Name: init.sqf
-//	@file Author: [404] Deadbeat, [GoT] JoSchaap, AgentRev
-//	@file Created: 20/11/2012 05:19
-//	@file Description: The server init.
-//	@file Args:
-
-// All the "hasInterface" and "isServer" checks are to allow this file to be executed on a headless client to offload object saving
-
-if (!isServer && hasInterface) exitWith {};
-
-externalConfigFolder = "\GPLAdmin_settings";
-
-if (isServer) then
-{
-	[] execVM "addons\admin\server\admins.sqf";
-	[] execVM "addons\admin\server\broadcaster.sqf";
-};
-
-/*
 nr_fnc_daynight =
 {
 	if ((daytime > 8) && (daytime < 22)) then 
@@ -30,7 +7,7 @@ nr_fnc_daynight =
 	{ 
 		skipTime (8 - daytime + 24 ) % 24; 
 	};
-};
+} call mf_compile;
 
 NR_fnc_weatherChange = {
 	_NR_weather_Over = _this select 0;
@@ -49,19 +26,19 @@ NR_fnc_weatherChange = {
 	setWind [_NR_weather_windEast, _NR_weather_windNorth, true];
 	forceWeatherChange;
 
-};
+} call mf_compile;
 
 NR_fnc_ViewDistance = {
 		_NR_ViewDistance = _this select 0;
 		setViewDistance _NR_ViewDistance;
-};
+} call mf_compile;
 
 NR_fnc_serverInvisAdmin = {
 		_player = _this select 0;
 		_state = _this select 1;
 		
 		_player hideObjectGlobal _state;
-};
+} call mf_compile;
 
 fn_aj_s_refreshZeus = {
 	if (isServer) then {
@@ -78,7 +55,7 @@ fn_aj_s_refreshZeus = {
 
 		
 	};
-};
+} call mf_compile;
 
 NR_fnc_remoteExecution = {
 	_codeToExec = _this select 0;
@@ -88,7 +65,7 @@ NR_fnc_remoteExecution = {
 		call _codeToExec;
 		
 	//};
-};
+} call mf_compile;
 
 NR_fnc_tempBanServer = {
 	_targetUID = _this select 0;
@@ -96,26 +73,21 @@ NR_fnc_tempBanServer = {
 	banList pushBack _targetUID;
 	publicVariable "banList";
 	[_targetUID,_adminName] remoteExec ["nr_fnc_tempBanClient",0,false];
-};
+} call mf_compile;
 
 NR_fnc_kickTarget = {
 	_target = _this;
 	_name = name _target;
-	serverCommandPassword serverCommand format ['#exec kick "%1"',_name];
-};
+	gpl_CommandPassword serverCommand format ['#exec kick "%1"',_name];
+} call mf_compile;
 
 NR_fnc_banTarget = {
 	_target = _this;
 	_name = name _target;
-	serverCommandPassword serverCommand format ['#exec ban "%1"',_name];
-};
+	gpl_CommandPassword serverCommand format ['#exec ban "%1"',_name];
+} call mf_compile;
 
 NR_fnc_timeMultiplier = {
 	_timeMultiplier = _this;
 	setTimeMultiplier _timeMultiplier;
-};
-*/
-
-[] execVM "addons\admin\server\functions\compileServerFuncs.sqf";
-
-diag_log "Admin - Server Compile Finished";
+} call mf_compile;
