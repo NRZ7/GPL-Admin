@@ -59,6 +59,7 @@ else
 if (typeName lowAdmins == "ARRAY") then { lowAdmins = compileFinal str lowAdmins };
 if (typeName highAdmins == "ARRAY") then { highAdmins = compileFinal str highAdmins };
 if (typeName serverOwners == "ARRAY") then { serverOwners = compileFinal str serverOwners };
+if (!isNil "gpl_CommandPassword") then { gpl_CommandPassword = compileFinal str gpl_CommandPassword };
 
 publicVariable "lowAdmins";
 publicVariable "highAdmins";

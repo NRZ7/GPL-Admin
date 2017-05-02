@@ -29,7 +29,8 @@ if (_uid call isAdmin) then
 		if(side _x == west) then {_side = "BLUFOR";};
 		if(side _x == east) then {_side = "OPFOR";};
 		if(side _x == INDEPENDENT) then {_side = "Independent";};
-		_namestr = name(_x) + " [UID:" + getplayerUID(_x) + "]";
+		_namestr = name(_x);
+		//_namestr = name(_x) + " [UID:" + getplayerUID(_x) + "]";
 		_index = _playerListBox lbAdd _namestr;
 		_playerListBox lbSetData [_index, str(_x)];
 		_punishCount = 0;

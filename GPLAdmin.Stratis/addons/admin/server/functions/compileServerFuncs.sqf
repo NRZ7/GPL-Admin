@@ -9,6 +9,7 @@ nr_fnc_daynight =
 	};
 } call mf_compile;
 
+
 NR_fnc_weatherChange = {
 	_NR_weather_Over = _this select 0;
 	_NR_weather_Fog = _this select 1;
@@ -28,10 +29,12 @@ NR_fnc_weatherChange = {
 
 } call mf_compile;
 
+
 NR_fnc_ViewDistance = {
 		_NR_ViewDistance = _this select 0;
 		setViewDistance _NR_ViewDistance;
 } call mf_compile;
+
 
 NR_fnc_serverInvisAdmin = {
 		_player = _this select 0;
@@ -39,6 +42,7 @@ NR_fnc_serverInvisAdmin = {
 		
 		_player hideObjectGlobal _state;
 } call mf_compile;
+
 
 fn_aj_s_refreshZeus = {
 	if (isServer) then {
@@ -57,6 +61,7 @@ fn_aj_s_refreshZeus = {
 	};
 } call mf_compile;
 
+
 NR_fnc_remoteExecution = {
 	_codeToExec = _this select 0;
 	_callerUID = _this select 1;
@@ -67,6 +72,7 @@ NR_fnc_remoteExecution = {
 	//};
 } call mf_compile;
 
+
 NR_fnc_tempBanServer = {
 	_targetUID = _this select 0;
 	_adminName = _this select 1;
@@ -75,17 +81,20 @@ NR_fnc_tempBanServer = {
 	[_targetUID,_adminName] remoteExec ["nr_fnc_tempBanClient",0,false];
 } call mf_compile;
 
+
 NR_fnc_kickTarget = {
 	_target = _this;
 	_name = name _target;
 	gpl_CommandPassword serverCommand format ['#exec kick "%1"',_name];
 } call mf_compile;
 
+
 NR_fnc_banTarget = {
 	_target = _this;
 	_name = name _target;
 	gpl_CommandPassword serverCommand format ['#exec ban "%1"',_name];
 } call mf_compile;
+
 
 NR_fnc_timeMultiplier = {
 	_timeMultiplier = _this;

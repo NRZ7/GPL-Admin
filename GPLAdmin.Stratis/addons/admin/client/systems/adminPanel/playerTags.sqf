@@ -4,7 +4,7 @@
 //	@file Version: 1.0
 //	@file Name: playerTags.sqf
 //	@file Author: Battleguns, AgentRev
-//	@file Created: 20/11/2012 05:19
+//	@file Created: 30/04/2017 05:19
 //	@file Args:
 
 _uid = getPlayerUID player;

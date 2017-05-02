@@ -19,7 +19,7 @@
 */
 disableSerialization;
 
-private ["_index1","_type1","_data1"];
+private ["_index1","_type1","_data1","_target"];
 _uid = getPlayerUID player;
 if (_uid call isAdmin) then
 {
@@ -60,6 +60,7 @@ if (_uid call isAdmin) then
 				_deathsOutput ctrlSetText str _deaths;
 				_squadOutput ctrlSetText str (group _x);
 				_vehicleOutput ctrlSetText (typeOf vehicle _x);
+				_target = _x;
 				
 	        };
 	    } foreach playableUnits;
@@ -69,6 +70,6 @@ if (_uid call isAdmin) then
 		_namestr = name(_x);
 		_index = _squadList lbAdd _namestr;
 		_squadList lbSetData [_index, str(_x)];
-	} forEach units group player;
+	} forEach units group _target;
 		
 };

@@ -1,5 +1,6 @@
 A3W_fnc_titleTextMessage = "addons\admin\client\titleTextMessage.sqf" call mf_compile;
 
+
 NR_fnc_tempBanClient = {
 	_targetUID = _this select 0;
 	_adminName = _this select 1;
@@ -8,6 +9,7 @@ NR_fnc_tempBanClient = {
 		["banned",false,0.5] call BIS_fnc_endMission;	
 	};
 } call mf_compile;
+
 
 NR_fnc_freeze = {
 	_target = _this;
@@ -19,6 +21,7 @@ NR_fnc_freeze = {
 	};
 } call mf_compile;
 
+
 NR_fnc_unfreeze = {
 	_target = _this;
 	_targetUID = getPlayerUID _target;
@@ -28,6 +31,7 @@ NR_fnc_unfreeze = {
 	};
 } call mf_compile;
 
+
 NR_fnc_arsenal = {
 	_target = _this;
 	_targetUID = getPlayerUID _target;
@@ -36,6 +40,7 @@ NR_fnc_arsenal = {
 		["Open",true] spawn BIS_fnc_arsenal;
 	};
 } call mf_compile;
+
 
 NR_fnc_removeGear = {
 	_target = _this;
@@ -54,6 +59,7 @@ NR_fnc_globalMessage = {
 	_NR_globalMessage = _this select 0;
 	titleText [_NR_globalMessage, "PLAIN", 0];
 } call mf_compile;
+
 
 NR_fnc_weatherChange = {
 	_NR_weather_Over = _this select 0;
@@ -74,6 +80,7 @@ NR_fnc_weatherChange = {
 
 } call mf_compile;
 
+
 NR_fnc_remoteCode = {
 	_UID = getPlayerUID player;
 	if (_UID call isAdmin) then
@@ -87,6 +94,7 @@ NR_fnc_remoteCode = {
 	};
 } call mf_compile;
 
+
 NR_fnc_remoteExecution = {
 	_codeToExec = _this select 0;
 	_callerUID = _this select 1;
@@ -96,6 +104,7 @@ NR_fnc_remoteExecution = {
 		
 	};
 } call mf_compile;
+
 
 NR_fnc_RRR = {
 	_target = _this;
@@ -108,6 +117,7 @@ NR_fnc_RRR = {
 		};
 	};
 } call mf_compile;
+
 
 NR_fnc_flip = {
 	_target = _this;
@@ -130,6 +140,7 @@ NR_fnc_flip = {
 			_obj setVectorUp [0,0,1];
 	};
 } call mf_compile;
+
 
 NR_fnc_ViewDistance = {
 		_NR_ViewDistance = _this select 0;

@@ -44,26 +44,15 @@ if (_uid call isAdmin) then
 		{
 			if (!isNil "_target") then
 			{
-				_spectating = ctrlText _spectateButton;
-				if (_spectating == "Spectate") then
-				{
-					if (!([player] call camera_enabled)) then
-					{
-						[] call camera_toggle;
-					};
-
-					[player, _target] call camera_attach_to_target;
-					player commandChat format ["Viewing %1.", name _target];
-					_spectateButton ctrlSetText "Spectating";
-				} else {
-					_spectateButton ctrlSetText "Spectate";
-					player commandChat format ["No Longer Viewing.", name _target];
-
-					if ([player] call camera_enabled) then
-					{
-						[] call camera_toggle;
-					};
-				};
+				closeDialog 0;
+				["Initialize", [_target, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+				waituntil {!IsNull (findDisplay 60492)}; 
+				keyDown = (findDisplay 60492) displayAddEventHandler ["KeyDown", "if (_this select 1 == 1) then {['Terminate'] call BIS_fnc_EGSpectator;}"];
+			} else {
+				closeDialog 0;
+				["Initialize", [player, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+				waituntil {!IsNull (findDisplay 60492)}; 
+				keyDown = (findDisplay 60492) displayAddEventHandler ["KeyDown", "if (_this select 1 == 1) then {['Terminate'] call BIS_fnc_EGSpectator;}"];
 			};
 		};
 		case 1: //Warn
