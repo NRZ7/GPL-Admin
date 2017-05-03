@@ -33,6 +33,12 @@ serverOwners =
 	// Put player UIDs here
 ];
 
+// Zeus Admins
+zeusAdmins = 
+[
+	// Put player UIDs here	
+];
+
 ///////////////////////////////////////////////////////////////////////////////
 /*																			 */
 /* BANLIST is an emergency tool. Please, use Arma3Server\bans.txt instead	 */

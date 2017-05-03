@@ -52,7 +52,7 @@ if ((getPlayerUID player) call isAdmin) then
 		};
 		
 		//3D Markers
-		addMissionEventHandler ["Draw3D", 
+		nr_EH_Draw3DNPC = addMissionEventHandler ["Draw3D", 
 		{ 
 			private["_vis","_pos","_groupIcon","_iconColor"]; 
 			{ 
@@ -76,7 +76,7 @@ if ((getPlayerUID player) call isAdmin) then
 	{ 
 		NR_toggleAIESP=false;
 		hint "NPC Markers OFF";
-		onEachFrame {};		
+		removeMissionEventHandler ["Draw3D",nr_EH_Draw3DNPC];	
 	};
 };
 	

@@ -3,9 +3,9 @@
 // ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: playerTags.sqf
-//	@file Author: Battleguns, AgentRev
+//	@file Author: NRZ7
 //	@file Created: 30/04/2017 05:19
-//	@file Args:
+//	@file Desc: This file toggle 3D and 2D markers to players
 
 _uid = getPlayerUID player;
 if (_uid call isAdmin) then
@@ -51,7 +51,7 @@ if (_uid call isAdmin) then
 		};
 		
 		//3D Markers
-		addMissionEventHandler ["Draw3D", 
+		nr_EH_Draw3DPlayers =addMissionEventHandler ["Draw3D", 
 		{ 
 			private["_vis","_pos","_groupIcon","_iconColor"]; 
 			{ 
@@ -76,6 +76,7 @@ if (_uid call isAdmin) then
 	{
 		adminPlayerMarkers = false;
 		hint "Player Markers OFF";
+		removeMissionEventHandler ["Draw3D",nr_EH_Draw3DPlayers];	
 	};
 
 };

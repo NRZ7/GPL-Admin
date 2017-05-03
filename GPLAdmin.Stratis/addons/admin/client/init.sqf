@@ -31,21 +31,21 @@ if (_UID call isAdmin) then
 	[] spawn {
 		while{true} do {
 			waitUntil{inputAction "user20" > 0};
-			execVM "addons\admin\client\systems\adminPanel\playerMenu.sqf";
+			execVM "addons\admin\client\systems\adminPanel\checkPlayerMenu.sqf";
 			waitUntil{inputAction "user20" == 0};
 		};
 	};
 	[] spawn {
 		while{true} do {
 			waitUntil{inputAction "user19" > 0};
-			createDialog "debugMenu";
+			execVM "addons\admin\client\systems\adminPanel\checkdebugMenu.sqf";
 			waitUntil{inputAction "user19" == 0};
 		};
 	};
 	[] spawn {
 		while{true} do {
 			waitUntil{inputAction "user18" > 0};
-			createDialog "debugConsoleMenu";
+			execVM "addons\admin\client\systems\adminPanel\checkdebugConsole.sqf";
 			waitUntil{inputAction "user18" == 0};
 		};
 	};
