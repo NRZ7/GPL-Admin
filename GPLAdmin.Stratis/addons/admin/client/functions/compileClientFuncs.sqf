@@ -127,7 +127,7 @@ NR_fnc_flip = {
 		private ["_obj","_pos","_xPos","_yPos","_zPos"];
 
 		if ((vehicle player) == player) then {
-			_obj = cursorobject;
+			_obj = cursorTarget;
 		} else {
 			_obj = vehicle player;
 		};

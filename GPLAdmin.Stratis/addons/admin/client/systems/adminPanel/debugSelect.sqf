@@ -3,7 +3,7 @@
 // *****************************************************************************************
 //	@file Version: 1.0
 //	@file Name: debugSelect.sqf
-//	@file Author: NRZ7, based on [404] Deadbeat playerSelect.sqf
+//	@file Author: NRZ7, based on [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
@@ -69,6 +69,7 @@ if (_uid call isAdmin) then
 			closeDialog 0;
 			execVM "addons\aj\zeus\refreshzeus.sqf";
 			openCuratorInterface;
+			findDisplay 312 closeDisplay 2;
 		};
 		
 		case 9: // delete cursorTarget
@@ -119,7 +120,20 @@ if (_uid call isAdmin) then
 		
 		case 23: //Flip
 		{
-			execVM "addons\admin\client\systems\adminPanel\flipVehicle.sqf";
+			private ["_obj","_pos","_xPos","_yPos","_zPos"];
+
+		if ((vehicle player) == player) then {
+			_obj = cursorTarget;
+		} else {
+			_obj = vehicle player;
+		};
+			_pos = getPos _obj;
+			_xPos = _pos select 0;
+			_yPos = _pos select 1;
+			_zPos = _pos select 2;
+			_zPos = _zPos +1;
+			_obj setPos [_xPos,_yPos,_zPos];
+			_obj setVectorUp [0,0,1];
 		};
 		
 		case 24: //Repair Refuel Rearm

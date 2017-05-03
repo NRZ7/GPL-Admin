@@ -66,10 +66,11 @@ if (_uid call isAdmin) then
 	    } foreach playableUnits;
 		lbClear _squadList;
 		{
-		_uid = getPlayerUID _x;
-		_namestr = name(_x);
-		_index = _squadList lbAdd _namestr;
-		_squadList lbSetData [_index, str(_x)];
+		if (isPlayer _x) then {
+			_namestr = name(_x);
+			_index = _squadList lbAdd _namestr;
+			_squadList lbSetData [_index, str(_x)];
+		};
 	} forEach units group _target;
 		
 };

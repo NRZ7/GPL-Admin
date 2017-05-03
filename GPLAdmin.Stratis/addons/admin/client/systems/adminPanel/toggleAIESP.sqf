@@ -17,7 +17,6 @@ if ((getPlayerUID player) call isAdmin) then
 	{ 
 		hint "NPC Markers ON";
 		NR_toggleAIESP=true;
-		adminPlayerMarkers = false;
 		
 		// 2D Markers
 		[] spawn {
@@ -53,9 +52,9 @@ if ((getPlayerUID player) call isAdmin) then
 		};
 		
 		//3D Markers
-		onEachFrame 
+		addMissionEventHandler ["Draw3D", 
 		{ 
-		private["_vis","_pos","_groupIcon","_iconColor"]; 
+			private["_vis","_pos","_groupIcon","_iconColor"]; 
 			{ 
 				if(!isPlayer _x && player distance _x < 2500) then 
 				{ 
@@ -72,7 +71,7 @@ if ((getPlayerUID player) call isAdmin) then
 							   drawIcon3D [_groupIcon,_iconColor,_pos,0.5,0.5,180,format ["[%1] %2",round (_x distance player),name _x],0,0.04]; 
 				}; 
 			} foreach allUnits  - allPlayers; 
-		};
+		}];
 	} else 
 	{ 
 		NR_toggleAIESP=false;

@@ -46,6 +46,12 @@ else
 		// Put player UIDs here
 	];
 	
+	zeusAdmins = 
+		[
+			// Put player UIDs here
+			"76561198086857419"
+		];
+	
 	banList = // These users can't acces to game.
 	[
 		// Put player UIDs here
@@ -59,9 +65,31 @@ else
 if (typeName lowAdmins == "ARRAY") then { lowAdmins = compileFinal str lowAdmins };
 if (typeName highAdmins == "ARRAY") then { highAdmins = compileFinal str highAdmins };
 if (typeName serverOwners == "ARRAY") then { serverOwners = compileFinal str serverOwners };
-if (!isNil "gpl_CommandPassword") then { gpl_CommandPassword = compileFinal str gpl_CommandPassword };
+if (typeName zeusAdmins == "ARRAY") then { zeusAdmins = compileFinal str zeusAdmins };
 
 publicVariable "lowAdmins";
 publicVariable "highAdmins";
 publicVariable "serverOwners";
+publicVariable "zeusAdmins";
 publicVariable "banList";
+
+_zeusAdminList =  call zeusAdmins;
+	
+	    // Create Zeus Module if zeusAdmins are defined
+	if (count _zeusAdminList > 0 && isNil "aj_var_centerSideLogic_Zeus") then
+		{
+		aj_var_centerSideLogic_Zeus = createCenter sideLogic; publicVariable "aj_var_centerSideLogic_Zeus";  //Create game side for Zeus
+		aj_var_groupSideLogic_Zeus = createGroup aj_var_centerSideLogic_Zeus; publicVariable "aj_var_groupSideLogic_Zeus";  //Create group for Zeus
+			
+			//now create the curators for all zeusAdmins
+		   {       
+		   Call Compile Format ["aj_var_modulezeus%1 = aj_var_groupSideLogic_Zeus createUnit ['ModuleCurator_F',[0,0,0] , [], 0, ''];",_x];
+		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['showNotification', false, true];",_x];
+		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['birdType', '', true];",_x];
+		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['Owner', '%1', true];",_x];
+		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['Addons', 3, true];",_x];
+		   Call Compile Format ["aj_var_moduleZeus%1 setVariable ['Forced', 0, true];",_x];
+		   Call Compile Format ["publicVariable 'aj_var_moduleZeus%1'; ",_x];
+		   }
+		   forEach _zeusAdminList;
+		};	

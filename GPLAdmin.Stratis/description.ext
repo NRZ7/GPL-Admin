@@ -35,16 +35,6 @@ respawnTemplates[] 	= {"MenuInventory","MenuPosition","Counter"};
 #include "addons\admin\client\systems\adminPanel\dialog\myTestMenu.hpp"
 
 
-class CfgFunctions
-{
-	class ArmaJunkies {
-		class ajzeus {
-			file="addons\aj\zeus";
-			class aj_s_initZeus {preInit=1;};	
-		};
-	};
-};
-
 class CfgRemoteExec
 {        
        // List of script functions allowed to be sent from client via remoteExec

@@ -34,7 +34,7 @@ if (_uid call isAdmin) then
 		};
 	} forEach playableUnits;
 	
-	if (isNil "_check") exitWith {hint "You need to select a target first!" };
+	//if (isNil "_check") exitWith {hint "You need to select a target first!" };
 	if (_check == 0) exitWith{};
 };
 
@@ -42,21 +42,14 @@ if (_uid call isAdmin) then
 	{
 		case 0: //Spectate
 		{
-			if (!isNil "_target") then
-			{
-				closeDialog 0;
-				["Initialize", [_target, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
-				waituntil {!IsNull (findDisplay 60492)}; 
-				keyDown = (findDisplay 60492) displayAddEventHandler ["KeyDown", "if (_this select 1 == 1) then {['Terminate'] call BIS_fnc_EGSpectator;}"];
-			} else {
-				closeDialog 0;
-				["Initialize", [player, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
-				waituntil {!IsNull (findDisplay 60492)}; 
-				keyDown = (findDisplay 60492) displayAddEventHandler ["KeyDown", "if (_this select 1 == 1) then {['Terminate'] call BIS_fnc_EGSpectator;}"];
-			};
+			closeDialog 0;
+			["Initialize", [player, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
+			waituntil {!IsNull (findDisplay 60492)}; 
+			keyDown = (findDisplay 60492) displayAddEventHandler ["KeyDown", "if (_this select 1 == 1) then {['Terminate'] call BIS_fnc_EGSpectator;}"];
 		};
 		case 1: //Warn
 		{
+			if (isNil "_target") exitWith {hint "You need to select a target first!" };
 			_warnText = ctrlText 55509;
 			_playerName = name player;
 			_warnText remoteExec ["A3W_fnc_titleTextMessage",_target,false];
