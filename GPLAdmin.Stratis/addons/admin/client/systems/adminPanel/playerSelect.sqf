@@ -34,7 +34,7 @@ if (_uid call isAdmin) then
 		};
 	} forEach playableUnits;
 	
-	//if (isNil "_check") exitWith {hint "You need to select a target first!" };
+	if (isNil "_check") exitWith { };
 	if (_check == 0) exitWith{};
 };
 

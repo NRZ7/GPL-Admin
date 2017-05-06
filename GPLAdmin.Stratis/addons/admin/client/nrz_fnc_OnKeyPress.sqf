@@ -7,8 +7,8 @@ nrz_fnc_OnKeyPress = {
 
 	switch (_this) do {
 		
-		//Key 6
-		case 7: {
+		//Key 8
+		case 9: {
 			nul = [] execVM "addons\admin\client\systems\adminPanel\checkAdmin.sqf";
 		};
 		case 21: {

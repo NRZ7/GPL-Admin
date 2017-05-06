@@ -13,7 +13,7 @@ class PlayersMenu
 	class controls {
 
 		////////////////////////////////////////////////////////
-		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Qucyhy)
+		// GUI EDITOR OUTPUT START (by NRZ7, v1.063, #Cohute)
 		////////////////////////////////////////////////////////
 
 		class MainBackground: w_RscPicture
@@ -33,7 +33,8 @@ class PlayersMenu
 		class nr_PM_rightPic: w_RscPicture
 		{
 			idc = 1200;
-			text = "#(argb,8,8,3)color(0,0,0,0.2)";
+
+			text = "#(argb,8,8,3)color(0,0,0,0.2)"; //--- ToDo: Localize;
 			x = 0.596112 * safezoneW + safezoneX;
 			y = 0.11874 * safezoneH + safezoneY;
 			w = 0.22275 * safezoneW;
@@ -91,7 +92,6 @@ class PlayersMenu
 			y = 0.88874 * safezoneH + safezoneY;
 			w = 0.175 * safezoneW;
 			h = 0.0449999 * safezoneH;
-			sizeEx = 0.03;
 		};
 		class PlayerListBox: w_RscList
 		{
@@ -245,6 +245,8 @@ class PlayersMenu
 			y = 0.54774 * safezoneH + safezoneY;
 			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.6};
 		};
 		class NR_PM_custom2: n_RscButtonMenu
 		{
@@ -256,6 +258,8 @@ class PlayersMenu
 			y = 0.54774 * safezoneH + safezoneY;
 			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.6};
 		};
 		class NR_PM_Custom3: n_RscButtonMenu
 		{
@@ -267,6 +271,8 @@ class PlayersMenu
 			y = 0.60274 * safezoneH + safezoneY;
 			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.6};
 		};
 		class NR_PM_custom4: n_RscButtonMenu
 		{
@@ -278,6 +284,8 @@ class PlayersMenu
 			y = 0.60274 * safezoneH + safezoneY;
 			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.6};
 		};
 		class NR_PM_tempban: w_RscButton
 		{
@@ -348,6 +356,8 @@ class PlayersMenu
 			y = 0.83374 * safezoneH + safezoneY;
 			w = 0.10725 * safezoneW;
 			h = 0.044 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.6};
 			tooltip = "Show the target on map"; //--- ToDo: Localize;
 		};
 		class NR_PM_customB: n_RscButtonMenu
@@ -360,6 +370,8 @@ class PlayersMenu
 			y = 0.88874 * safezoneH + safezoneY;
 			w = 0.10725 * safezoneW;
 			h = 0.044 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.6};
 			tooltip = "Show the target on map"; //--- ToDo: Localize;
 		};
 		class NR_PM_Repair: w_RscButton
@@ -588,10 +600,11 @@ class PlayersMenu
 		class RscSquadPlayerList: w_RscList
 		{
 			idc = 55529;
-			x = 0.670362 * safezoneW + safezoneX;
-			y = 0.48174 * safezoneH + safezoneY;
-			w = 0.132 * safezoneW;
-			h = 0.088 * safezoneH;
+
+			x = 0.668299 * safezoneW + safezoneX;
+			y = 0.65224 * safezoneH + safezoneY;
+			w = 0.136125 * safezoneW;
+			h = 0.1155 * safezoneH;
 		};
 		class PlayerSquadPlayersText: w_RscText
 		{
@@ -599,11 +612,10 @@ class PlayersMenu
 
 			text = "Squad Players:"; //--- ToDo: Localize;
 			x = 0.604362 * safezoneW + safezoneX;
-			y = 0.49274 * safezoneH + safezoneY;
+			y = 0.65774 * safezoneH + safezoneY;
 			w = 0.05775 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		
 		class NR_PM_Custom5: n_RscButtonMenu
 		{
 			onButtonClick = "[4] execVM 'addons\admin\client\systems\adminPanel\playerSelect.sqf'";
@@ -614,6 +626,8 @@ class PlayersMenu
 			y = 0.65774 * safezoneH + safezoneY;
 			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.6};
 		};
 		class NR_PM_Custom6: n_RscButtonMenu
 		{
@@ -625,12 +639,72 @@ class PlayersMenu
 			y = 0.65774 * safezoneH + safezoneY;
 			w = 0.0825 * safezoneW;
 			h = 0.033 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.6};
+		};
+		class customXOutput: n_RscOutput
+		{
+			idc = 55531;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.47074 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class customYOutput: n_RscOutput
+		{
+			idc = 55532;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.50374 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class customZOutput: n_RscOutput
+		{
+			idc = 55533;
+
+			x = 0.647675 * safezoneW + safezoneX;
+			y = 0.53674 * safezoneH + safezoneY;
+			w = 0.160875 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
+		class customXText: w_RscText
+		{
+			idc = 55534;
+
+			text = "Custom X:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.47074 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class customYText: w_RscText
+		{
+			idc = 55535;
+
+			text = "Custom Y:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.50374 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
+		};
+		class customZText: w_RscText
+		{
+			idc = 55536;
+
+			text = "Custom Z:"; //--- ToDo: Localize;
+			x = 0.604362 * safezoneW + safezoneX;
+			y = 0.53674 * safezoneH + safezoneY;
+			w = 0.0495 * safezoneW;
+			h = 0.0275 * safezoneH;
 		};
 		////////////////////////////////////////////////////////
 		// GUI EDITOR OUTPUT END
 		////////////////////////////////////////////////////////
-
-
 
 	};
 };

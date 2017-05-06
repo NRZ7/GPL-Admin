@@ -34,5 +34,7 @@ if (_uid call isAdmin) then
 		_index = _playerListBox lbAdd _namestr;
 		_playerListBox lbSetData [_index, str(_x)];
 		_punishCount = 0;
-	} forEach allPlayers;
+	} forEach allPlayers; 
 };
+
+lbSort _playerListBox;
