@@ -35,13 +35,13 @@ if (_uid call isAdmin) then
 		  24,  
 		  24,  
 		  getDir _x,  
-		  'AI',  
+		  name player,  
 		  1,  
 		  0.05,  
 		  'TahomaB',  
 		  'right'  
 		 ] 
-		} foreach allUnits - allPlayers;  
+		} foreach allPlayers;  
 		}];
 		
 		//3D Markers

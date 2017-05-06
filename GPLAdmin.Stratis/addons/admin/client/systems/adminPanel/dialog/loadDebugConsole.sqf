@@ -13,17 +13,15 @@ disableSerialization;
 _dialogPlayer = findDisplay debugConsoleMenuDialog;
 _functionsNameList = _dialogPlayer displayCtrl 1954;
 
-if (isNil "inDebugConsole") then
-{
+_NR_consoleLog = profileNamespace getVariable ["NR_profileConsoleLog",""];
+_NR_monitor = profileNamespace getVariable ["NR_profileMonitor","getPos player"];
+_NR_monitor2 = profileNamespace getVariable ["NR_profileMonitor2","count allPlayers"];
+_NR_monitor3 = profileNamespace getVariable ["NR_profileMonitor3","typeOf cursorTarget"];
+_NR_monitor4 = profileNamespace getVariable ["NR_profileMonitor4","count allUnits - count allPlayers"];
+_NR_monitor5 = profileNamespace getVariable ["NR_profileMonitor5","vehicle player"];
+_NR_monitor6 = profileNamespace getVariable ["NR_profileMonitor6","group player"];
 
-NR_consoleLog = "";
-NR_monitor = "getPos player";
-NR_monitor2 = "count allPlayers";
-NR_monitor3 = "typeOf cursorTarget";
-NR_monitor4 = "count allUnits - count allPlayers";
-NR_monitor5 = "vehicle player";
-NR_monitor6 = "group player";
-};
+inDebugConsole = true;
 
 if (isNil "nr_inPlayerMenu") then
 {
@@ -37,16 +35,15 @@ if (nr_inPlayerMenu) then
 	ctrlEnable [1976, false]; 
 };
 
-inDebugConsole = true;
 
-ctrlSetText [1953, NR_consoleLog];
+ctrlSetText [1953, _NR_consoleLog];
 
-ctrlSetText [1962, NR_monitor];
-ctrlSetText [1965, NR_monitor2];
-ctrlSetText [1969, NR_monitor3];
-ctrlSetText [1971, NR_monitor4];
-ctrlSetText [1977, NR_monitor5];
-ctrlSetText [1979, NR_monitor6];
+ctrlSetText [1962, _NR_monitor];
+ctrlSetText [1965, _NR_monitor2];
+ctrlSetText [1969, _NR_monitor3];
+ctrlSetText [1971, _NR_monitor4];
+ctrlSetText [1977, _NR_monitor5];
+ctrlSetText [1979, _NR_monitor6];
 
 if(cba_index < 1) then {
 				ctrlEnable [1956, false];

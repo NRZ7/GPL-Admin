@@ -125,8 +125,8 @@ class debugConsoleMenu
 		class n_consoleMonitor1: n_RscConsoleEdit
 		{
 			idc = 1962;
-			onKeyDown = "NR_monitor = ctrlText 1962;";
-			onKillFocus = "NR_monitor = ctrlText 1962;";
+			onKeyDown = "NR_monitor = ctrlText 1962; profileNamespace setVariable ['NR_profileMonitor', NR_monitor];";
+			onKillFocus = "NR_monitor = ctrlText 1962; profileNamespace setVariable ['NR_profileMonitor', NR_monitor];";
 
 			x = 0.183612 * safezoneW + safezoneX;
 			y = 0.72374 * safezoneH + safezoneY;
@@ -146,8 +146,8 @@ class debugConsoleMenu
 		class n_consoleMonitor2: n_RscConsoleEdit
 		{
 			idc = 1965;
-			onKeyDown = "NR_monitor2 = ctrlText 1965;";
-			onKillFocus = "NR_monitor2 = ctrlText 1965;";
+			onKeyDown = "NR_monitor2 = ctrlText 1965; profileNamespace setVariable ['NR_profileMonitor2', NR_monitor2];";
+			onKillFocus = "NR_monitor2 = ctrlText 1965; profileNamespace setVariable ['NR_profileMonitor2', NR_monitor2];";
 
 			x = 0.183612 * safezoneW + safezoneX;
 			y = 0.80074 * safezoneH + safezoneY;
@@ -167,8 +167,8 @@ class debugConsoleMenu
 		class n_consoleMonitor3: n_RscConsoleEdit
 		{
 			idc = 1969;
-			onKeyDown = "NR_monitor3 = ctrlText 1969;";
-			onKillFocus = "NR_monitor3 = ctrlText 1969;";
+			onKeyDown = "NR_monitor3 = ctrlText 1969; profileNamespace setVariable ['NR_profileMonitor3', NR_monitor3];";
+			onKillFocus = "NR_monitor3 = ctrlText 1969; profileNamespace setVariable ['NR_profileMonitor3', NR_monitor3];";
 
 			x = 0.183612 * safezoneW + safezoneX;
 			y = 0.87774 * safezoneH + safezoneY;
@@ -188,8 +188,8 @@ class debugConsoleMenu
 		class n_consoleMonitor4: n_RscConsoleEdit
 		{
 			idc = 1971;
-			onKeyDown = "NR_monitor4 = ctrlText 1971;";
-			onKillFocus = "NR_monitor4 = ctrlText 1971;";
+			onKeyDown = "NR_monitor4 = ctrlText 1971; profileNamespace setVariable ['NR_profileMonitor4', NR_monitor4];";
+			onKillFocus = "NR_monitor4 = ctrlText 1971; profileNamespace setVariable ['NR_profileMonitor4', NR_monitor4];";
 
 			x = 0.455862 * safezoneW + safezoneX;
 			y = 0.72374 * safezoneH + safezoneY;
@@ -253,12 +253,12 @@ class debugConsoleMenu
 		class n_consoleEdit: n_RscConsoleEdit
 		{
 			idc = 1953;
-			onKeyDown = "NR_consoleLog = ctrlText 1953;";
-			onKillFocus = "NR_consoleLog = ctrlText 1953;";
+			onKeyDown = "NR_consoleLog = ctrlText 1953; profileNamespace setVariable ['NR_profileConsoleLog', NR_consoleLog];";
+			onKillFocus = "NR_consoleLog = ctrlText 1953; profileNamespace setVariable ['NR_profileConsoleLog', NR_consoleLog]";
 
 			x = 0.175362 * safezoneW + safezoneX;
 			y = 0.11874 * safezoneH + safezoneY;
-			w = 0.51975 * safezoneW;
+			w = 0.51975 * safezoneW;	
 			h = 0.506 * safezoneH;
 			colorBackground[] = {0,0,0,0.5};
 		};
@@ -281,8 +281,8 @@ class debugConsoleMenu
 		class n_consoleMonitor5: n_RscConsoleEdit
 		{
 			idc = 1977;
-			onKeyDown = "NR_monitor5 = ctrlText 1977;";
-			onKillFocus = "NR_monitor5 = ctrlText 1977;";
+			onKeyDown = "NR_monitor5 = ctrlText 1977; profileNamespace setVariable ['NR_profileMonitor5', NR_monitor5];";
+			onKillFocus = "NR_monitor5 = ctrlText 1977; profileNamespace setVariable ['NR_profileMonitor5', NR_monitor5];"; 
 
 			x = 0.455862 * safezoneW + safezoneX;
 			y = 0.80074 * safezoneH + safezoneY;
@@ -314,8 +314,8 @@ class debugConsoleMenu
 		class n_consoleMonitor6: n_RscConsoleEdit
 		{
 			idc = 1979;
-			onKeyDown = "NR_monitor6 = ctrlText 1979;";
-			onKillFocus = "NR_monitor6 = ctrlText 1979;";
+			onKeyDown = "NR_monitor6 = ctrlText 1979; profileNamespace setVariable ['NR_profileMonitor6', NR_monitor6];";
+			onKillFocus = "NR_monitor6 = ctrlText 1979; profileNamespace setVariable ['NR_profileMonitor6', NR_monitor6];";
 
 			x = 0.455862 * safezoneW + safezoneX;
 			y = 0.87774 * safezoneH + safezoneY;
